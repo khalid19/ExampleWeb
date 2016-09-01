@@ -1,0 +1,2073 @@
+<!DOCTYPE html>
+<html itemscope="" itemtype="http://schema.org/QAPage"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<title>c# - Making a Simple Ajax call to controller in asp.net mvc - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico?v=4f32ecc8f43d">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta property="og:type" content="website">    
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded&amp;a">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="Making a Simple Ajax call to controller in asp.net mvc">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="I'm trying to get started with ASP.NET MVC Ajax calls.
+
+Controller:
+
+public class AjaxTestController : Controller
+{
+    //
+    // GET: /AjaxTest/
+    public ActionResult Index()
+    {
+        retur...">
+    <meta property="og:url" content="http://stackoverflow.com/questions/16186083/making-a-simple-ajax-call-to-controller-in-asp-net-mvc">
+    <link rel="canonical" href="http://stackoverflow.com/questions/16186083/making-a-simple-ajax-call-to-controller-in-asp-net-mvc">
+
+    
+    
+    <script src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/ados" async="" type="text/javascript"></script><script src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/quant.js" async=""></script><script src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/beacon.js" async=""></script><script src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/analytics.js" async=""></script><script src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/ados.js" async="" type="text/javascript"></script><script src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/jquery.js"></script>
+    <script src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/stub.js"></script>
+    <link rel="stylesheet" type="text/css" href="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/all.css">
+
+            <link rel="alternate" type="application/atom+xml" title="Feed for question 'Making a Simple Ajax call to controller in asp.net mvc'" href="http://stackoverflow.com/feeds/question/16186083">
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/16186083/making-a-simple-ajax-call-to-controller-in-asp-net-mvc">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/16186083/making-a-simple-ajax-call-to-controller-in-asp-net-mvc">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/16186083/making-a-simple-ajax-call-to-controller-in-asp-net-mvc">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+        
+            StackExchange.ready(function () {
+                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:2,shownCommentCount:2,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:16186083});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('1', '16186083');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text'); });
+
+            });
+        </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","serverTime":1471867852,"routeName":"Questions/Show","site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"id":1,"enableInsertDocLinkDialog":true,"enableSocialMediaInSharePopup":true},"user":{"fkey":"8608de9ac7d0d1a9bf5d01b814acfba8","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true}}, {"site":{"allowImageUploads":true,"enableUserHovercards":true,"styleCode":true,"enableNewLinkInsertDialog":true},"tags":{},"accounts":{"currentPasswordRequiredForChangingStackIdPassword":true},"flags":{"allowRetractingFlags":true},"snippets":{"snippetsEnabled":true,"renderDomain":"stacksnippets.net"},"markdown":{"asteriskIntraWordEmphasis":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"fd09991aa6d6","js/moderator.en.js":"2be157203f0c","js/full-anon.en.js":"9f6038d81692","js/full.en.js":"f59a9279a0b6","js/wmd.en.js":"dc51078c84ec","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"71d3e40fd6df","js/help.en.js":"b50417081cc4","js/tageditor.en.js":"2178711359dd","js/tageditornew.en.js":"511df03b52b0","js/inline-tag-editing.en.js":"4fa1a4a3339e","js/revisions.en.js":"db5a160e1690","js/review.en.js":"48bdcd1b2416","js/tagsuggestions.en.js":"d1ff9b84abe5","js/post-validation.en.js":"6bb4a20283f6","js/explore-qlist.en.js":"2a9a628fca7f","js/events.en.js":"9a8e62fa4d42","js/keyboard-shortcuts.en.js":"273790c5f3c5","js/external-editor.en.js":"683ce04845f3","js/external-editor.en.js":"683ce04845f3","js/snippet-javascript.en.js":"b45759e6e55e","js/snippet-javascript-codemirror.en.js":"823586268fff"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+<script src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/full-anon.js" async=""></script><script src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/snippet-javascript.js" async=""></script><script src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/post-validation.js" async=""></script><script src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/prettify-full.js" async=""></script><script src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/external-editor.js" async=""></script><script src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/adFeedback.js" type="text/javascript"></script><link href="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/adFeedback.css" rel="stylesheet"></head>
+<body class="question-page new-topbar">
+    <noscript><div id="noscript-padding"></div></noscript>
+    
+        <script>(function () { var old = $.fn.contents; $.fn.contents = function () { try { return old.apply(this, arguments); } catch (e) { return $([]); } } })()</script>
+        
+
+
+
+
+    <div id="notify-container"></div>
+    <div id="custom-header"></div>
+
+
+
+
+
+<div class="topbar">
+    <div class="topbar-wrapper">
+
+        <div class="js-topbar-dialog-corral">
+
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackoverflow.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+                    <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                </li>
+        </ul>
+    </div>
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+<a href="https://stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f16186083%2fmaking-a-simple-ajax-call-to-controller-in-asp-net-mvc" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f16186083%2fmaking-a-simple-ajax-call-to-controller-in-asp-net-mvc" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+            </div>
+    </div>
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+        <a href="http://blog.stackoverflow.com/" class="fr">company blog</a>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+                <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 159 Stack Exchange sites">
+                    <span class="hidden-text">Stack Exchange</span>
+                </a>
+
+    <a href="#" class="topbar-icon icon-inbox yes-hover js-inbox-button" title="Recent inbox messages">
+        <span class="hidden-text">Inbox</span>
+        <span class="unread-count" style="display:none"></span>
+    </a>
+    <a href="#" class="topbar-icon icon-achievements yes-hover js-achievements-button" data-unread-class="" title="Recent achievements: reputation, badges, and privileges earned">
+        <span class="hidden-text">Reputation and Badges</span>
+        <span class="unread-count" style="display:none">
+            
+        </span>
+    </a>
+        </div>
+
+        <div class="topbar-links">
+
+                <div class="links-container">
+                <span class="topbar-menu-links">
+                                    <a href="https://stackoverflow.com/users/signup?ssrc=head&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f16186083%2fmaking-a-simple-ajax-call-to-controller-in-asp-net-mvc" class="login-link">sign up</a>
+                                <a href="https://stackoverflow.com/users/login?ssrc=head&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f16186083%2fmaking-a-simple-ajax-call-to-controller-in-asp-net-mvc" class="login-link">log in</a>
+
+                            <a href="http://stackoverflow.com/tour">tour</a>
+        <a href="#" class="icon-help js-help-button" title="Help Center and other resources">
+            help
+            <span class="triangle"></span>
+        </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                        <li>
+                            <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                                Meta
+                                <span class="item-summary">
+                                    Discuss the workings and policies of this site
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                                About Us
+                                <span class="item-summary">
+                                    Learn more about Stack Overflow the company
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://business.stackoverflow.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                                Business
+                                <span class="item-summary">
+                                    Learn more about hiring developers or posting ads with us
+                                </span>
+                            </a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+                                            </span>
+                </div>
+
+            <div class="search-container">
+                <form id="search" action="/search" method="get" autocomplete="off">
+                    <input name="q" placeholder="Search Q&amp;A" tabindex="1" autocomplete="off" maxlength="240" type="text">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+    <div class="container">
+        <div id="header">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                            <li><a id="nav-jobs" href="http://stackoverflow.com/jobs?med=site-ui&amp;ref=jobs-tab">Jobs</a></li>
+                                                <li><a id="nav-docs" href="http://stackoverflow.com/documentation">Documentation</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/help/badges">Badges</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content" class="snippet-hidden">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="http://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+<div class="hero-box docs-announcement">
+    <div class="hero-close js-dismiss">Dismiss</div>
+    
+    
+    <div class="hero-content text-left">
+        <div class="text-wrapper">
+            <div class="hero-title">
+                Announcing Stack Overflow Documentation
+            </div>
+
+            <p class="subtitle">
+                We started with Q&amp;A. Technical documentation is next, and we need your help.
+            </p>
+            <p class="subtitle">
+                Whether you're a beginner or an experienced developer, you <i>can</i> contribute.
+            </p>
+        </div>
+
+            <a href="http://stackoverflow.com/users/signup?ssrc=docs_hero&amp;returnurl=%2Ftour%2Fdocumentation" class="btn js-gps-track" data-gps-track="docs.hero.clicked({target: 2 })">
+                Sign up and start helping →
+            </a>
+            <a href="http://stackoverflow.com/tour/documentation" class="btn-clear js-gps-track" data-gps-track="docs.hero.clicked({target: 1 })">
+                Learn more about Documentation →
+            </a>
+
+        <div class="img"></div>
+    </div>
+</div>
+
+<script>
+    StackExchange.ready(function() {
+        var location = 0;
+        if ($("body").hasClass("question-page")) {
+            location = 2;
+        } else if ($("body").hasClass("home-page")) {
+            location = 1;
+        }
+
+        $(".docs-announcement .js-dismiss").one("click", function() {
+            $(".docs-announcement").fadeOut("fast");
+            $.post("/dismiss-documentation-hero", { fkey: StackExchange.options.user.fkey, location: location });
+        });
+
+        StackExchange.using("gps", function () {
+            StackExchange.gps.track("docs.hero.show", { location: location }, true);
+        });
+    });
+</script>			<div id="question-header">
+                <h1 itemprop="name"><a href="http://stackoverflow.com/questions/16186083/making-a-simple-ajax-call-to-controller-in-asp-net-mvc" class="question-hyperlink">Making a Simple Ajax call to controller in asp.net mvc</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="16186083" id="question">
+
+    <script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk1032481396",4).setZone(43); });
+            </script>
+                <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="16186083" type="hidden">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">53</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="#">favorite</a>
+        <div class="favoritecount"><b>22</b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<p>I'm trying to get started with ASP.NET MVC Ajax calls.</p>
+
+<p><strong>Controller:</strong></p>
+
+<pre style="" class="lang-cs prettyprint prettyprinted"><code><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">AjaxTestController</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="typ">Controller</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="com">//</span><span class="pln">
+    </span><span class="com">// GET: /AjaxTest/</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">ActionResult</span><span class="pln"> </span><span class="typ">Index</span><span class="pun">()</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> </span><span class="typ">View</span><span class="pun">();</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">ActionResult</span><span class="pln"> </span><span class="typ">FirstAjax</span><span class="pun">()</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> </span><span class="typ">Json</span><span class="pun">(</span><span class="str">"chamara"</span><span class="pun">,</span><span class="pln"> </span><span class="typ">JsonRequestBehavior</span><span class="pun">.</span><span class="typ">AllowGet</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">   
+</span><span class="pun">}</span></code></pre>
+
+<p><strong>View:</strong></p>
+
+<pre style="" class="lang-cs prettyprint prettyprinted"><code><span class="pun">&lt;</span><span class="pln">head runat</span><span class="pun">=</span><span class="str">"server"</span><span class="pun">&gt;</span><span class="pln">
+    </span><span class="str">&lt;title&gt;</span><span class="typ">FirstAjax</span><span class="pun">&lt;/</span><span class="pln">title</span><span class="pun">&gt;</span><span class="pln">
+    </span><span class="pun">&lt;</span><span class="pln">script src</span><span class="pun">=</span><span class="str">"http://code.jquery.com/jquery-1.9.1.js"</span><span class="pun">&gt;&lt;/</span><span class="pln">script</span><span class="pun">&gt;</span><span class="pln">
+    </span><span class="pun">&lt;</span><span class="pln">script src</span><span class="pun">=</span><span class="str">"http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"</span><span class="pun">&gt;&lt;/</span><span class="pln">script</span><span class="pun">&gt;</span><span class="pln">
+    </span><span class="pun">&lt;</span><span class="pln">script type</span><span class="pun">=</span><span class="str">"text/javascript"</span><span class="pun">&gt;</span><span class="pln">
+        $</span><span class="pun">(</span><span class="pln">document</span><span class="pun">).</span><span class="pln">ready</span><span class="pun">(</span><span class="pln">function </span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="kwd">var</span><span class="pln"> serviceURL </span><span class="pun">=</span><span class="pln"> </span><span class="str">'/AjaxTest/FirstAjax'</span><span class="pun">;</span><span class="pln">
+
+            $</span><span class="pun">.</span><span class="pln">ajax</span><span class="pun">({</span><span class="pln">
+                type</span><span class="pun">:</span><span class="pln"> </span><span class="str">"POST"</span><span class="pun">,</span><span class="pln">
+                url</span><span class="pun">:</span><span class="pln"> serviceURL</span><span class="pun">,</span><span class="pln">
+                data</span><span class="pun">:</span><span class="pln"> param </span><span class="pun">=</span><span class="pln"> </span><span class="str">""</span><span class="pun">,</span><span class="pln">
+                contentType</span><span class="pun">:</span><span class="pln"> </span><span class="str">"application/json; charset=utf-8"</span><span class="pun">,</span><span class="pln">
+                dataType</span><span class="pun">:</span><span class="pln"> </span><span class="str">"json"</span><span class="pun">,</span><span class="pln">
+                success</span><span class="pun">:</span><span class="pln"> successFunc</span><span class="pun">,</span><span class="pln">
+                error</span><span class="pun">:</span><span class="pln"> errorFunc
+            </span><span class="pun">});</span><span class="pln">
+
+            function successFunc</span><span class="pun">(</span><span class="pln">data</span><span class="pun">,</span><span class="pln"> status</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">     
+                alert</span><span class="pun">(</span><span class="pln">data</span><span class="pun">);</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+
+            function errorFunc</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                alert</span><span class="pun">(</span><span class="str">'error'</span><span class="pun">);</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">});</span><span class="pln">
+    </span><span class="pun">&lt;/</span><span class="pln">script</span><span class="pun">&gt;</span><span class="pln">
+</span><span class="pun">&lt;/</span><span class="pln">head</span><span class="pun">&gt;</span></code></pre>
+
+<p>I just need to print an alert with the controller method returning 
+data. Above code just print "chamara" on my view. An alert is not 
+firing.</p>
+
+<p><strong>UPDATE</strong></p>
+
+<p>I modified my controller as below and it start working. I don't have 
+an clear idea why it's working now. Some one please explain. The 
+parameter "a" does not related i added it because i can not add two 
+methods with same method name and parameters.I think this might not be 
+the solution but its working</p>
+
+<pre style="" class="lang-cs prettyprint prettyprinted"><code><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">AjaxTestController</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="typ">Controller</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="com">//</span><span class="pln">
+        </span><span class="com">// GET: /AjaxTest/</span><span class="pln">
+        </span><span class="pun">[</span><span class="typ">HttpGet</span><span class="pun">]</span><span class="pln">
+        </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">ActionResult</span><span class="pln"> </span><span class="typ">FirstAjax</span><span class="pun">()</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+            </span><span class="kwd">return</span><span class="pln"> </span><span class="typ">View</span><span class="pun">();</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+
+        </span><span class="pun">[</span><span class="typ">HttpPost</span><span class="pun">]</span><span class="pln">
+        </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">ActionResult</span><span class="pln"> </span><span class="typ">FirstAjax</span><span class="pun">(</span><span class="kwd">string</span><span class="pln"> a</span><span class="pun">)</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+            </span><span class="kwd">return</span><span class="pln"> </span><span class="typ">Json</span><span class="pun">(</span><span class="str">"chamara"</span><span class="pun">,</span><span class="pln"> </span><span class="typ">JsonRequestBehavior</span><span class="pun">.</span><span class="typ">AllowGet</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span></code></pre>
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/c%23" class="post-tag js-gps-track" title="show questions tagged 'c#'" rel="tag">c#</a> <a href="http://stackoverflow.com/questions/tagged/jquery" class="post-tag js-gps-track" title="show questions tagged 'jquery'" rel="tag">jquery</a> <a href="http://stackoverflow.com/questions/tagged/asp.net" class="post-tag js-gps-track" title="show questions tagged 'asp.net'" rel="tag">asp.net</a> <a href="http://stackoverflow.com/questions/tagged/asp.net-mvc" class="post-tag js-gps-track" title="show questions tagged 'asp.net-mvc'" rel="tag">asp.net-mvc</a> <a href="http://stackoverflow.com/questions/tagged/asp.net-mvc-2" class="post-tag js-gps-track" title="show questions tagged 'asp.net-mvc-2'" rel="tag">asp.net-mvc-2</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/16186083" title="short permalink to this question" class="short-link" id="link-post-16186083">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/16186083/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td class="post-signature" align="right">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/16186083/revisions" title="show all edits to this post">edited <span title="2015-07-29 08:32:00Z" class="relativetime">Jul 29 '15 at 8:32</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/4390133/hakam-fostok"><div class="gravatar-wrapper-32"><img src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/photo_002.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/4390133/hakam-fostok">Hakam Fostok</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1,203</span><span title="6 silver badges"><span class="badge2"></span><span class="badgecount">6</span></span><span title="23 bronze badges"><span class="badge3"></span><span class="badgecount">23</span></span>
+        </div>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info user-hover">
+    <div class="user-action-time">
+        asked <span title="2013-04-24 07:34:36Z" class="relativetime">Apr 24 '13 at 7:34</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/367562/chamara"><div class="gravatar-wrapper-32"><img src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/vK59s.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/367562/chamara">chamara</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">4,735</span><span title="14 gold badges"><span class="badge1"></span><span class="badgecount">14</span></span><span title="80 silver badges"><span class="badge2"></span><span class="badgecount">80</span></span><span title="146 bronze badges"><span class="badge3"></span><span class="badgecount">146</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-16186083" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-23139326" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">return json formatted string <code>{"name":"chamara"}</code>. then try to read as <code>data['name']</code></span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1360253/rab-khan" title="20,394 reputation" class="comment-user">Rab Khan</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment23139326_16186083"><span title="2013-04-24 07:40:29Z" class="relativetime-clean">Apr 24 '13 at 7:40</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-23141260" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Remove the second jQuery 
+library from the view. Your code should work as is. I think a script 
+error might be occurring and preventing the alert from showing up.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1223446/terence" title="646 reputation" class="comment-user">Terence</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment23141260_16186083"><span title="2013-04-24 08:39:51Z" class="relativetime-clean">Apr 24 '13 at 8:39</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-16186083" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								7 Answers
+                                <span style="display:none;" itemprop="answerCount">7</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/16186083/making-a-simple-ajax-call-to-controller-in-asp-net-mvc?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active" data-shortcut="A">
+            active</a>
+        <a href="http://stackoverflow.com/questions/16186083/making-a-simple-ajax-call-to-controller-in-asp-net-mvc?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest" data-shortcut="O">
+            oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/16186083/making-a-simple-ajax-call-to-controller-in-asp-net-mvc?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes" data-shortcut="V">
+            votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="16207638"></a>
+<div id="answer-16207638" class="answer accepted-answer" data-answerid="16207638" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="16207638" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">12</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>After the update you have done, </p>
+
+<ol>
+<li>its first calling the FirstAjax action with default HttpGet request
+and renders the blank Html view . (Earlier you were not having it) </li>
+<li>later on  loading of DOM elements of that view your Ajax call get fired and displays alert.</li>
+</ol>
+
+<p>Earlier you were only returning JSON to browser without rendering any
+ HTML. Now it has a HTML view rendered where it can get your JSON Data. </p>
+
+<p>You can't directly render JSON its plain data not HTML.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/16207638" title="short permalink to this answer" class="short-link" id="link-post-16207638">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/16207638/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2013-04-25 06:12:55Z" class="relativetime">Apr 25 '13 at 6:12</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/2310808/asb"><div class="gravatar-wrapper-32"><img src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/589590f9a5362bf163888914b1cd5595.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/2310808/asb">asb</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">182</span><span title="3 bronze badges"><span class="badge3"></span><span class="badgecount">3</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-16207638" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-16207638" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk828491961",4).setZone(44); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk828491961"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjo0NzE0OTMsImNoIjoxMTc4LCJjayI6e30sImNyIjoxNjI3NzYxLCJkaSI6ImJhZmExNDJmMWE5NzQyNjU5ZGJiZTYyZDllNjlmNzFjIiwiZG0iOjEsImZjIjoxOTI0NDM5LCJmbCI6MjE0MjMxMiwiaXAiOiIxMDMuNTkuMzYuMzQiLCJrdyI6ImMjLGpxdWVyeSxhc3AubmV0LGFzcC5uZXQtbXZjLGFzcC5uZXQtbXZjLTIiLCJudyI6MjIsInBjIjowLCJlYyI6MCwicHIiOjE2MDQsInJ0IjoxLCJyZiI6Imh0dHBzOi8vd3d3Lmdvb2dsZS5jb20uYmQiLCJzdCI6ODI3NywidWsiOiJ1ZTEtZjg2ZmE5ZDI3MTQxNDAxYmI5OTQ1NjBiYjcwY2Y1ZTciLCJ6biI6NDQsInRzIjoxNDcxODY3ODU5MjA3LCJiZiI6dHJ1ZSwicG4iOiJhZHplcms4Mjg0OTE5NjEiLCJ1ciI6Imh0dHA6Ly9zdGFja292ZXJmbG93LmNvbS9qb2JzP3V0bV9zb3VyY2U9d2Vic2l0ZSZ1dG1fbWVkaXVtPWJhbm5lciZ1dG1fY29udGVudD1sZWFkZXJib2FyZF8xJnV0bV9jYW1wYWlnbj1ob3VzZV9hZHNfaG91c2VfYWRzX1JPU19TTyJ9&amp;s=zIe69ZAIy8K_5BB3CVilPJvmZA0" rel="nofollow" target="_blank" title=""><img src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/b1c783298af4422390cf6cfc84560e82.png" title="" alt="" border="0" height="90" width="728"></a><img src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/i_002.gif" style="position:absolute;" border="0" height="0px" width="0px"><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input value="12" name="downvoteReason" type="radio">Uninteresting</label></li><li><label><input value="13" name="downvoteReason" type="radio">Misleading</label></li><li><label><input value="14" name="downvoteReason" type="radio">Offensive</label></li><li><label><input value="15" name="downvoteReason" type="radio">Repetitive</label></li><li><label><input value="16" name="downvoteReason" type="radio">Other</label></li></ul><a href="#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div></div>
+  
+<a name="16186212"></a>
+<div id="answer-16186212" class="answer" data-answerid="16186212" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="16186212" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">30</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Remove the data attribute as you are not <code>POSTING</code> anything to the server (Your controller does not expect any parameters).  </p>
+
+<p>And in your AJAX Method you can use <code>Razor</code> and use <code>@Url.Action</code> rather than a static string:</p>
+
+<pre style="" class="lang-cs prettyprint prettyprinted"><code><span class="pln">$</span><span class="pun">.</span><span class="pln">ajax</span><span class="pun">({</span><span class="pln">
+    url</span><span class="pun">:</span><span class="pln"> </span><span class="str">'@Url.Action("FirstAjax", "AjaxTest")'</span><span class="pun">,</span><span class="pln">
+    contentType</span><span class="pun">:</span><span class="pln"> </span><span class="str">"application/json; charset=utf-8"</span><span class="pun">,</span><span class="pln">
+    dataType</span><span class="pun">:</span><span class="pln"> </span><span class="str">"json"</span><span class="pun">,</span><span class="pln">
+    success</span><span class="pun">:</span><span class="pln"> successFunc</span><span class="pun">,</span><span class="pln">
+    error</span><span class="pun">:</span><span class="pln"> errorFunc
+</span><span class="pun">});</span></code></pre>
+
+<p>From your update:</p>
+
+<pre style="" class="lang-cs prettyprint prettyprinted"><code><span class="pln">$</span><span class="pun">.</span><span class="pln">ajax</span><span class="pun">({</span><span class="pln">
+    type</span><span class="pun">:</span><span class="pln"> </span><span class="str">"POST"</span><span class="pun">,</span><span class="pln">
+    url</span><span class="pun">:</span><span class="pln"> </span><span class="str">'@Url.Action("FirstAjax", "AjaxTest")'</span><span class="pun">,</span><span class="pln">
+    contentType</span><span class="pun">:</span><span class="pln"> </span><span class="str">"application/json; charset=utf-8"</span><span class="pun">,</span><span class="pln">
+    data</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> a</span><span class="pun">:</span><span class="pln"> </span><span class="str">"testing"</span><span class="pln"> </span><span class="pun">},</span><span class="pln">
+    dataType</span><span class="pun">:</span><span class="pln"> </span><span class="str">"json"</span><span class="pun">,</span><span class="pln">
+    success</span><span class="pun">:</span><span class="pln"> function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> alert</span><span class="pun">(</span><span class="str">'Success'</span><span class="pun">);</span><span class="pln"> </span><span class="pun">},</span><span class="pln">
+    error</span><span class="pun">:</span><span class="pln"> errorFunc
+</span><span class="pun">});</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/16186212" title="short permalink to this answer" class="short-link" id="link-post-16186212">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/16186212/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/16186212/revisions" title="show all edits to this post">edited <span title="2015-02-20 05:23:28Z" class="relativetime">Feb 20 '15 at 5:23</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/57698/john-bubriski"><div class="gravatar-wrapper-32"><img src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/a72155ea89e84dcb8def0e8c64598a9d.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/57698/john-bubriski">John Bubriski</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">7,884</span><span title="25 gold badges"><span class="badge1"></span><span class="badgecount">25</span></span><span title="90 silver badges"><span class="badge2"></span><span class="badgecount">90</span></span><span title="156 bronze badges"><span class="badge3"></span><span class="badgecount">156</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2013-04-24 07:40:49Z" class="relativetime">Apr 24 '13 at 7:40</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1280410/darren-davies"><div class="gravatar-wrapper-32"><img src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/mCwuh.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1280410/darren-davies">Darren Davies</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 40,240" dir="ltr">40.2k</span><span title="14 gold badges"><span class="badge1"></span><span class="badgecount">14</span></span><span title="69 silver badges"><span class="badge2"></span><span class="badgecount">69</span></span><span title="102 bronze badges"><span class="badge3"></span><span class="badgecount">102</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-16186212" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-23139783" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">2</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@chamara - sorry, remove 
+HttpPost (You are not posting anything to the server so it would be a 
+redundant attribute) and the controller would not be hit. Also remove 
+"type: POST" in the AJAX function as I have sown you.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1280410/darren-davies" title="40,240 reputation" class="comment-user">Darren Davies</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment23139783_16186212"><span title="2013-04-24 07:52:52Z" class="relativetime-clean">Apr 24 '13 at 7:52</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-16186212" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="16211250"></a>
+<div id="answer-16211250" class="answer" data-answerid="16211250" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="16211250" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>It's for your UPDATE question.</p>
+
+<p>Since you cannot have two methods with the same name and signature you have to use the ActionName attribute:</p>
+
+<p>UPDATE:</p>
+
+<pre style="" class="lang-cs prettyprint prettyprinted"><code><span class="pun">[</span><span class="typ">HttpGet</span><span class="pun">]</span><span class="pln">
+</span><span class="kwd">public</span><span class="pln"> </span><span class="typ">ActionResult</span><span class="pln"> </span><span class="typ">FirstAjax</span><span class="pun">()</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="typ">Some</span><span class="pln"> </span><span class="typ">Code</span><span class="pun">--</span><span class="typ">Some</span><span class="pln"> </span><span class="typ">Code</span><span class="pun">---</span><span class="typ">Some</span><span class="pln"> </span><span class="typ">Code</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="typ">View</span><span class="pun">();</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="pun">[</span><span class="typ">HttpPost</span><span class="pun">]</span><span class="pln">
+</span><span class="pun">[</span><span class="typ">ActionName</span><span class="pun">(</span><span class="str">"FirstAjax"</span><span class="pun">)]</span><span class="pln">
+</span><span class="kwd">public</span><span class="pln"> </span><span class="typ">ActionResult</span><span class="pln"> </span><span class="typ">FirstAjaxPost</span><span class="pun">()</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="typ">Some</span><span class="pln"> </span><span class="typ">Code</span><span class="pun">--</span><span class="typ">Some</span><span class="pln"> </span><span class="typ">Code</span><span class="pun">---</span><span class="typ">Some</span><span class="pln"> </span><span class="typ">Code</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="typ">View</span><span class="pun">();</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>And please refer <a href="http://haacked.com/archive/2008/08/29/how-a-method-becomes-an-action.aspx" rel="nofollow">this</a> link for further reference of how a method becomes an action. Very good reference though.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/16211250" title="short permalink to this answer" class="short-link" id="link-post-16211250">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/16211250/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2013-04-25 09:34:51Z" class="relativetime">Apr 25 '13 at 9:34</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1039364/rgr"><div class="gravatar-wrapper-32"><img src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/DqWcD.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1039364/rgr">RGR</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">948</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="14 silver badges"><span class="badge2"></span><span class="badgecount">14</span></span><span title="27 bronze badges"><span class="badge3"></span><span class="badgecount">27</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-16211250" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-16211250" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="38047526"></a>
+<div id="answer-38047526" class="answer" data-answerid="38047526" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="38047526" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Use a Rajor to change/dynamic your url by alling your action like this</p>
+
+<pre style="" class="lang-cs prettyprint prettyprinted"><code><span class="pln">$</span><span class="pun">.</span><span class="pln">ajax</span><span class="pun">({</span><span class="pln">
+    type</span><span class="pun">:</span><span class="pln"> </span><span class="str">"POST"</span><span class="pun">,</span><span class="pln">
+    url</span><span class="pun">:</span><span class="pln"> </span><span class="str">'@Url.Action("ControllerName", "ActionName")'</span><span class="pun">,</span><span class="pln">
+    contentType</span><span class="pun">:</span><span class="pln"> </span><span class="str">"application/json; charset=utf-8"</span><span class="pun">,</span><span class="pln">
+    data</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> data</span><span class="pun">:</span><span class="pln"> </span><span class="str">"yourdata"</span><span class="pln"> </span><span class="pun">},</span><span class="pln">
+    dataType</span><span class="pun">:</span><span class="pln"> </span><span class="str">"json"</span><span class="pun">,</span><span class="pln">
+    success</span><span class="pun">:</span><span class="pln"> function</span><span class="pun">(</span><span class="pln">recData</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> alert</span><span class="pun">(</span><span class="str">'Success'</span><span class="pun">);</span><span class="pln"> </span><span class="pun">},</span><span class="pln">
+    error</span><span class="pun">:</span><span class="pln"> function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> alert</span><span class="pun">(</span><span class="str">'A error'</span><span class="pun">);</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">});</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/38047526" title="short permalink to this answer" class="short-link" id="link-post-38047526">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/38047526/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2016-06-27 06:50:03Z" class="relativetime">Jun 27 at 6:50</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/2256217/ananda-m-ghosh"><div class="gravatar-wrapper-32"><img src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/UVon0.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/2256217/ananda-m-ghosh">Ananda M. Ghosh</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">329</span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span><span title="10 bronze badges"><span class="badge3"></span><span class="badgecount">10</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-38047526" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-38047526" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="37067498"></a>
+<div id="answer-37067498" class="answer" data-answerid="37067498" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="37067498" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>First thing there is no need of having two different versions of 
+jquery libraries in one page,either "1.9.1" or "2.0.0" is sufficient to 
+make ajax calls work..</p>
+
+<p>Here is your controller code:</p>
+
+<pre style="" class="lang-cs prettyprint prettyprinted"><code><span class="pln">    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">ActionResult</span><span class="pln"> </span><span class="typ">Index</span><span class="pun">()</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> </span><span class="typ">View</span><span class="pun">();</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">ActionResult</span><span class="pln"> </span><span class="typ">FirstAjax</span><span class="pun">(</span><span class="kwd">string</span><span class="pln"> a</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> </span><span class="typ">Json</span><span class="pun">(</span><span class="str">"chamara"</span><span class="pun">,</span><span class="pln"> </span><span class="typ">JsonRequestBehavior</span><span class="pun">.</span><span class="typ">AllowGet</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">   </span></code></pre>
+
+<p>This is how your view should look like:</p>
+
+<pre style="" class="lang-cs prettyprint prettyprinted"><code><span class="pun">&lt;</span><span class="pln">script src</span><span class="pun">=</span><span class="str">"http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"</span><span class="pun">&gt;&lt;/</span><span class="pln">script</span><span class="pun">&gt;</span><span class="pln">
+
+</span><span class="pun">&lt;</span><span class="pln">script type</span><span class="pun">=</span><span class="str">"text/javascript"</span><span class="pun">&gt;</span><span class="pln">
+$</span><span class="pun">(</span><span class="pln">document</span><span class="pun">).</span><span class="pln">ready</span><span class="pun">(</span><span class="pln">function </span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">var</span><span class="pln"> a </span><span class="pun">=</span><span class="pln"> </span><span class="str">"Test"</span><span class="pun">;</span><span class="pln">
+    $</span><span class="pun">.</span><span class="pln">ajax</span><span class="pun">({</span><span class="pln">
+        url</span><span class="pun">:</span><span class="pln"> </span><span class="str">"../../Home/FirstAjax"</span><span class="pun">,</span><span class="pln">
+        type</span><span class="pun">:</span><span class="pln"> </span><span class="str">"GET"</span><span class="pun">,</span><span class="pln">
+        data</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> a </span><span class="pun">:</span><span class="pln"> a </span><span class="pun">},</span><span class="pln">
+        success</span><span class="pun">:</span><span class="pln"> function </span><span class="pun">(</span><span class="pln">response</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            alert</span><span class="pun">(</span><span class="pln">response</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">},</span><span class="pln">
+        error</span><span class="pun">:</span><span class="pln"> function </span><span class="pun">(</span><span class="pln">response</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            alert</span><span class="pun">(</span><span class="pln">response</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">});</span><span class="pln">
+</span><span class="pun">});</span><span class="pln">
+</span><span class="pun">&lt;/</span><span class="pln">script</span><span class="pun">&gt;</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/37067498" title="short permalink to this answer" class="short-link" id="link-post-37067498">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/37067498/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/37067498/revisions" title="show all edits to this post">edited <span title="2016-05-06 08:22:16Z" class="relativetime">May 6 at 8:22</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2016-05-06 08:15:43Z" class="relativetime">May 6 at 8:15</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/4887911/lokesh-ram"><div class="gravatar-wrapper-32"><img src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/photo.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/4887911/lokesh-ram">Lokesh_Ram</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">378</span><span title="2 silver badges"><span class="badge2"></span><span class="badgecount">2</span></span><span title="14 bronze badges"><span class="badge3"></span><span class="badgecount">14</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-37067498" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-37067498" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="16186227"></a>
+<div id="answer-16186227" class="answer" data-answerid="16186227" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="16186227" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>instead of <code>url: serviceURL,</code> 
+use</p>
+
+<pre style="" class="lang-cs prettyprint prettyprinted"><code><span class="pln">url</span><span class="pun">:</span><span class="pln"> </span><span class="str">'&lt;%= serviceURL%&gt;'</span><span class="pun">,</span></code></pre>
+
+<p>and are you passing 2 parameters to successFunc?</p>
+
+<pre style="" class="lang-cs prettyprint prettyprinted"><code><span class="pln">function successFunc</span><span class="pun">(</span><span class="pln">data</span><span class="pun">)</span><span class="pln">
+ </span><span class="pun">{</span><span class="pln">
+   alert</span><span class="pun">(</span><span class="pln">data</span><span class="pun">);</span><span class="pln">
+ </span><span class="pun">}</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/16186227" title="short permalink to this answer" class="short-link" id="link-post-16186227">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/16186227/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/16186227/revisions" title="show all edits to this post">edited <span title="2013-04-24 07:55:22Z" class="relativetime">Apr 24 '13 at 7:55</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2013-04-24 07:41:17Z" class="relativetime">Apr 24 '13 at 7:41</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/425260/swapneel"><div class="gravatar-wrapper-32"><img src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/y13EN.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/425260/swapneel">swapneel</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1,990</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="13 silver badges"><span class="badge2"></span><span class="badgecount">13</span></span><span title="27 bronze badges"><span class="badge3"></span><span class="badgecount">27</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-16186227" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-23139771" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">solution did not work</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/367562/chamara" title="4,735 reputation" class="comment-user owner">chamara</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment23139771_16186227"><span title="2013-04-24 07:52:29Z" class="relativetime-clean">Apr 24 '13 at 7:52</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-16186227" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="16187905"></a>
+<div id="answer-16187905" class="answer" data-answerid="16187905" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="16187905" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Add "JsonValueProviderFactory" in global.asax :</p>
+
+<pre style="" class="lang-cs prettyprint prettyprinted"><code><span class="kwd">protected</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> </span><span class="typ">Application_Start</span><span class="pun">()</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="typ">AreaRegistration</span><span class="pun">.</span><span class="typ">RegisterAllAreas</span><span class="pun">();</span><span class="pln">
+    </span><span class="typ">ValueProviderFactories</span><span class="pun">.</span><span class="typ">Factories</span><span class="pun">.</span><span class="typ">Add</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">JsonValueProviderFactory</span><span class="pun">());</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/16187905" title="short permalink to this answer" class="short-link" id="link-post-16187905">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/16187905/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2013-04-24 09:07:06Z" class="relativetime">Apr 24 '13 at 9:07</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/2310722/himanshu"><div class="gravatar-wrapper-32"><img src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/721b9c08d93e6e6c97c90455600b55dd.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/2310722/himanshu">Himanshu</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">16</span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-16187905" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-16187905" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="/questions/16186083/answer/submit" method="post" class="post-form">
+						    <input id="post-id" value="16186083" type="hidden">
+                            <input id="qualityBanWarningShown" name="qualityBanWarningShown" value="false" type="hidden">
+                            <input name="referrer" value="https://www.google.com.bd" type="hidden">
+							<h2 class="space">Your Answer</h2>
+
+
+            <script>
+            StackExchange.ifUsing("editor", function () {
+                StackExchange.using("externalEditor", function () {
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.init();
+                    });
+                });
+            }, "code-snippets");
+        </script>
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+                // Have to fire editor after snippets, if snippets enabled
+                if (StackExchange.settings.snippets.snippetsEnabled) {
+                    StackExchange.using("snippets", function() {
+                        createEditor();
+                    });
+                }
+                else {
+                    createEditor();
+                }
+            });
+
+            function createEditor() {
+                prepareEditor({
+                    heartbeatType: 'answer',
+                convertImagesToLinks: true,
+                reputationToPostImages: 10,
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                    ,immediatelyShowMarkdownHelp:true
+                    });
+                
+
+        }
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor js-post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li style="left: 0px;" class="wmd-button" id="wmd-bold-button"><span style="background-position: 0px -20px;"></span></li><li style="left: 25px;" class="wmd-button" id="wmd-italic-button"><span style="background-position: -20px -20px;"></span></li><li style="left: 50px;" class="wmd-spacer" id="wmd-spacer1"><span style="background-position: -40px -20px;"></span></li><li style="left: 75px;" class="wmd-button" id="wmd-link-button"><span style="background-position: -40px -20px;"></span></li><li style="left: 100px;" class="wmd-button" id="wmd-quote-button"><span style="background-position: -60px -20px;"></span></li><li style="left: 125px;" class="wmd-button" id="wmd-code-button"><span style="background-position: -80px -20px;"></span></li><li style="left: 150px;" class="wmd-button" id="wmd-image-button"><span style="background-position: -100px -20px;"></span></li><li style="left: 175px;" class="wmd-spacer" id="wmd-spacer2"><span style="background-position: -120px -20px;"></span></li><li style="left: 200px;" class="wmd-button" id="wmd-olist-button"><span style="background-position: -120px -20px;"></span></li><li style="left: 225px;" class="wmd-button" id="wmd-ulist-button"><span style="background-position: -140px -20px;"></span></li><li style="left: 250px;" class="wmd-button" id="wmd-heading-button"><span style="background-position: -160px -20px;"></span></li><li style="left: 275px;" class="wmd-button" id="wmd-hr-button"><span style="background-position: -180px -20px;"></span></li><li style="left: 300px;" class="wmd-spacer" id="wmd-spacer3"><span style="background-position: -200px -20px;"></span></li><li style="left: 325px;" class="wmd-button" id="wmd-undo-button"><span style="background-position: -200px -20px;"></span></li><li style="left: 350px;" class="wmd-button" id="wmd-redo-button"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" value="8608de9ac7d0d1a9bf5d01b814acfba8" type="hidden">
+        <input id="author" name="author" type="text">
+    </div>
+
+
+
+</div>
+							<div style="position: relative;">
+								
+								            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://stackoverflow.com/users/login?ssrc=question_page&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f16186083%2fmaking-a-simple-ajax-call-to-controller-in-asp-net-mvc%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Email and Password</span></p>
+                        </div>
+                    </div>
+                    <input name="manual-openid" class="manual-openid" type="hidden">
+                    <input name="use-facebook" class="use-facebook" value="false" type="hidden">
+                    <input name="use-google" class="use-google" value="false" type="hidden">
+                    <input class="submit-openid" value="Submit" style="display:none" type="button">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" size="30" maxlength="30" tabindex="105" type="text">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" size="30" maxlength="100" tabindex="106" placeholder="required, but never shown" type="email">
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', 'http%3a%2f%2fstackoverflow.com%2fquestions%2f16186083%2fmaking-a-simple-ajax-call-to-controller-in-asp-net-mvc%23new-answer', 'question_page');
+                    }
+                );
+            </script>
+            <noscript>
+                        <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown" />
+                </div>
+            </td>
+        </tr>
+        </table>
+    </div>
+
+            </noscript>
+
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" value="Post Your Answer" tabindex="110" type="submit">
+									<a href="#" class="btn-clear discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input name="legalLinksShown" value="1" type="hidden">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/c%23" class="post-tag" title="show questions tagged 'c#'" rel="tag">c#</a> <a href="http://stackoverflow.com/questions/tagged/jquery" class="post-tag" title="show questions tagged 'jquery'" rel="tag">jquery</a> <a href="http://stackoverflow.com/questions/tagged/asp.net" class="post-tag" title="show questions tagged 'asp.net'" rel="tag">asp.net</a> <a href="http://stackoverflow.com/questions/tagged/asp.net-mvc" class="post-tag" title="show questions tagged 'asp.net-mvc'" rel="tag">asp.net-mvc</a> <a href="http://stackoverflow.com/questions/tagged/asp.net-mvc-2" class="post-tag" title="show questions tagged 'asp.net-mvc-2'" rel="tag">asp.net-mvc-2</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2013-04-24 07:34:36Z"><b>3 years ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>182854 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/16186083/making-a-simple-ajax-call-to-controller-in-asp-net-mvc?lastactivity" class="lastactivity-link" title="2016-06-27 06:50:03Z">1 month ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+						
+			<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk456851688",[5,17,2221]).setZone(45); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk456851688"><div id="careersadsdoublehigh" style="display:none;"></div><img src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/i.gif" style="position:absolute;" border="0" height="0px" width="0px"><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input value="12" name="downvoteReason" type="radio">Uninteresting</label></li><li><label><input value="13" name="downvoteReason" type="radio">Misleading</label></li><li><label><input value="14" name="downvoteReason" type="radio">Offensive</label></li><li><label><input value="15" name="downvoteReason" type="radio">Repetitive</label></li><li><label><input value="16" name="downvoteReason" type="radio">Other</label></li></ul><a href="#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div></div>
+            <div id="hireme"></div>
+        <script>
+;"use strict";var _typeof=typeof Symbol=="function"&&typeof Symbol.iterator=="symbol"?function(n){return typeof n}:function(n){return n&&typeof Symbol=="function"&&n.constructor===Symbol?"symbol":typeof n};(function(n){try{var t=function(){var r,t,i;if(typeof[].indexOf!="function")return{v:void 0};if(r=["stackoverflow.com","serverfault.com","careers.stackoverflow.com","blog.codinghorror.com","joelonsoftware.com","www.joelonsoftware.com"],r[0]!=="*"&&r.indexOf(location.hostname)===-1)return{v:void 0};t=window;t.clc_opts=n;n.autoload&&(t.clc_init=t.clc_init||[],t.clc_init.push(function(){return t.clc.load()}));i=document.createElement("script");i.async=!0;i.src=n.lib;document.body.appendChild(i)}();if((typeof t=="undefined"?"undefined":_typeof(t))==="object")return t.v}catch(i){}}).call(null, {"az":true,"kt":2000,"tto":true,"autoload":true,"d":{"sb":["hireme","clc-sb"],"tlb":["careers1","clc-tlb"],"mlb":["careers3","clc-mlb"]},"allowed":["stackoverflow.com","serverfault.com","careers.stackoverflow.com","blog.codinghorror.com","joelonsoftware.com","www.joelonsoftware.com"],"h":"clc.stackoverflow.com","u":"//clc.stackoverflow.com/p.js","lib":"//cdn.sstatic.net/clc/clc.min.js?v=84432a71b7a2"});        </script>
+			<div class="module" id="chat-feature">
+
+    <h4><a title="124 users active in 55 rooms the last 60 minutes" href="http://chat.stackoverflow.com/" id="h-chat-link">124 People Chatting</a></h4>
+    <div class="related" id="ad502-rooms"><div class="ad502-room"><h3 class="ad502-room-h3"><span class="ad502-room-title" title="PHP"><a href="http://chat.stackoverflow.com/rooms/11">PHP</a></span></h3><span title="2016-08-22 11:20:02Z" class="ad502-last-message">50 mins ago - <a href="http://chat.stackoverflow.com/users/889949">DaveRandom</a></span><br><div class="ad502-users"><a href="http://chat.stackoverflow.com/users/889949"><img src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/8609c7056e725f9e8c03c594b831353e.jpg" title="DaveRandom: 50 mins ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/3942918"><img src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/Rup3Y.jpg" title="Paul Crovella: 51 mins ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/6315209"><img src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/3cd95714355a2cdf2f2a3c399e95517d.png" title="TRS: 51 mins ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/208809"><img src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/3eaa19bdd5f9f61fff5f7265734c6c09.png" title="Gordon: 52 mins ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/5516378"><img src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/vYbFn.png" title="Devilion: 52 mins ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/3464091"><img src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/799bedc82e73c4cef497adbc959e844e.png" title="user3464091: 53 mins ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/5913363"><img src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/8098b0a123161a3f3b892a290a424de0.png" title="neo: 56 mins ago" height="23" width="23"></a></div></div><div class="ad502-room"><h3 class="ad502-room-h3"><span class="ad502-room-title" title="JavaScript"><a href="http://chat.stackoverflow.com/rooms/17">JavaScript</a></span></h3><span title="2016-08-22 11:20:39Z" class="ad502-last-message">50 mins ago - <a href="http://chat.stackoverflow.com/users/5225363">Gandalf the White</a></span><br><div class="ad502-users"><a href="http://chat.stackoverflow.com/users/5225363"><img src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/euozF.jpg" title="Gandalf the White: 50 mins ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/1947276"><img src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/5YYk6.png" title="little pootis: 50 mins ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/1365454"><img src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/ea6906f4c6019d6fd681ca3d8ab7333b.png" title="Badger Cat: 53 mins ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/893578"><img src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/RdhGt.jpg" title="Sheepy: 54 mins ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/2615209"><img src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/MOaP8.jpg" title="Ben Fortune: 55 mins ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/809950"><img src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/mIOhV.jpg" title="GNi33: 57 mins ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/3297613"><img src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/8XIqK.png" title="Avinash Raj: 1 hour ago" height="23" width="23"></a></div></div></div>
+    <script>
+    // <!--
+        StackExchange.ready(
+        function () {
+            var options = {
+                chatUrl: 'http://chat.stackoverflow.com',
+                reloadUrl: '/api/recent-chat',
+                preloadData: {"activeUsers":124,"activeRooms":55,"rooms":[{"name":"PHP","id":11,"lastPost":1471864802,"posts":2446178,"users":[{"name":"DaveRandom","id":889949,"emailhash":"8609c7056e725f9e8c03c594b831353e","lastPost":1471864802},{"name":"Paul Crovella","id":3942918,"emailhash":"!https://i.stack.imgur.com/Rup3Y.jpg?s=128\u0026g=1","lastPost":1471864786},{"name":"TRS","id":6315209,"emailhash":"3cd95714355a2cdf2f2a3c399e95517d","lastPost":1471864754},{"name":"Gordon","id":208809,"emailhash":"3eaa19bdd5f9f61fff5f7265734c6c09","lastPost":1471864694},{"name":"Devilion","id":5516378,"emailhash":"!https://i.stack.imgur.com/vYbFn.png?s=128\u0026g=1","lastPost":1471864689},{"name":"user3464091","id":3464091,"emailhash":"799bedc82e73c4cef497adbc959e844e","lastPost":1471864630},{"name":"neo","id":5913363,"emailhash":"8098b0a123161a3f3b892a290a424de0","lastPost":1471864497}],"messages":[{"date":1471864802,"user":"DaveRandom","userid":889949}],"singleImage":false,"tags":["php"]},{"name":"JavaScript","id":17,"lastPost":1471864839,"posts":3544710,"users":[{"name":"Gandalf the White","id":5225363,"emailhash":"!https://i.stack.imgur.com/euozF.jpg?s=128\u0026g=1","lastPost":1471864839},{"name":"little pootis","id":1947276,"emailhash":"!https://i.stack.imgur.com/5YYk6.png?s=128\u0026g=1","lastPost":1471864834},{"name":"Badger Cat","id":1365454,"emailhash":"ea6906f4c6019d6fd681ca3d8ab7333b","lastPost":1471864643},{"name":"Sheepy","id":893578,"emailhash":"!https://i.stack.imgur.com/RdhGt.jpg?s=128\u0026g=1","lastPost":1471864609},{"name":"Ben Fortune","id":2615209,"emailhash":"!https://i.stack.imgur.com/MOaP8.jpg?s=128\u0026g=1","lastPost":1471864504},{"name":"GNi33","id":809950,"emailhash":"!https://i.stack.imgur.com/mIOhV.jpg?s=128\u0026g=1","lastPost":1471864438},{"name":"Avinash Raj","id":3297613,"emailhash":"!https://i.stack.imgur.com/8XIqK.png?s=128\u0026g=1","lastPost":1471860931}],"messages":[{"date":1471864839,"user":"Gandalf the White","userid":5225363}],"singleImage":false,"tags":["ecmascript","ecmascript-next","javascript","node.js"]}]} 
+            };
+
+            StackExchange.chatAd.init(options);
+        });
+    // -->
+    </script>
+
+</div>
+
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/18876821?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">1</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/18876821/how-to-show-a-calculated-field-in-an-mvc-razor-form?noredirect=1&amp;lq=1" class="question-hyperlink">How to show a calculated field in an MVC Razor form?</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/18012813?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">1</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/18012813/how-to-handle-textbox-keypress-event-in-asp-net-using-ajax?noredirect=1&amp;lq=1" class="question-hyperlink">how to handle TextBox.KeyPress event in asp.net using ajax</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/18280340?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/18280340/need-to-pass-key-value-pairs-from-c-sharp-to-javascript?noredirect=1&amp;lq=1" class="question-hyperlink">Need to pass key-value pairs from C# to Javascript</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/19272570?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">3</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/19272570/pass-textbox-value-from-view-to-buttons?noredirect=1&amp;lq=1" class="question-hyperlink">Pass textbox value from view to buttons</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/28594833?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/28594833/javascript-or-ajax-to-update-database-with-asp-net-mvc?noredirect=1&amp;lq=1" class="question-hyperlink">javascript or ajax to update database with asp.net mvc?</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/27560933?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">-1</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/27560933/how-to-call-httppost-method-of-web-api-in-c-sharp?noredirect=1&amp;lq=1" class="question-hyperlink">How to call [HttpPost] method of web api in c#</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/30936565?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/30936565/how-to-pass-the-value-of-dropdownlist-to-controller-in-asp-net-when-on-change-ev?noredirect=1&amp;lq=1" class="question-hyperlink">how to pass the value of dropdownlist to controller in asp.net when on-change event triggers</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/25165001?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/25165001/partial-view-is-not-updating-correctly?noredirect=1&amp;lq=1" class="question-hyperlink">Partial View is not updating correctly</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/36187622?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/36187622/how-can-i-export-an-html-table-from-a-partial-view-to-excel-in-asp-net-mvc-5?noredirect=1&amp;lq=1" class="question-hyperlink">How can I export an HTML table from a partial view to excel in ASP.NET MVC 5</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/29964254?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/29964254/how-to-pass-date-value-to-controller-asp-net-mvc?noredirect=1&amp;lq=1" class="question-hyperlink">How to pass date value to controller? asp.net mvc</a>
+</div>					<div class="spacer more">
+				<a href="http://stackoverflow.com/questions/linked/16186083?lq=1">see more linked questions…</a>
+			</div>
+	</div>
+</div>
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/177275?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted large">232</div></a><a href="http://stackoverflow.com/questions/177275/grid-controls-for-asp-net-mvc?rq=1" class="question-hyperlink">grid controls for ASP.NET MVC?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/186062?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted large">328</div></a><a href="http://stackoverflow.com/questions/186062/can-an-asp-net-mvc-controller-return-an-image?rq=1" class="question-hyperlink">Can an ASP.NET MVC controller return an Image?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/3830099?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">15</div></a><a href="http://stackoverflow.com/questions/3830099/asp-net-mvc-html-dropdownlist-populated-by-ajax-call-to-controller?rq=1" class="question-hyperlink">ASP.NET MVC Html.DropDownList populated by Ajax call to controller?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/4013695?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">27</div></a><a href="http://stackoverflow.com/questions/4013695/asp-net-mvc-redirect-with-model?rq=1" class="question-hyperlink">ASP.NET MVC Redirect with model</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/4544617?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="http://stackoverflow.com/questions/4544617/using-grasp-controller-with-mvc-controller-how-to-make-an-object-always-visibl?rq=1" class="question-hyperlink">Using Grasp Controller with MVC Controller - How to make an object always visible for a Controller?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/4651581?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">4</div></a><a href="http://stackoverflow.com/questions/4651581/ambiguous-call-asp-net-mvc-action-methods?rq=1" class="question-hyperlink">ambiguous call asp.net mvc action methods</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/5193842?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted large">621</div></a><a href="http://stackoverflow.com/questions/5193842/file-upload-asp-net-mvc-3-0?rq=1" class="question-hyperlink">File Upload ASP.NET MVC 3.0</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/5732507?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">5</div></a><a href="http://stackoverflow.com/questions/5732507/asp-net-mvc-2-issue-dot-in-route?rq=1" class="question-hyperlink">ASP.NET MVC 2 Issue - Dot in Route</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/23401701?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">4</div></a><a href="http://stackoverflow.com/questions/23401701/asp-net-mvc-ajax-call-not-calling-controller-method?rq=1" class="question-hyperlink">Asp.net MVC Ajax call not calling controller method</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/32714653?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">4</div></a><a href="http://stackoverflow.com/questions/32714653/making-a-simple-ajax-call-to-controller-in-mvc?rq=1" class="question-hyperlink">Making a Simple Ajax call to controller in Mvc</a></div>
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="http://unix.stackexchange.com/questions/304977/arithmetic-operations-between-files" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    arithmetic operations between files
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-puzzling" title="Puzzling Stack Exchange"></div><a href="http://puzzling.stackexchange.com/questions/41163/i-have-legs-but-cannot-walk" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    I have legs but cannot walk
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/90449/exponentially-slimy-programming-stacking-minecraft-slimes" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Exponentially Slimy Programming: Stacking Minecraft Slimes
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-history" title="History Stack Exchange"></div><a href="http://history.stackexchange.com/questions/32444/normandy-why-did-the-landing-craft-open-on-the-front" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:324 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Normandy: Why did the landing craft open on the front?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="http://worldbuilding.stackexchange.com/questions/52333/why-would-giant-mechs-use-melee-weapons" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why would giant mechs use melee weapons?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/138560/most-powerful-boy-magician-in-the-world-4-men-trenchcoats" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    most powerful boy magician in the world 4 men trenchcoats
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/343950/how-can-the-chinglish-expression-you-can-you-up-be-translated" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can the Chinglish expression "you can you up" be translated?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-puzzling" title="Puzzling Stack Exchange"></div><a href="http://puzzling.stackexchange.com/questions/41159/the-same-forwards-and-backwards-what-am-i" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    The same forwards and backwards, What am I?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-bitcoin" title="Bitcoin Stack Exchange"></div><a href="http://bitcoin.stackexchange.com/questions/48144/why-cant-we-fight-bitcoin-thieves-by-not-accepting-payments-from-hacked-account" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:308 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why can't we fight Bitcoin thieves by not accepting payments from hacked accounts?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/39068546/c-stdtuple-order-of-destruction" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    C++ std::tuple order of destruction
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-puzzling" title="Puzzling Stack Exchange"></div><a href="http://puzzling.stackexchange.com/questions/41179/find-the-identity-of-the-four-troll-brothers" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Find the identity of the four troll brothers
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/134392/why-do-mobile-devices-force-user-to-type-password-after-reboot" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why do mobile devices force user to type password after reboot?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-gaming" title="Arqade"></div><a href="http://gaming.stackexchange.com/questions/282797/in-pokemon-go-how-to-beat-multiple-pokemons-in-a-gym-if-there-are-2-3-or-8-of" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:41 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    In Pokemon Go, how to beat multiple Pokemons in a gym if there are 2, 3, or 8 of them?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/138537/why-did-sauron-not-have-control-of-the-three-rings-before-the-great-war" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why did Sauron not have control of the three rings before the Great War?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/75581/i-sent-an-email-asking-for-letter-of-recommendation-almost-a-week-ago-and-have-n" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    I sent an email asking for letter of recommendation 
+almost a week ago and have not received a response. Does it mean NO?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="http://worldbuilding.stackexchange.com/questions/52284/where-should-we-store-our-brains" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Where should we store our brains?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-superuser" title="Super User"></div><a href="http://superuser.com/questions/1116086/is-there-a-way-to-emulate-dragdrop-without-having-to-keep-the-mouse-held-down" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:3 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is there a way to emulate drag+drop without having to keep the mouse held down?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-codereview" title="Code Review Stack Exchange"></div><a href="http://codereview.stackexchange.com/questions/139326/pigeon-and-grain-problem-find-time-until-all-the-grain-is-eaten" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Pigeon and grain problem: find time until all the grain is eaten
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/344088/why-is-therefore-not-written-therefor" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why is therefore not written therefor?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-gis" title="Geographic Information Systems Stack Exchange"></div><a href="http://gis.stackexchange.com/questions/207815/label-expression-in-arcgis-error" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:79 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Label expression in ArcGIS- error
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/75588/how-do-a-cite-an-article-which-has-been-accepted-pending-revisions-but-the-revi" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do a cite an article which has been accepted pending revisions, but the revisions aren't accepted yet?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/39073931/if-i-change-the-destructor-of-one-base-class-from-non-virtual-to-virtual-what-w" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    If I change the destructor of one base class from non-virtual to virtual, what will happen?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="http://unix.stackexchange.com/questions/304987/why-does-sed-q-work-differently-when-reading-from-a-pipe" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why does 'sed q' work differently when reading from a pipe?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-movies" title="Movies &amp; TV Stack Exchange"></div><a href="http://movies.stackexchange.com/questions/59564/how-did-sherlock-holmes-know-what-the-gypsy-lady-will-say-to-watson" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:367 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How did Sherlock Holmes know what the gypsy lady will say to Watson?
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/16186083" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/16186083/ivc/6bd5');});
+</script>
+<noscript>
+    <div><img src="/posts/16186083/ivc/6bd5" class="dno" alt="" width="0" height="0"></div>
+</noscript><div style="display:none" id="prettify-lang">lang-cs</div></div>
+
+
+        </div>
+    </div><script src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/clc.js" async=""></script>
+    <div id="footer" class="categories">
+        <div class="footerwrap">            
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                    <a href="http://stackoverflow.com/company/about">about us</a>
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                    <a href="http://blog.stackoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackoverflow.com/company/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick='StackExchange.switchMobile("on")'>mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                        <li><a href="http://salesforce.stackexchange.com/" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                        <li><a href="http://expressionengine.stackexchange.com/" title="administrators, end users, developers and designers for ExpressionEngine® CMS">ExpressionEngine® Answers</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (13)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://movies.stackexchange.com/" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (9)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                        <li><a href="http://chemistry.stackexchange.com/" title="scientists, academics, teachers and students">Chemistry</a></li>
+                        <li><a href="http://biology.stackexchange.com/" title="biology researchers, academics, and students">Biology</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (5)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+            <div id="copyright">
+                site design / logo © 2016 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2016.8.19.3910
+            </div>
+                </div>
+    </div>
+    <noscript>
+        <div id="noscript-warning">Stack Overflow works best with JavaScript enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"></div>
+    </noscript>
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    
+    
+        
+        ados.run.push(function () {
+                setTimeout(function () { $("#adzerk-user-match").remove(); }, window.AUMIframeDone ? 0 : 2000);
+                ados_setKeywords('c%23,jquery,asp.net,asp.net-mvc,asp.net-mvc-2');; ados_load();
+        });   
+        
+</script>
+
+    <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+            
+            ga('create', 'UA-5620270-1');
+            ga('set', 'dimension2', '|c#|jquery|asp.net|asp.net-mvc|asp.net-mvc-2|');             ga('send', 'pageview');
+        
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+                qc.async = true;
+                qc.src = (ssl ? 'https://secure' : 'http://edge') + '.quantserve.com/quant.js';
+                s.parentNode.insertBefore(qc, s);
+                _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+                            var sc=document.createElement('script');
+                sc.async=true;
+                sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+                s.parentNode.insertBefore(sc, s);
+                _comscore.push({ c1: "2", c2: "17440561" });
+        })();
+
+    </script>
+        
+    
+            <script type="text/javascript">
+                
+                (function(appendChild) {
+                    Node.prototype.appendChild = function() {
+                        var parent = this;
+                        var newNode = arguments[0];
+                        if (parent.nodeName === 'HEAD'
+                            && newNode
+                            && newNode.nodeName === 'SCRIPT'
+                            && newNode.src) {
+                            
+                            window.setTimeout(function() {
+                                var result = newNode.src.match(/^https:\/\/maps\.googleapis\.com\/maps\/api\/place\/js\/(\w+)Service\./i) || [];
+                                var service = result[1];
+                                if (service) {
+                                    if (service === 'Autocompletion') service =  2;
+                                    else if (service === 'Place') service = 1;
+                                    else service = 0;
+                                    StackExchange.using('gps', function() {
+                                        StackExchange.gps.track('google_maps_places_api.call', { service: service });
+                                    });
+                                }
+                            }, 0);
+                        }
+                        return appendChild.apply(this, arguments);
+                    };
+                })(Node.prototype.appendChild);
+            </script>
+    
+<img style="display: none;" src="c%23%20-%20Making%20a%20Simple%20Ajax%20call%20to%20controller%20in%20asp.net%20mvc%20-%20Stack%20Overflow_files/to.gif"></body></html>

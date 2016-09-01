@@ -1,0 +1,1 @@
+﻿(function (d, t) {var g = d.createElement(t), s = d.getElementsByTagName('head')[0]; g.src = '/JavaScripts/MindcrackerJScript.js'; s.parentNode.insertBefore(g, s); }(document, 'script'));

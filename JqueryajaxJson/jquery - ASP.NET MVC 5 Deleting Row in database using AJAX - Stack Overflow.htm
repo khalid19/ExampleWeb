@@ -1,0 +1,1807 @@
+<!DOCTYPE html>
+<html itemscope="" itemtype="http://schema.org/QAPage"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<title>jquery - ASP.NET MVC 5 Deleting Row in database using AJAX - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico?v=4f32ecc8f43d">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta property="og:type" content="website">    
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded&amp;a">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="ASP.NET MVC 5 Deleting Row in database using AJAX">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="I am trying to delete rows in my table using Ajax so that the page does not refresh when I try to delete one row of the table.
+Here is the code I have, but at the moment pressing Delete does nothin...">
+    <meta property="og:url" content="http://stackoverflow.com/questions/33034093/asp-net-mvc-5-deleting-row-in-database-using-ajax">
+    <link rel="canonical" href="http://stackoverflow.com/questions/33034093/asp-net-mvc-5-deleting-row-in-database-using-ajax">
+
+    
+    
+    <script src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/quant.js" async=""></script><script src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/beacon.js" async=""></script><script src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/analytics.js" async=""></script><script src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/ados" async="" type="text/javascript"></script><script src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/ados.js" async="" type="text/javascript"></script><script src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/jquery.js"></script>
+    <script src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/stub.js"></script>
+    <link rel="stylesheet" type="text/css" href="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/all.css">
+
+            <link rel="alternate" type="application/atom+xml" title="Feed for question 'ASP.NET MVC 5 Deleting Row in database using AJAX'" href="http://stackoverflow.com/feeds/question/33034093">
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/33034093/asp-net-mvc-5-deleting-row-in-database-using-ajax">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/33034093/asp-net-mvc-5-deleting-row-in-database-using-ajax">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/33034093/asp-net-mvc-5-deleting-row-in-database-using-ajax">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+        
+            StackExchange.ready(function () {
+                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:4,shownCommentCount:4,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:33034093});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('1', '33034093');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text'); });
+
+            });
+        </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","serverTime":1472136878,"routeName":"Questions/Show","site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"id":1,"enableInsertDocLinkDialog":true,"enableSocialMediaInSharePopup":true},"user":{"fkey":"41569c366e39934c15c7afd05b59f5b2","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true}}, {"site":{"allowImageUploads":true,"enableUserHovercards":true,"styleCode":true,"enableNewLinkInsertDialog":true},"tags":{},"accounts":{"currentPasswordRequiredForChangingStackIdPassword":true},"flags":{"allowRetractingFlags":true},"snippets":{"snippetsEnabled":true,"renderDomain":"stacksnippets.net"},"markdown":{"asteriskIntraWordEmphasis":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"81a25b492df8","js/moderator.en.js":"c72323fa34db","js/full-anon.en.js":"3ea745926d9d","js/full.en.js":"a190d8f26f6f","js/wmd.en.js":"53ee3e99aebe","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"a33f87c69a13","js/help.en.js":"b50417081cc4","js/tageditor.en.js":"9c6df10dabc4","js/tageditornew.en.js":"78e23ecb22cf","js/inline-tag-editing.en.js":"e8d044708c54","js/revisions.en.js":"db5a160e1690","js/review.en.js":"1842485cf72e","js/tagsuggestions.en.js":"d1ff9b84abe5","js/post-validation.en.js":"9bf262e5e155","js/explore-qlist.en.js":"e71f14781288","js/events.en.js":"da957efa6725","js/keyboard-shortcuts.en.js":"7937f0f840fd","js/external-editor.en.js":"93769406446f","js/external-editor.en.js":"93769406446f","js/snippet-javascript.en.js":"0b62967fa0a8","js/snippet-javascript-codemirror.en.js":"7343acd2b568"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+<script src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/full-anon.js" async=""></script><script src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/snippet-javascript.js" async=""></script><script src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/post-validation.js" async=""></script><script src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/prettify-full.js" async=""></script><script src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/external-editor.js" async=""></script><script src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/adFeedback.js" type="text/javascript"></script><link href="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/adFeedback.css" rel="stylesheet"><link href="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/jobs-multi.css" rel="stylesheet" type="text/css"></head>
+<body class="question-page new-topbar">
+    <noscript><div id="noscript-padding"></div></noscript>
+    
+        <script>(function () { var old = $.fn.contents; $.fn.contents = function () { try { return old.apply(this, arguments); } catch (e) { return $([]); } } })()</script>
+        
+
+
+
+
+    <div id="notify-container"></div>
+    <div id="custom-header"></div>
+
+
+
+
+
+<div class="topbar">
+    <div class="topbar-wrapper">
+
+        <div class="js-topbar-dialog-corral">
+
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackoverflow.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+                    <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                </li>
+        </ul>
+    </div>
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+<a href="https://stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f33034093%2fasp-net-mvc-5-deleting-row-in-database-using-ajax" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f33034093%2fasp-net-mvc-5-deleting-row-in-database-using-ajax" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+            </div>
+    </div>
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+        <a href="http://blog.stackoverflow.com/" class="fr">company blog</a>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+                <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 160 Stack Exchange sites">
+                    <span class="hidden-text">Stack Exchange</span>
+                </a>
+
+    <a href="#" class="topbar-icon icon-inbox yes-hover js-inbox-button" title="Recent inbox messages">
+        <span class="hidden-text">Inbox</span>
+        <span class="unread-count" style="display:none"></span>
+    </a>
+    <a href="#" class="topbar-icon icon-achievements yes-hover js-achievements-button" data-unread-class="" title="Recent achievements: reputation, badges, and privileges earned">
+        <span class="hidden-text">Reputation and Badges</span>
+        <span class="unread-count" style="display:none">
+            
+        </span>
+    </a>
+        </div>
+
+        <div class="topbar-links">
+
+                <div class="links-container">
+                <span class="topbar-menu-links">
+                                    <a href="https://stackoverflow.com/users/signup?ssrc=head&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f33034093%2fasp-net-mvc-5-deleting-row-in-database-using-ajax" class="login-link">sign up</a>
+                                <a href="https://stackoverflow.com/users/login?ssrc=head&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f33034093%2fasp-net-mvc-5-deleting-row-in-database-using-ajax" class="login-link">log in</a>
+
+                            <a href="http://stackoverflow.com/tour">tour</a>
+        <a href="#" class="icon-help js-help-button" title="Help Center and other resources">
+            help
+            <span class="triangle"></span>
+        </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                        <li>
+                            <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                                Meta
+                                <span class="item-summary">
+                                    Discuss the workings and policies of this site
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                                About Us
+                                <span class="item-summary">
+                                    Learn more about Stack Overflow the company
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://business.stackoverflow.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                                Business
+                                <span class="item-summary">
+                                    Learn more about hiring developers or posting ads with us
+                                </span>
+                            </a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+                                            </span>
+                </div>
+
+            <div class="search-container">
+                <form id="search" action="/search" method="get" autocomplete="off">
+                    <input name="q" placeholder="Search Q&amp;A" tabindex="1" autocomplete="off" maxlength="240" type="text">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+    <div class="container">
+        <div id="header">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                            <li><a id="nav-jobs" href="http://stackoverflow.com/jobs?med=site-ui&amp;ref=jobs-tab">Jobs</a></li>
+                                                <li><a id="nav-docs" href="http://stackoverflow.com/documentation">Documentation</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/help/badges">Badges</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content" class="snippet-hidden">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="http://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+<div class="hero-box docs-announcement">
+    <div class="hero-close js-dismiss">Dismiss</div>
+    
+    
+    <div class="hero-content text-left">
+        <div class="text-wrapper">
+            <div class="hero-title">
+                Announcing Stack Overflow Documentation
+            </div>
+
+            <p class="subtitle">
+                We started with Q&amp;A. Technical documentation is next, and we need your help.
+            </p>
+            <p class="subtitle">
+                Whether you're a beginner or an experienced developer, you <i>can</i> contribute.
+            </p>
+        </div>
+
+            <a href="http://stackoverflow.com/users/signup?ssrc=docs_hero&amp;returnurl=%2Ftour%2Fdocumentation" class="btn js-gps-track" data-gps-track="docs.hero.clicked({target: 2 })">
+                Sign up and start helping →
+            </a>
+            <a href="http://stackoverflow.com/tour/documentation" class="btn-clear js-gps-track" data-gps-track="docs.hero.clicked({target: 1 })">
+                Learn more about Documentation →
+            </a>
+
+        <div class="img"></div>
+    </div>
+</div>
+
+<script>
+    StackExchange.ready(function() {
+        var location = 0;
+        if ($("body").hasClass("question-page")) {
+            location = 2;
+        } else if ($("body").hasClass("home-page")) {
+            location = 1;
+        }
+
+        $(".docs-announcement .js-dismiss").one("click", function() {
+            $(".docs-announcement").fadeOut("fast");
+            $.post("/dismiss-documentation-hero", { fkey: StackExchange.options.user.fkey, location: location });
+        });
+
+        StackExchange.using("gps", function () {
+            StackExchange.gps.track("docs.hero.show", { location: location }, true);
+        });
+    });
+</script>			<div id="question-header">
+                <h1 itemprop="name"><a href="http://stackoverflow.com/questions/33034093/asp-net-mvc-5-deleting-row-in-database-using-ajax" class="question-hyperlink">ASP.NET MVC 5 Deleting Row in database using AJAX</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="33034093" id="question">
+
+    <script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk89986135",4).setZone(43); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk89986135"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjo0NzE0OTMsImNoIjoxMTc4LCJjayI6e30sImNyIjoxNjI3NzY2LCJkaSI6IjMzYTc4YjUxYjM5MTQyZmM5NmQ4NTQzOGU0OTg4OTVkIiwiZG0iOjEsImZjIjoxOTI0NDQ1LCJmbCI6MjE0MjMxMiwiaXAiOiI0My4yNDUuMjM1LjQ2Iiwia3ciOiJqcXVlcnksYXNwLm5ldCxhamF4LGFzcC5uZXQtbXZjIiwibnciOjIyLCJwYyI6MCwiZWMiOjAsInByIjoxNjA0LCJydCI6MSwicmYiOiJodHRwczovL3d3dy5nb29nbGUuY29tLmJkLyIsInN0Ijo4Mjc3LCJ1ayI6InVlMS00YWRmNmI0NDJiNjY0NzUwOGNlNGE5MDM4ZDMxMjYwMyIsInpuIjo0MywidHMiOjE0NzIxMzY4ODEzOTIsImJmIjp0cnVlLCJwbiI6ImFkemVyazg5OTg2MTM1IiwidXIiOiJodHRwOi8vc3RhY2tvdmVyZmxvdy5jb20vam9icy9yZW1vdGU_dXRtX3NvdXJjZT13ZWJzaXRlJnV0bV9tZWRpdW09YmFubmVyJnV0bV9jb250ZW50PWxlYWRlcmJvYXJkXzMmdXRtX2NhbXBhaWduPWhvdXNlX2Fkc19ST1NfU08ifQ&amp;s=0YEXI8wER3euQ-mx5UMgmnif514" rel="nofollow" target="_blank" title=""><img src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/d220101fccb24c5f805ac8f614335fc7.png" title="" alt="" border="0" height="90" width="728"></a><img src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/i_003.gif" style="position:absolute;" border="0" height="0px" width="0px"><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input value="12" name="downvoteReason" type="radio">Uninteresting</label></li><li><label><input value="13" name="downvoteReason" type="radio">Misleading</label></li><li><label><input value="14" name="downvoteReason" type="radio">Offensive</label></li><li><label><input value="15" name="downvoteReason" type="radio">Repetitive</label></li><li><label><input value="16" name="downvoteReason" type="radio">Other</label></li></ul><a href="#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="33034093" type="hidden">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="#">favorite</a>
+        <div class="favoritecount"><b></b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<p>I am trying to delete rows in my table using Ajax so that the page does not refresh when I try to delete one row of the table.
+Here is the code I have, but at the moment pressing Delete does nothing:</p>
+
+<p>Controller:</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="kwd">public</span><span class="pln"> </span><span class="typ">ActionResult</span><span class="pln"> </span><span class="typ">Delete</span><span class="pun">(</span><span class="kwd">int</span><span class="pun">?</span><span class="pln"> id</span><span class="pun">)</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+            </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">id </span><span class="pun">==</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">)</span><span class="pln">
+            </span><span class="pun">{</span><span class="pln">
+                </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">HttpStatusCodeResult</span><span class="pun">(</span><span class="typ">HttpStatusCode</span><span class="pun">.</span><span class="typ">BadRequest</span><span class="pun">);</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+            </span><span class="typ">Main</span><span class="pln"> main </span><span class="pun">=</span><span class="pln"> db</span><span class="pun">.</span><span class="typ">Mains</span><span class="pun">.</span><span class="typ">Find</span><span class="pun">(</span><span class="pln">id</span><span class="pun">);</span><span class="pln">
+            </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">main </span><span class="pun">==</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">)</span><span class="pln">
+            </span><span class="pun">{</span><span class="pln">
+                </span><span class="kwd">return</span><span class="pln"> </span><span class="typ">HttpNotFound</span><span class="pun">();</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+            </span><span class="kwd">return</span><span class="pln"> </span><span class="typ">View</span><span class="pun">(</span><span class="pln">main</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">[</span><span class="typ">HttpPost</span><span class="pun">,</span><span class="pln"> </span><span class="typ">ActionName</span><span class="pun">(</span><span class="str">"Delete"</span><span class="pun">)]</span><span class="pln">
+        </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">ActionResult</span><span class="pln"> </span><span class="typ">DeleteConfirmed</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> id</span><span class="pun">)</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+            </span><span class="typ">Main</span><span class="pln"> main </span><span class="pun">=</span><span class="pln"> db</span><span class="pun">.</span><span class="typ">Mains</span><span class="pun">.</span><span class="typ">Find</span><span class="pun">(</span><span class="pln">id</span><span class="pun">);</span><span class="pln">
+            db</span><span class="pun">.</span><span class="typ">Mains</span><span class="pun">.</span><span class="typ">Remove</span><span class="pun">(</span><span class="pln">main</span><span class="pun">);</span><span class="pln">
+            db</span><span class="pun">.</span><span class="typ">SaveChanges</span><span class="pun">();</span><span class="pln">
+            </span><span class="kwd">return</span><span class="pln"> </span><span class="typ">RedirectToAction</span><span class="pun">(</span><span class="str">"Index"</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span></code></pre>
+
+<p>The view:</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="tag">&lt;script&gt;</span><span class="pln">
+$</span><span class="pun">(</span><span class="pln">document</span><span class="pun">).</span><span class="pln">ready</span><span class="pun">(</span><span class="kwd">function</span><span class="pln"> </span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    $</span><span class="pun">(</span><span class="str">"#Delete"</span><span class="pun">).</span><span class="pln">on</span><span class="pun">(</span><span class="str">"click"</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">var</span><span class="pln"> parent </span><span class="pun">=</span><span class="pln"> $</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">).</span><span class="pln">parent</span><span class="pun">().</span><span class="pln">parent</span><span class="pun">();</span><span class="pln">
+        $</span><span class="pun">.</span><span class="pln">ajax</span><span class="pun">({</span><span class="pln">
+            type</span><span class="pun">:</span><span class="pln"> </span><span class="str">"post"</span><span class="pun">,</span><span class="pln">
+            url</span><span class="pun">:</span><span class="pln"> </span><span class="str">"@Url.Action("</span><span class="typ">Delete</span><span class="str">","</span><span class="typ">Main</span><span class="str">")"</span><span class="pun">,</span><span class="pln">
+            ajaxasync</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">,</span><span class="pln">
+            success</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                alert</span><span class="pun">(</span><span class="str">"success"</span><span class="pun">);</span><span class="pln">
+            </span><span class="pun">},</span><span class="pln">
+            error</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">(</span><span class="pln">data</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                alert</span><span class="pun">(</span><span class="pln">data</span><span class="pun">.</span><span class="pln">x</span><span class="pun">);</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">});</span><span class="pln">
+    </span><span class="pun">});</span><span class="pln">
+</span><span class="pun">});</span><span class="pln">
+</span><span class="tag">&lt;/script&gt;</span></code></pre>
+
+<p>The actual link to delete from the table:</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="pln"> </span><span class="tag">&lt;td&gt;</span><span class="pln">
+      @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+      </span><span class="tag">&lt;a</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">""</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"Delete"</span><span class="tag">&gt;</span><span class="pln">Delete</span><span class="tag">&lt;/a&gt;</span><span class="pln">
+</span><span class="tag">&lt;/td&gt;</span></code></pre>
+
+<p>Please help me! Ty</p>
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/jquery" class="post-tag js-gps-track" title="" rel="tag">jquery</a> <a href="http://stackoverflow.com/questions/tagged/asp.net" class="post-tag js-gps-track" title="show questions tagged 'asp.net'" rel="tag">asp.net</a> <a href="http://stackoverflow.com/questions/tagged/ajax" class="post-tag js-gps-track" title="" rel="tag">ajax</a> <a href="http://stackoverflow.com/questions/tagged/asp.net-mvc" class="post-tag js-gps-track" title="" rel="tag">asp.net-mvc</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/33034093" title="short permalink to this question" class="short-link" id="link-post-33034093">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/33034093/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2015-10-09 09:00:54Z" class="relativetime">Oct 9 '15 at 9:00</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/2524603/xdevil"><div class="gravatar-wrapper-32"><img src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/bf91e74d712541719743aa4d3b5f2e6b.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/2524603/xdevil">xDevil</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">60</span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span><span title="8 bronze badges"><span class="badge3"></span><span class="badgecount">8</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-33034093" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-53889815" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">2</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Delete does nothing is way 
+too vague. What have you tried with debugging? How far have you gotten? 
+Does your onclick get triggered, does it reach the mvc action, ... 
+Please add at least the basic debugging info that you've tried.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1331034/thomas-schellekens" title="271 reputation" class="comment-user">Thomas Schellekens</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment53889815_33034093"><span title="2015-10-09 09:07:27Z" class="relativetime-clean">Oct 9 '15 at 9:07</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-53890111" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Can you clarify if it is the 
+delete that isn't working (in the database the row isn't deleted) or 
+that it's just the page load that doesn't work... or both?</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/894792/luke" title="8,313 reputation" class="comment-user">Luke</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment53890111_33034093"><span title="2015-10-09 09:15:57Z" class="relativetime-clean">Oct 9 '15 at 9:15</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-53890189" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">both do not work :(</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/2524603/xdevil" title="60 reputation" class="comment-user owner">xDevil</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment53890189_33034093"><span title="2015-10-09 09:17:56Z" class="relativetime-clean">Oct 9 '15 at 9:17</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-53890269" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">you want postback on <code>DeleteConfirmed</code> action after id is exist in your database?</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/2423840/manish-sharma" title="1,350 reputation" class="comment-user">Manish Sharma</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment53890269_33034093"><span title="2015-10-09 09:19:47Z" class="relativetime-clean">Oct 9 '15 at 9:19</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-33034093" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								3 Answers
+                                <span style="display:none;" itemprop="answerCount">3</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/33034093/asp-net-mvc-5-deleting-row-in-database-using-ajax?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active" data-shortcut="A">
+            active</a>
+        <a href="http://stackoverflow.com/questions/33034093/asp-net-mvc-5-deleting-row-in-database-using-ajax?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest" data-shortcut="O">
+            oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/33034093/asp-net-mvc-5-deleting-row-in-database-using-ajax?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes" data-shortcut="V">
+            votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="33034551"></a>
+<div id="answer-33034551" class="answer accepted-answer" data-answerid="33034551" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="33034551" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">4</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>You're not including the <code>Id</code> in the post in your AJAX method.</p>
+
+<p>Without it, it won't be posting the Id to the <code>DeleteConfirmed</code> action method:</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="pln">$</span><span class="pun">(</span><span class="pln">document</span><span class="pun">).</span><span class="kwd">delegate</span><span class="pun">(</span><span class="str">'#Delete'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'click'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">(</span><span class="pln">e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+    e</span><span class="pun">.</span><span class="pln">preventDefault</span><span class="pun">();</span><span class="pln">
+
+    $</span><span class="pun">.</span><span class="pln">ajax</span><span class="pun">({</span><span class="pln">
+            type</span><span class="pun">:</span><span class="pln"> </span><span class="str">"post"</span><span class="pun">,</span><span class="pln">
+            url</span><span class="pun">:</span><span class="pln"> </span><span class="str">"@Url.Action("</span><span class="typ">Delete</span><span class="str">","</span><span class="typ">Main</span><span class="str">")"</span><span class="pun">,</span><span class="pln">
+            ajaxasync</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">,</span><span class="pln">
+            data</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> id </span><span class="pun">:</span><span class="pln"> $</span><span class="pun">(</span><span class="str">'input#idField'</span><span class="pun">).</span><span class="pln">val</span><span class="pun">()</span><span class="pln"> </span><span class="pun">},</span><span class="pln">
+            success</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+                alert</span><span class="pun">(</span><span class="str">"success"</span><span class="pun">);</span><span class="pln">
+
+                </span><span class="com">// Perform redirect</span><span class="pln">
+                window</span><span class="pun">.</span><span class="pln">location</span><span class="pun">.</span><span class="pln">replace</span><span class="pun">(</span><span class="str">"@Url.Action('Index', 'Main')"</span><span class="pun">);</span><span class="pln">
+            </span><span class="pun">},</span><span class="pln">
+            error</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">(</span><span class="pln">data</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                alert</span><span class="pun">(</span><span class="pln">data</span><span class="pun">.</span><span class="pln">x</span><span class="pun">);</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">});</span><span class="pln">
+</span><span class="pun">});</span></code></pre>
+
+<p>As for it not redirecting after you post, that's because you're 
+making your request using an AJAX request.  If you return a redirect 
+from your action method this won't be honoured by your page because it's
+ a server side redirect.</p>
+
+<p>You have to check for a success message and then redirect on success.  I suggest the following:</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="pun">[</span><span class="typ">HttpPost</span><span class="pun">,</span><span class="pln"> </span><span class="typ">ActionName</span><span class="pun">(</span><span class="str">"Delete"</span><span class="pun">)]</span><span class="pln">
+</span><span class="kwd">public</span><span class="pln"> </span><span class="typ">ActionResult</span><span class="pln"> </span><span class="typ">DeleteConfirmed</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> id</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="typ">Main</span><span class="pln"> main </span><span class="pun">=</span><span class="pln"> db</span><span class="pun">.</span><span class="typ">Mains</span><span class="pun">.</span><span class="typ">Find</span><span class="pun">(</span><span class="pln">id</span><span class="pun">);</span><span class="pln">
+    db</span><span class="pun">.</span><span class="typ">Mains</span><span class="pun">.</span><span class="typ">Remove</span><span class="pun">(</span><span class="pln">main</span><span class="pun">);</span><span class="pln">
+    db</span><span class="pun">.</span><span class="typ">SaveChanges</span><span class="pun">();</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">HttpStatusCodeResult</span><span class="pun">(</span><span class="typ">System</span><span class="pun">.</span><span class="typ">Net</span><span class="pun">.</span><span class="typ">HttpStatusCode</span><span class="pun">.</span><span class="pln">OK</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>and to add this to your <code>success</code> (also shown above):</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="com">// Perform redirect</span><span class="pln">
+window</span><span class="pun">.</span><span class="pln">location</span><span class="pun">.</span><span class="pln">replace</span><span class="pun">(</span><span class="lit">@Url</span><span class="pun">.</span><span class="typ">Action</span><span class="pun">(</span><span class="str">'Index'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'Main'</span><span class="pun">));</span></code></pre>
+
+<p>Your page is reloading the page because your link is instructing it to:</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="tag">&lt;a</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">""</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"Delete"</span><span class="tag">&gt;</span><span class="pln">Delete</span><span class="tag">&lt;/a&gt;</span><span class="pln"> // Navigate to current page</span></code></pre>
+
+<p>Add a tag hash in there, or add <code>e.preventDefault()</code> in your delegate function or both (also shown above):</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="tag">&lt;a</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"#"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"Delete"</span><span class="tag">&gt;</span><span class="pln">Delete</span><span class="tag">&lt;/a&gt;</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/33034551" title="short permalink to this answer" class="short-link" id="link-post-33034551">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/33034551/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/33034551/revisions" title="show all edits to this post">edited <span title="2015-10-09 10:58:08Z" class="relativetime">Oct 9 '15 at 10:58</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2015-10-09 09:22:37Z" class="relativetime">Oct 9 '15 at 9:22</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/894792/luke"><div class="gravatar-wrapper-32"><img src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/picture_002.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/894792/luke">Luke</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">8,313</span><span title="15 gold badges"><span class="badge1"></span><span class="badgecount">15</span></span><span title="55 silver badges"><span class="badge2"></span><span class="badgecount">55</span></span><span title="119 bronze badges"><span class="badge3"></span><span class="badgecount">119</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-33034551" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="3" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-53890579" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">i tryed it but it still does not work</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/2524603/xdevil" title="60 reputation" class="comment-user owner">xDevil</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment53890579_33034551"><span title="2015-10-09 09:29:04Z" class="relativetime-clean">Oct 9 '15 at 9:29</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-53890606" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Please see the update</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/894792/luke" title="8,313 reputation" class="comment-user">Luke</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment53890606_33034551"><span title="2015-10-09 09:29:46Z" class="relativetime-clean">Oct 9 '15 at 9:29</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-53890861" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">it cannot find StatusCodeResult... should i just let VS generate it?</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/2524603/xdevil" title="60 reputation" class="comment-user owner">xDevil</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment53890861_33034551"><span title="2015-10-09 09:36:12Z" class="relativetime-clean">Oct 9 '15 at 9:36</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-53890969" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Is that because you've changed your return value from <code>ActionResult</code> to <code>bool</code>?</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/894792/luke" title="8,313 reputation" class="comment-user">Luke</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment53890969_33034551"><span title="2015-10-09 09:38:51Z" class="relativetime-clean">Oct 9 '15 at 9:38</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-53891026" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">no i changed it back</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/2524603/xdevil" title="60 reputation" class="comment-user owner">xDevil</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment53891026_33034551"><span title="2015-10-09 09:40:23Z" class="relativetime-clean">Oct 9 '15 at 9:40</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-33034551" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link  dno" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."></a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link " title="expand to show all comments on this post" href="#" onclick="">show <b>3</b> more comments</a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk625625138",4).setZone(44); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk625625138"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjo0NzE0OTMsImNoIjoxMTc4LCJjayI6e30sImNyIjoxNjI3NzY5LCJkaSI6Ijc1NzQ4ZjJjYjAxMDQ2MTNhNjY1YmU5MGM4N2RiNzUzIiwiZG0iOjEsImZjIjoxOTI0NDQ4LCJmbCI6MjE0MjMxMiwiaXAiOiI0My4yNDUuMjM1LjQ2Iiwia3ciOiJqcXVlcnksYXNwLm5ldCxhamF4LGFzcC5uZXQtbXZjIiwibnciOjIyLCJwYyI6MCwiZWMiOjAsInByIjoxNjA0LCJydCI6MSwicmYiOiJodHRwczovL3d3dy5nb29nbGUuY29tLmJkLyIsInN0Ijo4Mjc3LCJ1ayI6InVlMS00YWRmNmI0NDJiNjY0NzUwOGNlNGE5MDM4ZDMxMjYwMyIsInpuIjo0NCwidHMiOjE0NzIxMzY4ODEzOTQsImJmIjp0cnVlLCJwbiI6ImFkemVyazYyNTYyNTEzOCIsInVyIjoiaHR0cDovL3N0YWNrb3ZlcmZsb3cuY29tL2pvYnMvcmVtb3RlP3V0bV9zb3VyY2U9d2Vic2l0ZSZ1dG1fbWVkaXVtPWJhbm5lciZ1dG1fY29udGVudD1sZWFkZXJib2FyZF80JnV0bV9jYW1wYWlnbj1ob3VzZV9hZHNfUk9TX1NPIn0&amp;s=s7B7Gsfn-GQWzLPwI-inmtl5iyE" rel="nofollow" target="_blank" title=""><img src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/3ce23fa868ea401dac7e2fcfda5ec312.png" title="" alt="" border="0" height="90" width="728"></a><img src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/i_002.gif" style="position:absolute;" border="0" height="0px" width="0px"><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input value="12" name="downvoteReason" type="radio">Uninteresting</label></li><li><label><input value="13" name="downvoteReason" type="radio">Misleading</label></li><li><label><input value="14" name="downvoteReason" type="radio">Offensive</label></li><li><label><input value="15" name="downvoteReason" type="radio">Repetitive</label></li><li><label><input value="16" name="downvoteReason" type="radio">Other</label></li></ul><a href="#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div></div>
+  
+<a name="33034423"></a>
+<div id="answer-33034423" class="answer" data-answerid="33034423" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="33034423" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>If you change:</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="kwd">return</span><span class="pln"> </span><span class="typ">View</span><span class="pun">(</span><span class="pln">main</span><span class="pun">);</span></code></pre>
+
+<p>to</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="kwd">return</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">;</span></code></pre>
+
+<p>will give you success on AJAX call.</p>
+
+<p>Then dubug JS in browser to check if </p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="pln">alert</span><span class="pun">(</span><span class="str">"success"</span><span class="pun">);</span></code></pre>
+
+<p>in success is called</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/33034423" title="short permalink to this answer" class="short-link" id="link-post-33034423">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/33034423/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2015-10-09 09:16:44Z" class="relativetime">Oct 9 '15 at 9:16</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/3243859/xawery-wi%c5%9bniowiecki"><div class="gravatar-wrapper-32"><img src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/91d38ec9cceaf52936bb67e5d65ec4a3.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/3243859/xawery-wi%c5%9bniowiecki">Xawery Wiśniowiecki</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">677</span><span title="5 silver badges"><span class="badge2"></span><span class="badgecount">5</span></span><span title="27 bronze badges"><span class="badge3"></span><span class="badgecount">27</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-33034423" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-53890188" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I think you mean change <code>return RedirectToAction("Index");</code> :)</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/894792/luke" title="8,313 reputation" class="comment-user">Luke</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment53890188_33034423"><span title="2015-10-09 09:17:55Z" class="relativetime-clean">Oct 9 '15 at 9:17</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-53890242" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">i get error "cannot convert bool to Action Result"</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/2524603/xdevil" title="60 reputation" class="comment-user owner">xDevil</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment53890242_33034423"><span title="2015-10-09 09:19:03Z" class="relativetime-clean">Oct 9 '15 at 9:19</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-53890322" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">so change it to bool</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/3243859/xawery-wi%c5%9bniowiecki" title="677 reputation" class="comment-user">Xawery Wiśniowiecki</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment53890322_33034423"><span title="2015-10-09 09:20:59Z" class="relativetime-clean">Oct 9 '15 at 9:20</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-33034423" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="33034507"></a>
+<div id="answer-33034507" class="answer" data-answerid="33034507" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="33034507" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>You have to pass your <code>Id</code> to the MVC Action. You are not actually passing it as parameter using the <code>data</code> option of the <code>ajax</code> jQuery method. Try debuggin you MVC Action and see what you are receiving in the <code>Id</code> parameter.</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="pln"> </span><span class="tag">&lt;script&gt;</span><span class="pln">
+$(document).ready(function () {
+$("#Delete").on("click", function () {
+    var parent = $(this).parent().parent();
+    var myId = //Get here you id
+    $.ajax({
+        type: "post",
+        url: "@Url.Action("Delete","Main")",
+        data: {id:  myId },
+        ajaxasync: true,
+        success: function () {
+            alert("success");
+        },
+        error: function (data) {
+            alert(data.x);
+        }
+    });
+});
+});</span></code></pre>
+
+<p></p>
+
+<p>You probably need to pass also the <code>RequestVerificationToken</code></p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/33034507" title="short permalink to this answer" class="short-link" id="link-post-33034507">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/33034507/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/33034507/revisions" title="show all edits to this post">edited <span title="2015-10-09 10:51:20Z" class="relativetime">Oct 9 '15 at 10:51</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2015-10-09 09:20:18Z" class="relativetime">Oct 9 '15 at 9:20</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1416980/anmarti"><div class="gravatar-wrapper-32"><img src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/d5d3824688ae0511311ef8a1d41b827a.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1416980/anmarti">anmarti</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">2,184</span><span title="5 gold badges"><span class="badge1"></span><span class="badgecount">5</span></span><span title="26 silver badges"><span class="badge2"></span><span class="badgecount">26</span></span><span title="60 bronze badges"><span class="badge3"></span><span class="badgecount">60</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-33034507" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-33034507" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="/questions/33034093/answer/submit" method="post" class="post-form">
+						    <input id="post-id" value="33034093" type="hidden">
+                            <input id="qualityBanWarningShown" name="qualityBanWarningShown" value="false" type="hidden">
+                            <input name="referrer" value="https://www.google.com.bd/" type="hidden">
+							<h2 class="space">Your Answer</h2>
+
+
+            <script>
+            StackExchange.ifUsing("editor", function () {
+                StackExchange.using("externalEditor", function () {
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.init();
+                    });
+                });
+            }, "code-snippets");
+        </script>
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+                // Have to fire editor after snippets, if snippets enabled
+                if (StackExchange.settings.snippets.snippetsEnabled) {
+                    StackExchange.using("snippets", function() {
+                        createEditor();
+                    });
+                }
+                else {
+                    createEditor();
+                }
+            });
+
+            function createEditor() {
+                prepareEditor({
+                    heartbeatType: 'answer',
+                convertImagesToLinks: true,
+                reputationToPostImages: 10,
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                    ,immediatelyShowMarkdownHelp:true
+                    });
+                
+
+        }
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor js-post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li style="left: 0px;" class="wmd-button" id="wmd-bold-button"><span style="background-position: 0px -20px;"></span></li><li style="left: 25px;" class="wmd-button" id="wmd-italic-button"><span style="background-position: -20px -20px;"></span></li><li style="left: 50px;" class="wmd-spacer" id="wmd-spacer1"><span style="background-position: -40px -20px;"></span></li><li style="left: 75px;" class="wmd-button" id="wmd-link-button"><span style="background-position: -40px -20px;"></span></li><li style="left: 100px;" class="wmd-button" id="wmd-quote-button"><span style="background-position: -60px -20px;"></span></li><li style="left: 125px;" class="wmd-button" id="wmd-code-button"><span style="background-position: -80px -20px;"></span></li><li style="left: 150px;" class="wmd-button" id="wmd-image-button"><span style="background-position: -100px -20px;"></span></li><li style="left: 175px;" class="wmd-spacer" id="wmd-spacer2"><span style="background-position: -120px -20px;"></span></li><li style="left: 200px;" class="wmd-button" id="wmd-olist-button"><span style="background-position: -120px -20px;"></span></li><li style="left: 225px;" class="wmd-button" id="wmd-ulist-button"><span style="background-position: -140px -20px;"></span></li><li style="left: 250px;" class="wmd-button" id="wmd-heading-button"><span style="background-position: -160px -20px;"></span></li><li style="left: 275px;" class="wmd-button" id="wmd-hr-button"><span style="background-position: -180px -20px;"></span></li><li style="left: 300px;" class="wmd-spacer" id="wmd-spacer3"><span style="background-position: -200px -20px;"></span></li><li style="left: 325px;" class="wmd-button" id="wmd-undo-button"><span style="background-position: -200px -20px;"></span></li><li style="left: 350px;" class="wmd-button" id="wmd-redo-button"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" value="41569c366e39934c15c7afd05b59f5b2" type="hidden">
+        <input id="author" name="author" type="text">
+    </div>
+
+
+
+</div>
+							<div style="position: relative;">
+								
+								            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://stackoverflow.com/users/login?ssrc=question_page&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f33034093%2fasp-net-mvc-5-deleting-row-in-database-using-ajax%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Email and Password</span></p>
+                        </div>
+                    </div>
+                    <input name="manual-openid" class="manual-openid" type="hidden">
+                    <input name="use-facebook" class="use-facebook" value="false" type="hidden">
+                    <input name="use-google" class="use-google" value="false" type="hidden">
+                    <input class="submit-openid" value="Submit" style="display:none" type="button">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" size="30" maxlength="30" tabindex="105" type="text">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" size="30" maxlength="100" tabindex="106" placeholder="required, but never shown" type="email">
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', 'http%3a%2f%2fstackoverflow.com%2fquestions%2f33034093%2fasp-net-mvc-5-deleting-row-in-database-using-ajax%23new-answer', 'question_page');
+                    }
+                );
+            </script>
+            <noscript>
+                        <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown" />
+                </div>
+            </td>
+        </tr>
+        </table>
+    </div>
+
+            </noscript>
+
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" value="Post Your Answer" tabindex="110" type="submit">
+									<a href="#" class="btn-clear discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input name="legalLinksShown" value="1" type="hidden">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/jquery" class="post-tag" title="show questions tagged 'jquery'" rel="tag">jquery</a> <a href="http://stackoverflow.com/questions/tagged/asp.net" class="post-tag" title="show questions tagged 'asp.net'" rel="tag">asp.net</a> <a href="http://stackoverflow.com/questions/tagged/ajax" class="post-tag" title="show questions tagged 'ajax'" rel="tag">ajax</a> <a href="http://stackoverflow.com/questions/tagged/asp.net-mvc" class="post-tag" title="show questions tagged 'asp.net-mvc'" rel="tag">asp.net-mvc</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2015-10-09 09:00:54Z"><b>10 months ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>2723 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/33034093/asp-net-mvc-5-deleting-row-in-database-using-ajax?lastactivity" class="lastactivity-link" title="2015-10-09 10:58:08Z">10 months ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+			<div class="module community-bulletin" data-tracker="cb=1">
+    <div class="related">
+                <div class="bulletin-title">
+                    Blog
+                </div>
+                <hr>
+    <div class="spacer">
+        <div class="bulletin-item-type">
+                <a href="http://blog.stackoverflow.com/2016/08/podcast-72-jay-doesnt-get-a-raise-in-this-podcast/?cb=1" class="question-hyperlink">
+<div class="favicon favicon-stackexchangemeta" title="Meta Stack Exchange"></div>                </a>
+            </div>
+                <div class="bulletin-item-content">
+                    <a href="http://blog.stackoverflow.com/2016/08/podcast-72-jay-doesnt-get-a-raise-in-this-podcast/?cb=1" class="question-hyperlink">Podcast #72 — Jay Doesn’t Get a Raise in This Podcast</a>
+                </div>
+                <br class="cbt">
+            </div>
+    </div>
+</div>			
+			<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk2077032528",[5,17,2221]).setZone(45); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk2077032528"><div id="careersadsdoublehigh" style="display:none;"></div><img src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/i.gif" style="position:absolute;" border="0" height="0px" width="0px"><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input value="12" name="downvoteReason" type="radio">Uninteresting</label></li><li><label><input value="13" name="downvoteReason" type="radio">Misleading</label></li><li><label><input value="14" name="downvoteReason" type="radio">Offensive</label></li><li><label><input value="15" name="downvoteReason" type="radio">Repetitive</label></li><li><label><input value="16" name="downvoteReason" type="radio">Other</label></li></ul><a href="#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div></div>
+            <div class=" orange looking tagged clc-jobs-multi" id="hireme"><a href="http://stackoverflow.com/jobs" target="_blank" data-at="0" data-tz="1" data-ti="0" class="top "><span>Looking for a job?</span></a><div class="middle"><ul class="jobs"><li class="clc-dismissable"><div class="job-wrap"><a class="job" data-at="0" data-tz="3" data-ti="215383" href="http://stackoverflow.com/jobs/115383/demandware-software-engineering-manager-140k-crossover" target="_blank" title="Demandware Software Engineering Manager - $140K at Crossover. Click to learn more."><div class="title">Demandware Software Engineering Manager - $140K</div><div><span class="company">Crossover</span><span class="location">No office location</span></div><div class="opts"><span class="opt remote">Remote</span></div><span class="post-tag">demandware</span><span class="post-tag">java</span></a></div><a class="clc-dismiss clc-non-ad" data-clc-url="//clc.stackoverflow.com/dismiss-job" data-clcparam-cid="215383" data-clc-tooltip="dismiss this job"><span class="clc-tooltip above-left">dismiss this job</span></a></li><li class="clc-dismissable"><div class="job-wrap"><a class="job" data-at="0" data-tz="3" data-ti="154262" href="http://stackoverflow.com/jobs/67791/take-part-in-our-residential-sustainable-energy-the-sustainables-bv" target="_blank" title="Take part in our residential sustainable energy revolution at The Sustainables BV. Click to learn more."><div class="title">Take part in our residential sustainable energy revolution</div><div><span class="company">The Sustainables BV</span><span class="location">Amsterdam, Netherlands</span></div><div class="opts"><span class="salary">€20,000 - €35,000</span><span class="opt remote">Remote</span></div><span class="post-tag">asp.net-mvc</span><span class="post-tag">.net</span></a></div><a class="clc-dismiss clc-non-ad" data-clc-url="//clc.stackoverflow.com/dismiss-job" data-clcparam-cid="154262" data-clc-tooltip="dismiss this job"><span class="clc-tooltip above-left">dismiss this job</span></a></li><li class="clc-dismissable"><div class="job-wrap"><a class="job" data-at="0" data-tz="3" data-ti="221780" href="http://stackoverflow.com/jobs/121780/backend-developer-classic-asp-c-sharp-net-work-powerfront-inc" target="_blank" title="Backend Developer - Classic ASP / C# .Net - Work Remotely From Offshore at Powerfront Inc. Click to learn more."><div class="title">Backend Developer - Classic ASP / C# .Net - Work Remotely From Offshore</div><div><span class="company">Powerfront Inc</span><span class="location">No office location</span></div><div class="opts"><span class="salary">$16,000 - $24,000</span><span class="opt remote">Remote</span></div><span class="post-tag">asp.net</span><span class="post-tag">sql</span></a></div><a class="clc-dismiss clc-non-ad" data-clc-url="//clc.stackoverflow.com/dismiss-job" data-clcparam-cid="221780" data-clc-tooltip="dismiss this job"><span class="clc-tooltip above-left">dismiss this job</span></a></li><li class="clc-dismissable"><div class="job-wrap"><a class="job" data-at="0" data-tz="3" data-ti="223388" href="http://stackoverflow.com/jobs/123388/full-stack-software-engineer-newscred" target="_blank" title="Full Stack Software Engineer at NewsCred. Click to learn more."><div class="title">Full Stack Software Engineer</div><div><span class="company">NewsCred</span><span class="location">Dhaka, Bangladesh</span></div><span class="post-tag">python</span><span class="post-tag">javascript</span></a></div><a class="clc-dismiss clc-non-ad" data-clc-url="//clc.stackoverflow.com/dismiss-job" data-clcparam-cid="223388" data-clc-tooltip="dismiss this job"><span class="clc-tooltip above-left">dismiss this job</span></a></li></ul><div style="clear:both"></div></div><img class="impression" src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/soi.gif" style="display:none;"></div>
+        <script>
+;"use strict";var _typeof=typeof Symbol=="function"&&typeof Symbol.iterator=="symbol"?function(n){return typeof n}:function(n){return n&&typeof Symbol=="function"&&n.constructor===Symbol?"symbol":typeof n};(function(n){try{var t=function(){var r,t,i;if(typeof[].indexOf!="function")return{v:void 0};if(r=["stackoverflow.com","serverfault.com","careers.stackoverflow.com","blog.codinghorror.com","joelonsoftware.com","www.joelonsoftware.com"],r[0]!=="*"&&r.indexOf(location.hostname)===-1)return{v:void 0};t=window;t.clc_opts=n;n.autoload&&(t.clc_init=t.clc_init||[],t.clc_init.push(function(){return t.clc.load()}));i=document.createElement("script");i.async=!0;i.src=n.lib;document.body.appendChild(i)}();if((typeof t=="undefined"?"undefined":_typeof(t))==="object")return t.v}catch(i){}}).call(null, {"az":true,"kt":2000,"tto":true,"autoload":true,"d":{"sb":["hireme","clc-sb"],"tlb":["careers1","clc-tlb"],"mlb":["careers3","clc-mlb"]},"allowed":["stackoverflow.com","serverfault.com","careers.stackoverflow.com","blog.codinghorror.com","joelonsoftware.com","www.joelonsoftware.com"],"h":"clc.stackoverflow.com","u":"//clc.stackoverflow.com/p.js","lib":"//cdn.sstatic.net/clc/clc.min.js?v=84432a71b7a2"});        </script>
+			<div class="module" id="chat-feature">
+
+    <h4><a title="154 users active in 63 rooms the last 60 minutes" href="http://chat.stackoverflow.com/" id="h-chat-link">154 People Chatting</a></h4>
+    <div class="related" id="ad502-rooms"><div class="ad502-room"><h3 class="ad502-room-h3"><span class="ad502-room-title" title="JavaScript: Boats, Boats, Boats!"><a href="http://chat.stackoverflow.com/rooms/17">JavaScript: Boats, Boats, Boats!</a></span></h3><span title="2016-08-25 13:59:56Z" class="ad502-last-message">54 mins ago - <a href="http://chat.stackoverflow.com/users/956900">Luggage</a></span><br><div class="ad502-users"><a href="http://chat.stackoverflow.com/users/785745"><img src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/f9fc3249a341a64ee2721637915cd301.jpg" title="Kendall Frey: 55 mins ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/956900"><img src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/4416acf0ee6259443ee3cca16d894d14.png" title="Luggage: 55 mins ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/401137"><img src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/j25bf.png" title="Some Guy: 55 mins ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/406009"><img src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/3au2T.jpg" title="Lalaland: 57 mins ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/561731"><img src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/5ba9dd877c8a4bc5995b2101908ae648.jpg" title="Neal: 57 mins ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/829835"><img src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/N6iem.png" title="rlemon: 1 hour ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/322395"><img src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/Bks1l.jpg" title="Loktar: 1 hour ago" height="23" width="23"></a></div></div><div class="ad502-room"><h3 class="ad502-room-h3"><span class="ad502-room-title" title="PHP"><a href="http://chat.stackoverflow.com/rooms/11">PHP</a></span></h3><span title="2016-08-25 13:58:07Z" class="ad502-last-message">56 mins ago - <a href="http://chat.stackoverflow.com/users/6397156">virepo</a></span><br><div class="ad502-users"><a href="http://chat.stackoverflow.com/users/6397156"><img src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/46b77b4bf3302e7b8b2e901ad15b49be.png" title="virepo: 56 mins ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/836646"><img src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/c9d3823e79bae04bb12f702335d6d312.png" title="Sergey Telshevsky: 58 mins ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/208809"><img src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/3eaa19bdd5f9f61fff5f7265734c6c09.png" title="Gordon: 58 mins ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/214577"><img src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/IEKbS.png" title="Oldskool: 59 mins ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/5244131"><img src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/8hsb0.jpg" title="rabbit guy: 1 hour ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/889949"><img src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/8609c7056e725f9e8c03c594b831353e.jpg" title="DaveRandom: 1 hour ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/3605516"><img src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/picture.jpg" title="Linus: 1 hour ago" height="23" width="23"></a></div></div></div>
+    <script>
+    // <!--
+        StackExchange.ready(
+        function () {
+            var options = {
+                chatUrl: 'http://chat.stackoverflow.com',
+                reloadUrl: '/api/recent-chat',
+                preloadData: {"activeUsers":154,"activeRooms":63,"rooms":[{"name":"JavaScript: Boats, Boats, Boats!","id":17,"lastPost":1472133596,"posts":3551277,"users":[{"name":"Kendall Frey","id":785745,"emailhash":"f9fc3249a341a64ee2721637915cd301","lastPost":1472133567},{"name":"Luggage","id":956900,"emailhash":"4416acf0ee6259443ee3cca16d894d14","lastPost":1472133566},{"name":"Some Guy","id":401137,"emailhash":"!https://i.stack.imgur.com/j25bf.png?s=128\u0026g=1","lastPost":1472133565},{"name":"Lalaland","id":406009,"emailhash":"!https://i.stack.imgur.com/3au2T.jpg?s=128\u0026g=1","lastPost":1472133418},{"name":"Neal","id":561731,"emailhash":"5ba9dd877c8a4bc5995b2101908ae648","lastPost":1472133401},{"name":"rlemon","id":829835,"emailhash":"!https://i.stack.imgur.com/N6iem.png?s=128\u0026g=1","lastPost":1472133167},{"name":"Loktar","id":322395,"emailhash":"!https://i.stack.imgur.com/Bks1l.jpg?s=128\u0026g=1","lastPost":1472132910}],"messages":[{"date":1472133596,"user":"Luggage","userid":956900}],"singleImage":false,"tags":["ecmascript","ecmascript-next","javascript","node.js"]},{"name":"PHP","id":11,"lastPost":1472133487,"posts":2452118,"users":[{"name":"virepo","id":6397156,"emailhash":"46b77b4bf3302e7b8b2e901ad15b49be","lastPost":1472133487},{"name":"Sergey Telshevsky","id":836646,"emailhash":"c9d3823e79bae04bb12f702335d6d312","lastPost":1472133377},{"name":"Gordon","id":208809,"emailhash":"3eaa19bdd5f9f61fff5f7265734c6c09","lastPost":1472133340},{"name":"Oldskool","id":214577,"emailhash":"!https://i.stack.imgur.com/IEKbS.png?s=128\u0026g=1","lastPost":1472133297},{"name":"rabbit guy","id":5244131,"emailhash":"!https://i.stack.imgur.com/8hsb0.jpg?s=128\u0026g=1","lastPost":1472133241},{"name":"DaveRandom","id":889949,"emailhash":"8609c7056e725f9e8c03c594b831353e","lastPost":1472132940},{"name":"Linus","id":3605516,"emailhash":"!https://graph.facebook.com/886075218103351/picture?type=large","lastPost":1472132639}],"messages":[{"date":1472133487,"user":"virepo","userid":6397156}],"singleImage":false,"tags":["php"]}]} 
+            };
+
+            StackExchange.chatAd.init(options);
+        });
+    // -->
+    </script>
+
+</div>
+
+            
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/383192?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted large">420</div></a><a href="http://stackoverflow.com/questions/383192/compile-views-in-asp-net-mvc?rq=1" class="question-hyperlink">Compile Views in ASP.NET MVC</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/388483?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted large">447</div></a><a href="http://stackoverflow.com/questions/388483/how-do-you-create-a-dropdownlist-from-an-enum-in-asp-net-mvc?rq=1" class="question-hyperlink">How do you create a dropdownlist from an enum in ASP.NET MVC?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/446594?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">1256</div></a><a href="http://stackoverflow.com/questions/446594/abort-ajax-requests-using-jquery?rq=1" class="question-hyperlink">Abort Ajax requests using jQuery</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/777523?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">34</div></a><a href="http://stackoverflow.com/questions/777523/asp-net-ajax-vs-jquery-in-asp-net-mvc?rq=1" class="question-hyperlink">ASP.NET AJAX vs jQuery in ASP.NET MVC</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/3864179?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">78</div></a><a href="http://stackoverflow.com/questions/3864179/how-to-know-if-the-request-is-ajax-in-asp-net-mvc?rq=1" class="question-hyperlink">how to know if the request is ajax in asp.net mvc?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/9653294?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">1</div></a><a href="http://stackoverflow.com/questions/9653294/asp-net-ajax-or-jquery-in-asp-net-mvc?rq=1" class="question-hyperlink">ASP.NET AJAX or jQuery in ASP.NET MVC</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/30533461?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">0</div></a><a href="http://stackoverflow.com/questions/30533461/hide-item-after-deleting-it-with-ajax-in-asp-net-mvc?rq=1" class="question-hyperlink">Hide item after deleting it with ajax in asp.net mvc</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/33196791?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">0</div></a><a href="http://stackoverflow.com/questions/33196791/ajax-in-asp-net-mvc-strange-behavior?rq=1" class="question-hyperlink">Ajax in Asp.Net MVC strange behavior</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/37207447?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="http://stackoverflow.com/questions/37207447/how-to-delete-multiple-rows-in-asp-net-mvc-4-using-ajax?rq=1" class="question-hyperlink">How to delete multiple rows in ASP.net mvc 4 using Ajax</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/37978193?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">2</div></a><a href="http://stackoverflow.com/questions/37978193/fill-dropdown-with-jquery-ajax-asp-net-mvc?rq=1" class="question-hyperlink">Fill dropdown with jquery ajax ASP.NET MVC</a></div>
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="http://workplace.stackexchange.com/questions/74620/team-being-on-standby-on-weekends" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Team being on standby on weekends?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="http://worldbuilding.stackexchange.com/questions/52391/is-there-any-plausible-reason-for-a-robots-eyes-to-glow" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is there any plausible reason for a robot's eyes to glow?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="http://worldbuilding.stackexchange.com/questions/52573/economic-reasons-to-put-people-on-mars" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Economic reasons to put people on Mars?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-vi" title="Vi and Vim Stack Exchange"></div><a href="http://vi.stackexchange.com/questions/9344/open-markdown-filename-under-cursor-like-gf-and-jump-to-the-section" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:599 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Open markdown filename under cursor like gf, and jump to the section?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/39144498/python-import-behavior" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Python import behavior
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/90983/exploded-view-of-a-string" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Exploded view of a string
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-bicycles" title="Bicycles Stack Exchange"></div><a href="http://bicycles.stackexchange.com/questions/42100/how-do-i-make-mountain-bike-go-faster-commuting" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:126 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do I make mountain bike go faster (commuting)
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/344127/phrase-for-a-small-legitimate-fix-for-part-of-a-system-so-broken-the-fix-is-uni" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Phrase for a small, legitimate fix for part of a system so broken the fix is unimportant
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-mathoverflow" title="MathOverflow"></div><a href="http://mathoverflow.net/questions/248167/why-are-the-julia-sets-so-simple-quadratic-family" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:504 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why are the Julia sets so simple? (quadratic family)
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/91065/highlight-the-bounding-box-part-i-cartesian-grid" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Highlight the Bounding Box, Part I: Cartesian Grid
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="http://travel.stackexchange.com/questions/77423/can-i-travel-to-europe-from-india-with-different-outbound-and-return-pnr" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can I travel to Europe from India with different outbound and return PNR?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-mathematica" title="Mathematica Stack Exchange"></div><a href="http://mathematica.stackexchange.com/questions/124745/unit-discovery-is-this-some-sort-of-a-sick-joke" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Unit Discovery: Is this some sort of a sick joke?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="http://travel.stackexchange.com/questions/77414/metal-flask-while-travelling-from-heathrow-terminal-3-to-asia" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Metal flask while travelling from Heathrow terminal 3 to Asia
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-mythology" title="Mythology Stack Exchange"></div><a href="http://mythology.stackexchange.com/questions/1912/are-there-any-gods-who-are-in-a-different-species-than-humans" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:615 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Are there any gods who are in a different species than humans?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/90349/the-letter-a-without-a" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    The Letter A without A
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="http://rpg.stackexchange.com/questions/87093/are-background-and-class-skills-additive" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Are background and class skills additive?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="http://worldbuilding.stackexchange.com/questions/52696/a-monochrome-planet" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    A monochrome planet
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/138640/what-does-oliver-queen-mean-when-says-he-wants-a-piece-of-him-in-the-dark-knig" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What does Oliver Queen mean when says he wants "a piece of him" in the Dark Knight Returns?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="http://unix.stackexchange.com/questions/305549/processes-in-background-without" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Processes in background without “&amp;”
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-diy" title="Home Improvement Stack Exchange"></div><a href="http://diy.stackexchange.com/questions/98094/dried-expanding-foam-on-floorboards-how-can-i-remove-it" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:73 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Dried expanding foam on floorboards, how can I remove it?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/138723/why-are-there-so-few-volunteers-in-the-hunger-games" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why are there so few volunteers in the Hunger Games?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/75595/should-i-warn-colleagues-of-another-colleagues-sexism" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Should I warn colleagues of another colleague's sexism?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/75737/should-i-mention-a-mistake-made-by-a-third-person" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Should I mention a mistake made by a third person?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="http://unix.stackexchange.com/questions/305563/cat-special-characters-meaning" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    cat special characters meaning
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/33034093" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/33034093/ivc/f967');});
+</script>
+<noscript>
+    <div><img src="/posts/33034093/ivc/f967" class="dno" alt="" width="0" height="0"></div>
+</noscript><div style="display:none" id="prettify-lang">default</div></div>
+
+
+        </div>
+    </div><script src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/clc.js" async=""></script>
+    <div id="footer" class="categories">
+        <div class="footerwrap">            
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                    <a href="http://stackoverflow.com/company/about">about us</a>
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                    <a href="http://blog.stackoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackoverflow.com/company/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick='StackExchange.switchMobile("on")'>mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                        <li><a href="http://salesforce.stackexchange.com/" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                        <li><a href="http://expressionengine.stackexchange.com/" title="administrators, end users, developers and designers for ExpressionEngine® CMS">ExpressionEngine® Answers</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (13)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://movies.stackexchange.com/" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (9)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                        <li><a href="http://chemistry.stackexchange.com/" title="scientists, academics, teachers and students">Chemistry</a></li>
+                        <li><a href="http://biology.stackexchange.com/" title="biology researchers, academics, and students">Biology</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (5)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+            <div id="copyright">
+                site design / logo © 2016 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2016.8.25.3926
+            </div>
+                </div>
+    </div>
+    <noscript>
+        <div id="noscript-warning">Stack Overflow works best with JavaScript enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"></div>
+    </noscript>
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    
+    
+        
+        ados.run.push(function () {
+                setTimeout(function () { $("#adzerk-user-match").remove(); }, window.AUMIframeDone ? 0 : 2000);
+                ados_setKeywords('jquery,asp.net,ajax,asp.net-mvc');; ados_load();
+        });   
+        
+</script>
+
+    <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+            
+            ga('create', 'UA-5620270-1');
+            ga('set', 'dimension2', '|jquery|asp.net|ajax|asp.net-mvc|');             ga('send', 'pageview');
+        
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+                qc.async = true;
+                qc.src = (ssl ? 'https://secure' : 'http://edge') + '.quantserve.com/quant.js';
+                s.parentNode.insertBefore(qc, s);
+                _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+                            var sc=document.createElement('script');
+                sc.async=true;
+                sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+                s.parentNode.insertBefore(sc, s);
+                _comscore.push({ c1: "2", c2: "17440561" });
+        })();
+
+    </script>
+        
+    
+            <script type="text/javascript">
+                
+                (function(appendChild) {
+                    Node.prototype.appendChild = function() {
+                        var parent = this;
+                        var newNode = arguments[0];
+                        if (parent.nodeName === 'HEAD'
+                            && newNode
+                            && newNode.nodeName === 'SCRIPT'
+                            && newNode.src) {
+                            
+                            window.setTimeout(function() {
+                                var result = newNode.src.match(/^https:\/\/maps\.googleapis\.com\/maps\/api\/place\/js\/(\w+)Service\./i) || [];
+                                var service = result[1];
+                                if (service) {
+                                    if (service === 'Autocompletion') service =  2;
+                                    else if (service === 'Place') service = 1;
+                                    else service = 0;
+                                    StackExchange.using('gps', function() {
+                                        StackExchange.gps.track('google_maps_places_api.call', { service: service });
+                                    });
+                                }
+                            }, 0);
+                        }
+                        return appendChild.apply(this, arguments);
+                    };
+                })(Node.prototype.appendChild);
+            </script>
+    
+<script src="jquery%20-%20ASP.NET%20MVC%205%20Deleting%20Row%20in%20database%20using%20AJAX%20-%20Stack%20Overflow_files/p.js" async=""></script></body></html>

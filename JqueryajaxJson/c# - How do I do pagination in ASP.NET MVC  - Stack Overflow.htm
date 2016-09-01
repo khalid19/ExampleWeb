@@ -1,0 +1,2167 @@
+<!DOCTYPE html>
+<html itemscope="" itemtype="http://schema.org/QAPage"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<title>c# - How do I do pagination in ASP.NET MVC? - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico?v=4f32ecc8f43d">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta property="og:type" content="website">    
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded&amp;a">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="How do I do pagination in ASP.NET MVC?">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="What is the most preferred and easiest way to do pagination in ASP.NET MVC?  I.e. what is the easiest way to break up a list into several browsable pages.
+
+As an example lets say I get a list of el...">
+    <meta property="og:url" content="http://stackoverflow.com/questions/446196/how-do-i-do-pagination-in-asp-net-mvc">
+    <link rel="canonical" href="http://stackoverflow.com/questions/446196/how-do-i-do-pagination-in-asp-net-mvc">
+
+    
+    
+    <script src="c%23%20-%20How%20do%20I%20do%20pagination%20in%20ASP.NET%20MVC%20%20-%20Stack%20Overflow_files/ados" async="" type="text/javascript"></script><script src="c%23%20-%20How%20do%20I%20do%20pagination%20in%20ASP.NET%20MVC%20%20-%20Stack%20Overflow_files/quant.js" async=""></script><script src="c%23%20-%20How%20do%20I%20do%20pagination%20in%20ASP.NET%20MVC%20%20-%20Stack%20Overflow_files/beacon.js" async=""></script><script src="c%23%20-%20How%20do%20I%20do%20pagination%20in%20ASP.NET%20MVC%20%20-%20Stack%20Overflow_files/analytics.js" async=""></script><script src="c%23%20-%20How%20do%20I%20do%20pagination%20in%20ASP.NET%20MVC%20%20-%20Stack%20Overflow_files/ados.js" async="" type="text/javascript"></script><script src="c%23%20-%20How%20do%20I%20do%20pagination%20in%20ASP.NET%20MVC%20%20-%20Stack%20Overflow_files/jquery.js"></script>
+    <script src="c%23%20-%20How%20do%20I%20do%20pagination%20in%20ASP.NET%20MVC%20%20-%20Stack%20Overflow_files/stub.js"></script>
+    <link rel="stylesheet" type="text/css" href="c%23%20-%20How%20do%20I%20do%20pagination%20in%20ASP.NET%20MVC%20%20-%20Stack%20Overflow_files/all.css">
+
+            <link rel="alternate" type="application/atom+xml" title="Feed for question 'How do I do pagination in ASP.NET MVC?'" href="http://stackoverflow.com/feeds/question/446196">
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/446196/how-do-i-do-pagination-in-asp-net-mvc">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/446196/how-do-i-do-pagination-in-asp-net-mvc">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/446196/how-do-i-do-pagination-in-asp-net-mvc">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+        
+            StackExchange.ready(function () {
+                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:446196});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('1', '446196');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text'); });
+
+            });
+        </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","serverTime":1472111265,"routeName":"Questions/Show","site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"id":1,"enableInsertDocLinkDialog":true,"enableSocialMediaInSharePopup":true},"user":{"fkey":"41569c366e39934c15c7afd05b59f5b2","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true}}, {"site":{"allowImageUploads":true,"enableUserHovercards":true,"styleCode":true,"enableNewLinkInsertDialog":true},"tags":{},"accounts":{"currentPasswordRequiredForChangingStackIdPassword":true},"flags":{"allowRetractingFlags":true},"snippets":{"snippetsEnabled":true,"renderDomain":"stacksnippets.net"},"markdown":{"asteriskIntraWordEmphasis":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"d7a60d186a2d","js/moderator.en.js":"fd4e61072bfc","js/full-anon.en.js":"c50efe891b4f","js/full.en.js":"95c6cd6073b9","js/wmd.en.js":"80394f1e88c0","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"d60a8524a8a6","js/help.en.js":"c8004cc0095d","js/tageditor.en.js":"9c6df10dabc4","js/tageditornew.en.js":"41232208b019","js/inline-tag-editing.en.js":"4fa1a4a3339e","js/revisions.en.js":"47de10a8358f","js/review.en.js":"7654150fd1e6","js/tagsuggestions.en.js":"d1ff9b84abe5","js/post-validation.en.js":"35c8d0954e61","js/explore-qlist.en.js":"e71f14781288","js/events.en.js":"feb1bb495423","js/keyboard-shortcuts.en.js":"c248fbc5e00f","js/external-editor.en.js":"34f78799ad2d","js/external-editor.en.js":"34f78799ad2d","js/snippet-javascript.en.js":"9741c25254db","js/snippet-javascript-codemirror.en.js":"c99c4bd40581"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+<script src="c%23%20-%20How%20do%20I%20do%20pagination%20in%20ASP.NET%20MVC%20%20-%20Stack%20Overflow_files/full-anon.js" async=""></script><script src="c%23%20-%20How%20do%20I%20do%20pagination%20in%20ASP.NET%20MVC%20%20-%20Stack%20Overflow_files/snippet-javascript.js" async=""></script><script src="c%23%20-%20How%20do%20I%20do%20pagination%20in%20ASP.NET%20MVC%20%20-%20Stack%20Overflow_files/post-validation.js" async=""></script><script src="c%23%20-%20How%20do%20I%20do%20pagination%20in%20ASP.NET%20MVC%20%20-%20Stack%20Overflow_files/prettify-full.js" async=""></script><script src="c%23%20-%20How%20do%20I%20do%20pagination%20in%20ASP.NET%20MVC%20%20-%20Stack%20Overflow_files/external-editor.js" async=""></script><script src="c%23%20-%20How%20do%20I%20do%20pagination%20in%20ASP.NET%20MVC%20%20-%20Stack%20Overflow_files/adFeedback.js" type="text/javascript"></script><link href="c%23%20-%20How%20do%20I%20do%20pagination%20in%20ASP.NET%20MVC%20%20-%20Stack%20Overflow_files/adFeedback.css" rel="stylesheet"></head>
+<body class="question-page new-topbar">
+    <noscript><div id="noscript-padding"></div></noscript>
+    
+        <script>(function () { var old = $.fn.contents; $.fn.contents = function () { try { return old.apply(this, arguments); } catch (e) { return $([]); } } })()</script>
+        
+
+
+
+
+    <div id="notify-container"></div>
+    <div id="custom-header"></div>
+
+
+
+
+
+<div class="topbar">
+    <div class="topbar-wrapper">
+
+        <div class="js-topbar-dialog-corral">
+
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackoverflow.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+                    <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                </li>
+        </ul>
+    </div>
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+<a href="https://stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f446196%2fhow-do-i-do-pagination-in-asp-net-mvc" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f446196%2fhow-do-i-do-pagination-in-asp-net-mvc" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+            </div>
+    </div>
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+        <a href="http://blog.stackoverflow.com/" class="fr">company blog</a>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+                <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 160 Stack Exchange sites">
+                    <span class="hidden-text">Stack Exchange</span>
+                </a>
+
+    <a href="#" class="topbar-icon icon-inbox yes-hover js-inbox-button" title="Recent inbox messages">
+        <span class="hidden-text">Inbox</span>
+        <span class="unread-count" style="display:none"></span>
+    </a>
+    <a href="#" class="topbar-icon icon-achievements yes-hover js-achievements-button" data-unread-class="" title="Recent achievements: reputation, badges, and privileges earned">
+        <span class="hidden-text">Reputation and Badges</span>
+        <span class="unread-count" style="display:none">
+            
+        </span>
+    </a>
+        </div>
+
+        <div class="topbar-links">
+
+                <div class="links-container">
+                <span class="topbar-menu-links">
+                                    <a href="https://stackoverflow.com/users/signup?ssrc=head&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f446196%2fhow-do-i-do-pagination-in-asp-net-mvc" class="login-link">sign up</a>
+                                <a href="https://stackoverflow.com/users/login?ssrc=head&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f446196%2fhow-do-i-do-pagination-in-asp-net-mvc" class="login-link">log in</a>
+
+                            <a href="http://stackoverflow.com/tour">tour</a>
+        <a href="#" class="icon-help js-help-button" title="Help Center and other resources">
+            help
+            <span class="triangle"></span>
+        </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                        <li>
+                            <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                                Meta
+                                <span class="item-summary">
+                                    Discuss the workings and policies of this site
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                                About Us
+                                <span class="item-summary">
+                                    Learn more about Stack Overflow the company
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://business.stackoverflow.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                                Business
+                                <span class="item-summary">
+                                    Learn more about hiring developers or posting ads with us
+                                </span>
+                            </a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+                                            </span>
+                </div>
+
+            <div class="search-container">
+                <form id="search" action="/search" method="get" autocomplete="off">
+                    <input name="q" placeholder="Search Q&amp;A" tabindex="1" autocomplete="off" maxlength="240" type="text">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+    <div class="container">
+        <div id="header">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                            <li><a id="nav-jobs" href="http://stackoverflow.com/jobs?med=site-ui&amp;ref=jobs-tab">Jobs</a></li>
+                                                <li><a id="nav-docs" href="http://stackoverflow.com/documentation">Documentation</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/help/badges">Badges</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content" class="snippet-hidden">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="http://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+<div class="hero-box docs-announcement">
+    <div class="hero-close js-dismiss">Dismiss</div>
+    
+    
+    <div class="hero-content text-left">
+        <div class="text-wrapper">
+            <div class="hero-title">
+                Announcing Stack Overflow Documentation
+            </div>
+
+            <p class="subtitle">
+                We started with Q&amp;A. Technical documentation is next, and we need your help.
+            </p>
+            <p class="subtitle">
+                Whether you're a beginner or an experienced developer, you <i>can</i> contribute.
+            </p>
+        </div>
+
+            <a href="http://stackoverflow.com/users/signup?ssrc=docs_hero&amp;returnurl=%2Ftour%2Fdocumentation" class="btn js-gps-track" data-gps-track="docs.hero.clicked({target: 2 })">
+                Sign up and start helping →
+            </a>
+            <a href="http://stackoverflow.com/tour/documentation" class="btn-clear js-gps-track" data-gps-track="docs.hero.clicked({target: 1 })">
+                Learn more about Documentation →
+            </a>
+
+        <div class="img"></div>
+    </div>
+</div>
+
+<script>
+    StackExchange.ready(function() {
+        var location = 0;
+        if ($("body").hasClass("question-page")) {
+            location = 2;
+        } else if ($("body").hasClass("home-page")) {
+            location = 1;
+        }
+
+        $(".docs-announcement .js-dismiss").one("click", function() {
+            $(".docs-announcement").fadeOut("fast");
+            $.post("/dismiss-documentation-hero", { fkey: StackExchange.options.user.fkey, location: location });
+        });
+
+        StackExchange.using("gps", function () {
+            StackExchange.gps.track("docs.hero.show", { location: location }, true);
+        });
+    });
+</script>			<div id="question-header">
+                <h1 itemprop="name"><a href="http://stackoverflow.com/questions/446196/how-do-i-do-pagination-in-asp-net-mvc" class="question-hyperlink">How do I do pagination in ASP.NET MVC?</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="446196" id="question">
+
+    <script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk1452554992",4).setZone(43); });
+            </script>
+                <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="446196" type="hidden">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">65</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="#">favorite</a>
+        <div class="favoritecount"><b>44</b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<p>What is the most preferred and easiest way to do pagination in 
+ASP.NET MVC?  I.e. what is the easiest way to break up a list into 
+several browsable pages.</p>
+
+<p>As an example lets say I get a list of elements from a database/gateway/repository like this:</p>
+
+<pre style="" class="lang-cs prettyprint prettyprinted"><code><span class="kwd">public</span><span class="pln"> </span><span class="typ">ActionResult</span><span class="pln"> </span><span class="typ">ListMyItems</span><span class="pun">()</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="typ">List</span><span class="pun">&lt;</span><span class="typ">Item</span><span class="pun">&gt;</span><span class="pln"> </span><span class="typ">list</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="typ">ItemDB</span><span class="pun">.</span><span class="typ">GetListOfItems</span><span class="pun">();</span><span class="pln">
+    </span><span class="typ">ViewData</span><span class="pun">[</span><span class="str">"ItemList"</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="typ">list</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="typ">View</span><span class="pun">();</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>For simplicity's sake I'd like to specify just a page number for my action as parameter. Like this:</p>
+
+<pre style="" class="lang-cs prettyprint prettyprinted"><code><span class="kwd">public</span><span class="pln"> </span><span class="typ">ActionResult</span><span class="pln"> </span><span class="typ">ListMyItems</span><span class="pun">(</span><span class="typ">int</span><span class="pln"> page</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+   </span><span class="com">//...</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/c%23" class="post-tag js-gps-track" title="show questions tagged 'c#'" rel="tag">c#</a> <a href="http://stackoverflow.com/questions/tagged/asp.net" class="post-tag js-gps-track" title="show questions tagged 'asp.net'" rel="tag">asp.net</a> <a href="http://stackoverflow.com/questions/tagged/asp.net-mvc" class="post-tag js-gps-track" title="show questions tagged 'asp.net-mvc'" rel="tag">asp.net-mvc</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/446196" title="short permalink to this question" class="short-link" id="link-post-446196">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/446196/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/446196/revisions" title="show all edits to this post">edited <span title="2009-01-15 10:16:55Z" class="relativetime">Jan 15 '09 at 10:16</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info user-hover">
+    <div class="user-action-time">
+        asked <span title="2009-01-15 09:50:20Z" class="relativetime">Jan 15 '09 at 9:50</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/3713/spoike"><div class="gravatar-wrapper-32"><img src="c%23%20-%20How%20do%20I%20do%20pagination%20in%20ASP.NET%20MVC%20%20-%20Stack%20Overflow_files/dc374f99f92956f128ef79df36d819e9.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/3713/spoike">Spoike</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 46,823" dir="ltr">46.8k</span><span title="32 gold badges"><span class="badge1"></span><span class="badgecount">32</span></span><span title="114 silver badges"><span class="badge2"></span><span class="badgecount">114</span></span><span title="139 bronze badges"><span class="badge3"></span><span class="badgecount">139</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-446196" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-446196" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								6 Answers
+                                <span style="display:none;" itemprop="answerCount">6</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/446196/how-do-i-do-pagination-in-asp-net-mvc?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active" data-shortcut="A">
+            active</a>
+        <a href="http://stackoverflow.com/questions/446196/how-do-i-do-pagination-in-asp-net-mvc?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest" data-shortcut="O">
+            oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/446196/how-do-i-do-pagination-in-asp-net-mvc?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes" data-shortcut="V">
+            votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="446232"></a>
+<div id="answer-446232" class="answer accepted-answer" data-answerid="446232" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="446232" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">74</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Well, what is the data source? Your action could take a few defaulted arguments, i.e.</p>
+
+<pre style="" class="lang-cs prettyprint prettyprinted"><code><span class="typ">ActionResult</span><span class="pln"> </span><span class="typ">Search</span><span class="pun">(</span><span class="kwd">string</span><span class="pln"> query</span><span class="pun">,</span><span class="pln"> </span><span class="typ">int</span><span class="pln"> startIndex</span><span class="pun">,</span><span class="pln"> </span><span class="typ">int</span><span class="pln"> pageSize</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{...}</span></code></pre>
+
+<p>defaulted in the routes setup so that startIndex is 0 and pageSize is (say) 20:</p>
+
+<pre style="" class="lang-cs prettyprint prettyprinted"><code><span class="pln">        routes</span><span class="pun">.</span><span class="typ">MapRoute</span><span class="pun">(</span><span class="str">"Search"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Search/{query}/{startIndex}"</span><span class="pun">,</span><span class="pln">
+                        </span><span class="kwd">new</span><span class="pln">
+                        </span><span class="pun">{</span><span class="pln">
+                            controller </span><span class="pun">=</span><span class="pln"> </span><span class="str">"Home"</span><span class="pun">,</span><span class="pln"> action </span><span class="pun">=</span><span class="pln"> </span><span class="str">"Search"</span><span class="pun">,</span><span class="pln">
+                            startIndex </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> pageSize </span><span class="pun">=</span><span class="pln"> </span><span class="lit">20</span><span class="pln">
+                        </span><span class="pun">});</span></code></pre>
+
+<p>To split the feed, you can use LINQ quite easily:</p>
+
+<pre style="" class="lang-cs prettyprint prettyprinted"><code><span class="kwd">var</span><span class="pln"> page </span><span class="pun">=</span><span class="pln"> source</span><span class="pun">.</span><span class="typ">Skip</span><span class="pun">(</span><span class="pln">startIndex</span><span class="pun">).</span><span class="typ">Take</span><span class="pun">(</span><span class="pln">pageSize</span><span class="pun">);</span></code></pre>
+
+<p>(or do a multiplication if you use "pageNumber" rather than "startIndex")</p>
+
+<p>With LINQ-toSQL, EF, etc - this should "compose" down to the database, too.</p>
+
+<p>You should then be able to use action-links to the next page (etc):</p>
+
+<pre style="" class="lang-cs prettyprint prettyprinted"><code><span class="pun">&lt;%=</span><span class="typ">Html</span><span class="pun">.</span><span class="typ">ActionLink</span><span class="pun">(</span><span class="str">"next page"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Search"</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                query</span><span class="pun">,</span><span class="pln"> startIndex </span><span class="pun">=</span><span class="pln"> startIndex </span><span class="pun">+</span><span class="pln"> pageSize</span><span class="pun">,</span><span class="pln"> pageSize </span><span class="pun">})</span><span class="pln"> </span><span class="pun">%&gt;</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/446232" title="short permalink to this answer" class="short-link" id="link-post-446232">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/446232/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/446232/revisions" title="show all edits to this post">edited <span title="2009-01-15 10:18:08Z" class="relativetime">Jan 15 '09 at 10:18</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2009-01-15 10:11:49Z" class="relativetime">Jan 15 '09 at 10:11</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/23354/marc-gravell"><div class="gravatar-wrapper-32"><img src="c%23%20-%20How%20do%20I%20do%20pagination%20in%20ASP.NET%20MVC%20%20-%20Stack%20Overflow_files/NJcqr.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/23354/marc-gravell">Marc Gravell</a><span class="mod-flair" title="moderator">♦</span>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 620,045" dir="ltr">620k</span><span title="142 gold badges"><span class="badge1"></span><span class="badgecount">142</span></span><span title="1731 silver badges"><span class="badge2"></span><span class="badgecount">1731</span></span><span title="2205 bronze badges"><span class="badge3"></span><span class="badgecount">2205</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-446232" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-267627" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">3</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">That's an interesting routing
+ example, so I'll upvote it. I haven't gotten into the groove of using 
+LINQ yet, so Skip and Take is new to me. But that's definately what I 
+need. And that's why I'll mark this as answer.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/3713/spoike" title="46,823 reputation" class="comment-user owner">Spoike</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment267627_446232"><span title="2009-01-15 10:22:35Z" class="relativetime-clean">Jan 15 '09 at 10:22</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-999843" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">awsome stuff! Thank you very much in deed.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/42019/ric-tokyo" title="5,745 reputation" class="comment-user">Ric Tokyo</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment999843_446232"><span title="2009-07-24 17:01:12Z" class="relativetime-clean">Jul 24 '09 at 17:01</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-18999047" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Using MVC2, your <code>ActionLink</code>
+ syntax is giving me a Compilation Error when requesting the page. 
+CS0103: The name 'startIndex' does not exist in the current context. Is 
+this technique not possible with MVC2?</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/537956/comecme" title="2,486 reputation" class="comment-user">comecme</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment18999047_446232"><span title="2012-12-10 21:37:26Z" class="relativetime-clean">Dec 10 '12 at 21:37</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-18999237" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@comecme do you mean the last line? you need to provide those values (or variables). What <i>is</i> that start-index / page-size?</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/23354/marc-gravell" title="620,045 reputation" class="comment-user">Marc Gravell<span class="mod-flair" title="moderator">♦</span></a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment18999237_446232"><span title="2012-12-10 21:43:36Z" class="relativetime-clean">Dec 10 '12 at 21:43</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-18999490" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Yeah, I mean the last line. I thought you are using the current <code>startIndex</code> and add <code>pageSize</code> to it. I'd hoped it would automatically be using the values of the last call to <code>Search</code>. How would I use the <code>startIndex</code> from the last <code>Search</code> in my <code>ActionLink</code>?</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/537956/comecme" title="2,486 reputation" class="comment-user">comecme</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment18999490_446232"><span title="2012-12-10 21:52:57Z" class="relativetime-clean">Dec 10 '12 at 21:52</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-446232" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk2004568136",4).setZone(44); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk2004568136"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjo0NzE0OTMsImNoIjoxMTc4LCJjayI6e30sImNyIjoxNjI3NzcxLCJkaSI6ImM1NGUxYTFiODg0YTQ3MTNhMjhlOTlmMDU1NjNhN2VkIiwiZG0iOjEsImZjIjoxOTI0NDUwLCJmbCI6MjE0MjMxMiwiaXAiOiI0My4yNDUuMjM1LjQ2Iiwia3ciOiJjIyxhc3AubmV0LGFzcC5uZXQtbXZjIiwibnciOjIyLCJwYyI6MCwiZWMiOjAsInByIjoxNjA0LCJydCI6MSwicmYiOiJodHRwczovL3d3dy5nb29nbGUuY29tLmJkLyIsInN0Ijo4Mjc3LCJ1ayI6InVlMS00YWRmNmI0NDJiNjY0NzUwOGNlNGE5MDM4ZDMxMjYwMyIsInpuIjo0NCwidHMiOjE0NzIxMTEyNzQ0NDYsImJmIjp0cnVlLCJwbiI6ImFkemVyazIwMDQ1NjgxMzYiLCJ1ciI6Imh0dHA6Ly9zdGFja292ZXJmbG93LmNvbS9qb2JzL3JlbW90ZT91dG1fc291cmNlPXdlYnNpdGUmdXRtX21lZGl1bT1iYW5uZXImdXRtX2NvbnRlbnQ9bGVhZGVyYm9hcmRfNSZ1dG1fY2FtcGFpZ249aG91c2VfYWRzX1JPU19TTyJ9&amp;s=79-eUSI-cMfyvngQ1ICofWtAxNc" rel="nofollow" target="_blank" title=""><img src="c%23%20-%20How%20do%20I%20do%20pagination%20in%20ASP.NET%20MVC%20%20-%20Stack%20Overflow_files/f380ecc42410414693b467ac7a97901b.png" title="" alt="" height="90" border="0" width="728"></a><img src="c%23%20-%20How%20do%20I%20do%20pagination%20in%20ASP.NET%20MVC%20%20-%20Stack%20Overflow_files/i.gif" style="position:absolute;" height="0px" border="0" width="0px"><div class="adzerk-vote-controls" style="display: none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input value="12" name="downvoteReason" type="radio">Uninteresting</label></li><li><label><input value="13" name="downvoteReason" type="radio">Misleading</label></li><li><label><input value="14" name="downvoteReason" type="radio">Offensive</label></li><li><label><input value="15" name="downvoteReason" type="radio">Repetitive</label></li><li><label><input value="16" name="downvoteReason" type="radio">Other</label></li></ul><a href="#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div></div>
+  
+<a name="446461"></a>
+<div id="answer-446461" class="answer" data-answerid="446461" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="446461" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">12</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>I had the same problem and found a very elegant solution for a Pager Class from</p>
+
+<p><a href="http://blogs.taiga.nl/martijn/2008/08/27/paging-with-aspnet-mvc/">http://blogs.taiga.nl/martijn/2008/08/27/paging-with-aspnet-mvc/</a></p>
+
+<p>In your controller the call looks like:</p>
+
+<pre style="" class="lang-cs prettyprint prettyprinted"><code><span class="kwd">return</span><span class="pln"> </span><span class="typ">View</span><span class="pun">(</span><span class="pln">partnerList</span><span class="pun">.</span><span class="typ">ToPagedList</span><span class="pun">(</span><span class="pln">currentPageIndex</span><span class="pun">,</span><span class="pln"> pageSize</span><span class="pun">));</span></code></pre>
+
+<p>and in your view:</p>
+
+<pre style="" class="lang-cs prettyprint prettyprinted"><code><span class="pun">&lt;</span><span class="pln">div </span><span class="kwd">class</span><span class="pun">=</span><span class="str">"pager"</span><span class="pun">&gt;</span><span class="pln">
+    </span><span class="typ">Seite</span><span class="pun">:</span><span class="pln"> </span><span class="pun">&lt;%=</span><span class="pln"> </span><span class="typ">Html</span><span class="pun">.</span><span class="typ">Pager</span><span class="pun">(</span><span class="typ">ViewData</span><span class="pun">.</span><span class="typ">Model</span><span class="pun">.</span><span class="typ">PageSize</span><span class="pun">,</span><span class="pln"> 
+                          </span><span class="typ">ViewData</span><span class="pun">.</span><span class="typ">Model</span><span class="pun">.</span><span class="typ">PageNumber</span><span class="pun">,</span><span class="pln">
+                          </span><span class="typ">ViewData</span><span class="pun">.</span><span class="typ">Model</span><span class="pun">.</span><span class="typ">TotalItemCount</span><span class="pun">)%&gt;</span><span class="pln">
+</span><span class="pun">&lt;/</span><span class="pln">div</span><span class="pun">&gt;</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/446461" title="short permalink to this answer" class="short-link" id="link-post-446461">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/446461/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/446461/revisions" title="show all edits to this post">edited <span title="2010-02-20 03:56:06Z" class="relativetime">Feb 20 '10 at 3:56</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/50776/casperone"><div class="gravatar-wrapper-32"><img src="c%23%20-%20How%20do%20I%20do%20pagination%20in%20ASP.NET%20MVC%20%20-%20Stack%20Overflow_files/1b2b5d5007262ea3f9e21ab5b15f8b75.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/50776/casperone">casperOne</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 57,600" dir="ltr">57.6k</span><span title="10 gold badges"><span class="badge1"></span><span class="badgecount">10</span></span><span title="125 silver badges"><span class="badge2"></span><span class="badgecount">125</span></span><span title="202 bronze badges"><span class="badge3"></span><span class="badgecount">202</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2009-01-15 11:52:22Z" class="relativetime">Jan 15 '09 at 11:52</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/55390/oliver"><div class="gravatar-wrapper-32"><img src="c%23%20-%20How%20do%20I%20do%20pagination%20in%20ASP.NET%20MVC%20%20-%20Stack%20Overflow_files/ab6244eb1205a9d754bd9fe6f16fa157.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/55390/oliver">Oliver</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">158</span><span title="9 bronze badges"><span class="badge3"></span><span class="badgecount">9</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-446461" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-268335" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">It's for ASP.NET MVC Preview 5. Will it work for ASP.NET MVC Beta?</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/3713/spoike" title="46,823 reputation" class="comment-user owner">Spoike</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment268335_446461"><span title="2009-01-15 15:15:27Z" class="relativetime-clean">Jan 15 '09 at 15:15</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-1282226" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Link changed, code updated to RC1 (guess it will work with 1.0 too, will try out now).  <a href="http://blogs.taiga.nl/martijn/2008/08/27/paging-with-aspnet-mvc/" rel="nofollow">blogs.taiga.nl/martijn/2008/08/27/paging-with-aspnet-mvc</a></span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/79456/palantir" title="14,992 reputation" class="comment-user">Palantir</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment1282226_446461"><span title="2009-09-17 07:42:26Z" class="relativetime-clean">Sep 17 '09 at 7:42</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-446461" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="27965790"></a>
+<div id="answer-27965790" class="answer" data-answerid="27965790" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="27965790" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">5</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>I wanted to cover a simple way of doing this with the front end too:</p>
+
+<p><strong>Controller:</strong></p>
+
+<pre style="" class="lang-cs prettyprint prettyprinted"><code><span class="kwd">public</span><span class="pln"> </span><span class="typ">ActionResult</span><span class="pln"> </span><span class="typ">Index</span><span class="pun">(</span><span class="typ">int</span><span class="pln"> page </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">const</span><span class="pln"> </span><span class="typ">int</span><span class="pln"> </span><span class="typ">PageSize</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">3</span><span class="pun">;</span><span class="pln"> </span><span class="com">// you can always do something more elegant to set this</span><span class="pln">
+
+    </span><span class="kwd">var</span><span class="pln"> count </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">dataSource</span><span class="pun">.</span><span class="typ">Count</span><span class="pun">();</span><span class="pln">
+
+    </span><span class="kwd">var</span><span class="pln"> data </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">dataSource</span><span class="pun">.</span><span class="typ">Skip</span><span class="pun">(</span><span class="pln">page </span><span class="pun">*</span><span class="pln"> </span><span class="typ">PageSize</span><span class="pun">).</span><span class="typ">Take</span><span class="pun">(</span><span class="typ">PageSize</span><span class="pun">).</span><span class="typ">ToList</span><span class="pun">();</span><span class="pln">
+
+    </span><span class="kwd">this</span><span class="pun">.</span><span class="typ">ViewBag</span><span class="pun">.</span><span class="typ">MaxPage</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="pln">count </span><span class="pun">/</span><span class="pln"> </span><span class="typ">PageSize</span><span class="pun">)</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> </span><span class="pun">(</span><span class="pln">count </span><span class="pun">%</span><span class="pln"> </span><span class="typ">PageSize</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> </span><span class="pun">?</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pun">);</span><span class="pln">
+
+    </span><span class="kwd">this</span><span class="pun">.</span><span class="typ">ViewBag</span><span class="pun">.</span><span class="typ">Page</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> page</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">.</span><span class="typ">View</span><span class="pun">(</span><span class="pln">data</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p><strong>View:</strong></p>
+
+<pre style="" class="lang-cs prettyprint prettyprinted"><code><span class="pun">@*</span><span class="pln"> rest of file with view </span><span class="pun">*@</span><span class="pln">
+
+</span><span class="lit">@if</span><span class="pln"> </span><span class="pun">(</span><span class="typ">ViewBag</span><span class="pun">.</span><span class="typ">Page</span><span class="pln"> </span><span class="pun">&gt;</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="pun">&lt;</span><span class="pln">a href</span><span class="pun">=</span><span class="str">"@Url.Action("</span><span class="typ">Index</span><span class="str">", new { page = ViewBag.Page - 1 })"</span><span class="pln"> 
+       </span><span class="kwd">class</span><span class="pun">=</span><span class="str">"btn btn-default"</span><span class="pun">&gt;</span><span class="pln">
+        </span><span class="pun">&amp;</span><span class="pln">laquo</span><span class="pun">;</span><span class="pln"> </span><span class="typ">Prev</span><span class="pln">
+    </span><span class="pun">&lt;/</span><span class="pln">a</span><span class="pun">&gt;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="lit">@if</span><span class="pln"> </span><span class="pun">(</span><span class="typ">ViewBag</span><span class="pun">.</span><span class="typ">Page</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln"> </span><span class="typ">ViewBag</span><span class="pun">.</span><span class="typ">MaxPage</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="pun">&lt;</span><span class="pln">a href</span><span class="pun">=</span><span class="str">"@Url.Action("</span><span class="typ">Index</span><span class="str">", new { page = ViewBag.Page + 1 })"</span><span class="pln"> 
+       </span><span class="kwd">class</span><span class="pun">=</span><span class="str">"btn btn-default"</span><span class="pun">&gt;</span><span class="pln">
+        </span><span class="typ">Next</span><span class="pln"> </span><span class="pun">&amp;</span><span class="pln">raquo</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">&lt;/</span><span class="pln">a</span><span class="pun">&gt;</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/27965790" title="short permalink to this answer" class="short-link" id="link-post-27965790">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/27965790/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2015-01-15 14:35:30Z" class="relativetime">Jan 15 '15 at 14:35</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1185053/dav-i"><div class="gravatar-wrapper-32"><img src="c%23%20-%20How%20do%20I%20do%20pagination%20in%20ASP.NET%20MVC%20%20-%20Stack%20Overflow_files/58c51dfdd3eab064c2c29c7c0d1e4c6b.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1185053/dav-i">dav_i</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 13,500" dir="ltr">13.5k</span><span title="6 gold badges"><span class="badge1"></span><span class="badgecount">6</span></span><span title="54 silver badges"><span class="badge2"></span><span class="badgecount">54</span></span><span title="87 bronze badges"><span class="badge3"></span><span class="badgecount">87</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-27965790" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-62182731" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy"><code>var data = this.dataSource.Skip(page * PageSize).Take(PageSize).ToList();</code> Requires a <code>orderBy(o =&gt; o.Id)</code> before you can use <code>skip()</code> || Besides that this is a great answer that deserves a lot more upvotes.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/2715331/vahx" title="343 reputation" class="comment-user">Vahx</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment62182731_27965790"><span title="2016-05-19 19:20:17Z" class="relativetime-clean">May 19 at 19:20</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-27965790" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="34915208"></a>
+<div id="answer-34915208" class="answer" data-answerid="34915208" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="34915208" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>I think the easiest way to create pagination in ASP.NET MVC application is using PagedList library. </p>
+
+<p>There is a complete example in following github repository. Hope it would help.</p>
+
+<pre style="" class="lang-cs prettyprint prettyprinted"><code><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">ProductController</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="typ">Controller</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">object</span><span class="pln"> </span><span class="typ">Index</span><span class="pun">(</span><span class="typ">int</span><span class="pun">?</span><span class="pln"> page</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">var</span><span class="pln"> </span><span class="typ">list</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="typ">ItemDB</span><span class="pun">.</span><span class="typ">GetListOfItems</span><span class="pun">();</span><span class="pln">
+
+        </span><span class="kwd">var</span><span class="pln"> pageNumber </span><span class="pun">=</span><span class="pln"> page </span><span class="pun">??</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln"> 
+        </span><span class="kwd">var</span><span class="pln"> onePageOfItem </span><span class="pun">=</span><span class="pln"> </span><span class="typ">list</span><span class="pun">.</span><span class="typ">ToPagedList</span><span class="pun">(</span><span class="pln">pageNumber</span><span class="pun">,</span><span class="pln"> </span><span class="lit">25</span><span class="pun">);</span><span class="pln"> </span><span class="com">// will only contain 25 items max because of the pageSize</span><span class="pln">
+
+        </span><span class="typ">ViewBag</span><span class="pun">.</span><span class="pln">onePageOfItem </span><span class="pun">=</span><span class="pln"> onePageOfProducts</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> </span><span class="typ">View</span><span class="pun">();</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>Demo Link: <a href="http://ajaxpagination.azurewebsites.net/" rel="nofollow">http://ajaxpagination.azurewebsites.net/</a></p>
+
+<p>Source Code: <a href="https://github.com/ungleng/SimpleAjaxPagedListAndSearchMVC5" rel="nofollow">https://github.com/ungleng/SimpleAjaxPagedListAndSearchMVC5</a></p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/34915208" title="short permalink to this answer" class="short-link" id="link-post-34915208">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/34915208/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/34915208/revisions" title="show all edits to this post">edited <span title="2016-01-22 04:12:40Z" class="relativetime">Jan 22 at 4:12</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2016-01-21 04:03:34Z" class="relativetime">Jan 21 at 4:03</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/2833375/leng-ung"><div class="gravatar-wrapper-32"><img src="c%23%20-%20How%20do%20I%20do%20pagination%20in%20ASP.NET%20MVC%20%20-%20Stack%20Overflow_files/a08d1ba6cfc0919481ce4806e8c6d5d3.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/2833375/leng-ung">LENG UNG</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">199</span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span><span title="4 bronze badges"><span class="badge3"></span><span class="badgecount">4</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-34915208" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-57611286" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Thank you for comment</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/2833375/leng-ung" title="199 reputation" class="comment-user">LENG UNG</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment57611286_34915208"><span title="2016-01-22 05:22:04Z" class="relativetime-clean">Jan 22 at 5:22</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-34915208" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="30797087"></a>
+<div id="answer-30797087" class="answer" data-answerid="30797087" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="30797087" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p></p><p>Controller </p><p></p>
+
+<pre style="" class="lang-cs prettyprint prettyprinted"><code><span class="pln"> </span><span class="pun">[</span><span class="typ">HttpGet</span><span class="pun">]</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> async </span><span class="typ">Task</span><span class="pun">&lt;</span><span class="typ">ActionResult</span><span class="pun">&gt;</span><span class="pln"> </span><span class="typ">Index</span><span class="pun">(</span><span class="typ">int</span><span class="pln"> page </span><span class="pun">=</span><span class="lit">1</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">page </span><span class="pun">&lt;</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> </span><span class="pun">||</span><span class="pln"> page </span><span class="pun">==</span><span class="lit">0</span><span class="pln"> </span><span class="pun">)</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+            page </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        </span><span class="typ">int</span><span class="pln"> pageSize </span><span class="pun">=</span><span class="pln"> </span><span class="lit">5</span><span class="pun">;</span><span class="pln">
+        </span><span class="typ">int</span><span class="pln"> totalPage </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+        </span><span class="typ">int</span><span class="pln"> totalRecord </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+        </span><span class="typ">BusinessLayer</span><span class="pln"> bll </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">BusinessLayer</span><span class="pun">();</span><span class="pln">
+        </span><span class="typ">MatchModel</span><span class="pln"> matchmodel </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">MatchModel</span><span class="pun">();</span><span class="pln">
+        matchmodel</span><span class="pun">.</span><span class="typ">GetMatchList</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> bll</span><span class="pun">.</span><span class="typ">GetMatchCore</span><span class="pun">(</span><span class="pln">page</span><span class="pun">,</span><span class="pln"> pageSize</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">out</span><span class="pln"> totalRecord</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">out</span><span class="pln"> totalPage</span><span class="pun">);</span><span class="pln">
+        </span><span class="typ">ViewBag</span><span class="pun">.</span><span class="pln">dbCount </span><span class="pun">=</span><span class="pln"> totalPage</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> </span><span class="typ">View</span><span class="pun">(</span><span class="pln">matchmodel</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span></code></pre>
+
+<p></p><p>BusinessLogic </p><p></p>
+
+<pre style="" class="lang-cs prettyprint prettyprinted"><code><span class="pln">  </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">List</span><span class="pun">&lt;</span><span class="typ">Match</span><span class="pun">&gt;</span><span class="pln"> </span><span class="typ">GetMatchCore</span><span class="pun">(</span><span class="typ">int</span><span class="pln"> page</span><span class="pun">,</span><span class="pln"> </span><span class="typ">int</span><span class="pln"> pageSize</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">out</span><span class="pln"> </span><span class="typ">int</span><span class="pln"> totalRecord</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">out</span><span class="pln"> </span><span class="typ">int</span><span class="pln"> totalPage</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="typ">SignalRDataContext</span><span class="pln"> db </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">SignalRDataContext</span><span class="pun">();</span><span class="pln">
+        </span><span class="kwd">var</span><span class="pln"> query </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">List</span><span class="pun">&lt;</span><span class="typ">Match</span><span class="pun">&gt;();</span><span class="pln">
+        totalRecord </span><span class="pun">=</span><span class="pln"> db</span><span class="pun">.</span><span class="typ">Matches</span><span class="pun">.</span><span class="typ">Count</span><span class="pun">();</span><span class="pln">
+        totalPage </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="pln">totalRecord </span><span class="pun">/</span><span class="pln"> pageSize</span><span class="pun">)</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="pun">((</span><span class="pln">totalRecord </span><span class="pun">%</span><span class="pln"> pageSize</span><span class="pun">)</span><span class="pln"> </span><span class="pun">&gt;</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> </span><span class="pun">?</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pun">);</span><span class="pln">
+        query </span><span class="pun">=</span><span class="pln"> db</span><span class="pun">.</span><span class="typ">Matches</span><span class="pun">.</span><span class="typ">OrderBy</span><span class="pun">(</span><span class="pln">a </span><span class="pun">=&gt;</span><span class="pln"> a</span><span class="pun">.</span><span class="typ">QuestionID</span><span class="pun">).</span><span class="typ">Skip</span><span class="pun">(((</span><span class="pln">page </span><span class="pun">-</span><span class="pln"> </span><span class="lit">1</span><span class="pun">)</span><span class="pln"> </span><span class="pun">*</span><span class="pln"> pageSize</span><span class="pun">)).</span><span class="typ">Take</span><span class="pun">(</span><span class="pln">pageSize</span><span class="pun">).</span><span class="typ">ToList</span><span class="pun">();</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> query</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span></code></pre>
+
+<p>View for displaying total page count </p>
+
+<pre style="" class="lang-cs prettyprint prettyprinted"><code><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="typ">ViewBag</span><span class="pun">.</span><span class="pln">dbCount </span><span class="pun">!=</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="typ">int</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;=</span><span class="pln"> </span><span class="typ">ViewBag</span><span class="pun">.</span><span class="pln">dbCount</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++)</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+            </span><span class="pun">&lt;</span><span class="pln">ul </span><span class="kwd">class</span><span class="pun">=</span><span class="str">"pagination"</span><span class="pun">&gt;</span><span class="pln">
+                </span><span class="str">&lt;li&gt;</span><span class="lit">@Html</span><span class="pun">.</span><span class="typ">ActionLink</span><span class="pun">(</span><span class="lit">@i</span><span class="pun">.</span><span class="typ">ToString</span><span class="pun">(),</span><span class="pln"> </span><span class="str">"Index"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Grid"</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> page </span><span class="pun">=</span><span class="pln"> </span><span class="lit">@i</span><span class="pln"> </span><span class="pun">},</span><span class="kwd">null</span><span class="pun">)&lt;/</span><span class="pln">li</span><span class="pun">&gt;</span><span class="pln"> 
+            </span><span class="pun">&lt;/</span><span class="pln">ul</span><span class="pun">&gt;</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/30797087" title="short permalink to this answer" class="short-link" id="link-post-30797087">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/30797087/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2015-06-12 06:59:34Z" class="relativetime">Jun 12 '15 at 6:59</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/4894419/raghava-nalkari"><div class="gravatar-wrapper-32"><img src="c%23%20-%20How%20do%20I%20do%20pagination%20in%20ASP.NET%20MVC%20%20-%20Stack%20Overflow_files/9508bd6763e94a9373274cd868b2ea67.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/4894419/raghava-nalkari">Raghava Nalkari</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">14</span><span title="5 bronze badges"><span class="badge3"></span><span class="badgecount">5</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-30797087" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-30797087" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="35390942"></a>
+<div id="answer-35390942" class="answer" data-answerid="35390942" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="35390942" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Entity</p>
+
+<pre style="" class="lang-cs prettyprint prettyprinted"><code><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">PageEntity</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">int</span><span class="pln"> </span><span class="typ">Page</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> get</span><span class="pun">;</span><span class="pln"> </span><span class="typ">set</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+        </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">string</span><span class="pln"> </span><span class="typ">Class</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> get</span><span class="pun">;</span><span class="pln"> </span><span class="typ">set</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Pagination</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">List</span><span class="pun">&lt;</span><span class="typ">PageEntity</span><span class="pun">&gt;</span><span class="pln"> </span><span class="typ">Pages</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> get</span><span class="pun">;</span><span class="pln"> </span><span class="typ">set</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+        </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">int</span><span class="pln"> </span><span class="typ">Next</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> get</span><span class="pun">;</span><span class="pln"> </span><span class="typ">set</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+        </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">int</span><span class="pln"> </span><span class="typ">Previous</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> get</span><span class="pun">;</span><span class="pln"> </span><span class="typ">set</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+        </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">string</span><span class="pln"> </span><span class="typ">NextClass</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> get</span><span class="pun">;</span><span class="pln"> </span><span class="typ">set</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+        </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">string</span><span class="pln"> </span><span class="typ">PreviousClass</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> get</span><span class="pun">;</span><span class="pln"> </span><span class="typ">set</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+        </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">bool</span><span class="pln"> </span><span class="typ">Display</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> get</span><span class="pun">;</span><span class="pln"> </span><span class="typ">set</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+        </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">string</span><span class="pln"> </span><span class="typ">Query</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> get</span><span class="pun">;</span><span class="pln"> </span><span class="typ">set</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span></code></pre>
+
+<p>HTML</p>
+
+<pre style="" class="lang-cs prettyprint prettyprinted"><code><span class="pln">    </span><span class="str">&lt;nav&gt;</span><span class="pln">
+        </span><span class="pun">&lt;</span><span class="pln">div </span><span class="kwd">class</span><span class="pun">=</span><span class="str">"navigation"</span><span class="pln"> style</span><span class="pun">=</span><span class="str">"text-align: center"</span><span class="pun">&gt;</span><span class="pln">
+            </span><span class="pun">&lt;</span><span class="pln">ul </span><span class="kwd">class</span><span class="pun">=</span><span class="str">"pagination"</span><span class="pun">&gt;</span><span class="pln">
+                </span><span class="pun">&lt;</span><span class="pln">li </span><span class="kwd">class</span><span class="pun">=</span><span class="str">"page-item @Model.NextClass"</span><span class="pun">&gt;&lt;</span><span class="pln">a </span><span class="kwd">class</span><span class="pun">=</span><span class="str">"page-link"</span><span class="pln"> href</span><span class="pun">=</span><span class="str">"?page=@(@Model.Previous+@Model.Query)"</span><span class="pun">&gt;&amp;</span><span class="pln">laquo</span><span class="pun">;&lt;/</span><span class="pln">a</span><span class="pun">&gt;&lt;/</span><span class="pln">li</span><span class="pun">&gt;</span><span class="pln">
+                </span><span class="lit">@foreach</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">var</span><span class="pln"> item </span><span class="kwd">in</span><span class="pln"> </span><span class="lit">@Model</span><span class="pun">.</span><span class="typ">Pages</span><span class="pun">)</span><span class="pln">
+                </span><span class="pun">{</span><span class="pln">
+                    </span><span class="pun">&lt;</span><span class="pln">li </span><span class="kwd">class</span><span class="pun">=</span><span class="str">"page-item @item.Class"</span><span class="pun">&gt;&lt;</span><span class="pln">a </span><span class="kwd">class</span><span class="pun">=</span><span class="str">"page-link"</span><span class="pln"> href</span><span class="pun">=</span><span class="str">"?page=@(item.Page+@Model.Query)"</span><span class="pun">&gt;</span><span class="lit">@item</span><span class="pun">.</span><span class="typ">Page</span><span class="pun">&lt;/</span><span class="pln">a</span><span class="pun">&gt;&lt;/</span><span class="pln">li</span><span class="pun">&gt;</span><span class="pln">
+                </span><span class="pun">}</span><span class="pln">
+                </span><span class="pun">&lt;</span><span class="pln">li </span><span class="kwd">class</span><span class="pun">=</span><span class="str">"page-item @Model.NextClass"</span><span class="pun">&gt;&lt;</span><span class="pln">a </span><span class="kwd">class</span><span class="pun">=</span><span class="str">"page-link"</span><span class="pln"> href</span><span class="pun">=</span><span class="str">"?page=@(@Model.Next+@Model.Query)"</span><span class="pun">&gt;&amp;</span><span class="pln">raquo</span><span class="pun">;&lt;/</span><span class="pln">a</span><span class="pun">&gt;&lt;/</span><span class="pln">li</span><span class="pun">&gt;</span><span class="pln">
+            </span><span class="pun">&lt;/</span><span class="pln">ul</span><span class="pun">&gt;</span><span class="pln">
+        </span><span class="pun">&lt;/</span><span class="pln">div</span><span class="pun">&gt;</span><span class="pln">
+</span><span class="pun">&lt;/</span><span class="pln">nav</span><span class="pun">&gt;</span></code></pre>
+
+<p>Paging Logic</p>
+
+<pre style="" class="lang-cs prettyprint prettyprinted"><code><span class="kwd">public</span><span class="pln"> </span><span class="typ">Pagination</span><span class="pln"> </span><span class="typ">GetCategoryPaging</span><span class="pun">(</span><span class="typ">int</span><span class="pln"> currentPage</span><span class="pun">,</span><span class="pln"> </span><span class="typ">int</span><span class="pln"> recordCount</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">string</span><span class="pln"> query</span><span class="pun">)</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+            </span><span class="kwd">string</span><span class="pln"> pageClass </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">string</span><span class="pun">.</span><span class="typ">Empty</span><span class="pun">;</span><span class="pln"> </span><span class="typ">int</span><span class="pln"> pageSize </span><span class="pun">=</span><span class="pln"> </span><span class="lit">10</span><span class="pun">,</span><span class="pln"> innerCount </span><span class="pun">=</span><span class="pln"> </span><span class="lit">5</span><span class="pun">;</span><span class="pln">
+
+            </span><span class="typ">Pagination</span><span class="pln"> pagination </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Pagination</span><span class="pun">();</span><span class="pln">
+            pagination</span><span class="pun">.</span><span class="typ">Pages</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">List</span><span class="pun">&lt;</span><span class="typ">PageEntity</span><span class="pun">&gt;();</span><span class="pln">
+            pagination</span><span class="pun">.</span><span class="typ">Next</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> currentPage </span><span class="pun">+</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+            pagination</span><span class="pun">.</span><span class="typ">Previous</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">((</span><span class="pln">currentPage </span><span class="pun">-</span><span class="pln"> </span><span class="lit">1</span><span class="pun">)</span><span class="pln"> </span><span class="pun">&gt;</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln"> </span><span class="pun">?</span><span class="pln"> </span><span class="pun">(</span><span class="pln">currentPage </span><span class="pun">-</span><span class="pln"> </span><span class="lit">1</span><span class="pun">)</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+            pagination</span><span class="pun">.</span><span class="typ">Query</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> query</span><span class="pun">;</span><span class="pln">
+
+            </span><span class="typ">int</span><span class="pln"> totalPages </span><span class="pun">=</span><span class="pln"> </span><span class="pun">((</span><span class="typ">int</span><span class="pun">)</span><span class="pln">recordCount </span><span class="pun">%</span><span class="pln"> pageSize</span><span class="pun">)</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> </span><span class="pun">?</span><span class="pln"> </span><span class="pun">(</span><span class="typ">int</span><span class="pun">)</span><span class="pln">recordCount </span><span class="pun">/</span><span class="pln"> pageSize </span><span class="pun">:</span><span class="pln"> </span><span class="pun">(</span><span class="typ">int</span><span class="pun">)</span><span class="pln">recordCount </span><span class="pun">/</span><span class="pln"> pageSize </span><span class="pun">+</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+
+            </span><span class="typ">int</span><span class="pln"> loopStart </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">,</span><span class="pln"> loopCount </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+
+            </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">((</span><span class="pln">currentPage </span><span class="pun">-</span><span class="pln"> </span><span class="lit">2</span><span class="pun">)</span><span class="pln"> </span><span class="pun">&gt;</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln">
+            </span><span class="pun">{</span><span class="pln">
+                loopStart </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="pln">currentPage </span><span class="pun">-</span><span class="pln"> </span><span class="lit">2</span><span class="pun">);</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+
+            </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="typ">int</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> loopStart</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;=</span><span class="pln"> totalPages</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++)</span><span class="pln">
+            </span><span class="pun">{</span><span class="pln">
+                pagination</span><span class="pun">.</span><span class="typ">Pages</span><span class="pun">.</span><span class="typ">Add</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">PageEntity</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="typ">Page</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> i</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Class</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">string</span><span class="pun">.</span><span class="typ">Empty</span><span class="pln"> </span><span class="pun">});</span><span class="pln">
+
+                </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">loopCount </span><span class="pun">==</span><span class="pln"> innerCount</span><span class="pun">)</span><span class="pln">
+                </span><span class="pun">{</span><span class="pln"> </span><span class="kwd">break</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+
+                loopCount</span><span class="pun">++;</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+
+            </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">totalPages </span><span class="pun">&lt;=</span><span class="pln"> innerCount</span><span class="pun">)</span><span class="pln">
+            </span><span class="pun">{</span><span class="pln">
+                pagination</span><span class="pun">.</span><span class="typ">PreviousClass</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">"disabled"</span><span class="pun">;</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+
+            </span><span class="kwd">foreach</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">var</span><span class="pln"> item </span><span class="kwd">in</span><span class="pln"> pagination</span><span class="pun">.</span><span class="typ">Pages</span><span class="pun">.</span><span class="typ">Where</span><span class="pun">(</span><span class="pln">x </span><span class="pun">=&gt;</span><span class="pln"> x</span><span class="pun">.</span><span class="typ">Page</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> currentPage</span><span class="pun">))</span><span class="pln">
+            </span><span class="pun">{</span><span class="pln">
+                item</span><span class="pun">.</span><span class="typ">Class</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">"active"</span><span class="pun">;</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+
+            </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">pagination</span><span class="pun">.</span><span class="typ">Pages</span><span class="pun">.</span><span class="typ">Count</span><span class="pun">()</span><span class="pln"> </span><span class="pun">&lt;=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">)</span><span class="pln">
+            </span><span class="pun">{</span><span class="pln">
+                pagination</span><span class="pun">.</span><span class="typ">Display</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">;</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+
+            </span><span class="kwd">return</span><span class="pln"> pagination</span><span class="pun">;</span><span class="pln">
+        </span><span class="pun">}</span></code></pre>
+
+<p>Using Controller</p>
+
+<pre style="" class="lang-cs prettyprint prettyprinted"><code><span class="kwd">public</span><span class="pln"> </span><span class="typ">ActionResult</span><span class="pln"> </span><span class="typ">GetPages</span><span class="pun">()</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+            </span><span class="typ">int</span><span class="pln"> currentPage </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln"> </span><span class="kwd">string</span><span class="pln"> search </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">string</span><span class="pun">.</span><span class="typ">Empty</span><span class="pun">;</span><span class="pln">
+            </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!</span><span class="kwd">string</span><span class="pun">.</span><span class="typ">IsNullOrEmpty</span><span class="pun">(</span><span class="typ">Request</span><span class="pun">.</span><span class="typ">QueryString</span><span class="pun">[</span><span class="str">"page"</span><span class="pun">]))</span><span class="pln">
+            </span><span class="pun">{</span><span class="pln">
+                currentPage </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Convert</span><span class="pun">.</span><span class="typ">ToInt32</span><span class="pun">(</span><span class="typ">Request</span><span class="pun">.</span><span class="typ">QueryString</span><span class="pun">[</span><span class="str">"page"</span><span class="pun">]);</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+
+            </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!</span><span class="kwd">string</span><span class="pun">.</span><span class="typ">IsNullOrEmpty</span><span class="pun">(</span><span class="typ">Request</span><span class="pun">.</span><span class="typ">QueryString</span><span class="pun">[</span><span class="str">"q"</span><span class="pun">]))</span><span class="pln">
+            </span><span class="pun">{</span><span class="pln">
+                search </span><span class="pun">=</span><span class="pln"> </span><span class="str">"&amp;q="</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="typ">Request</span><span class="pun">.</span><span class="typ">QueryString</span><span class="pun">[</span><span class="str">"q"</span><span class="pun">];</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+
+            </span><span class="com">/* to be Fetched from database using count */</span><span class="pln">
+            </span><span class="typ">int</span><span class="pln"> recordCount </span><span class="pun">=</span><span class="pln"> </span><span class="lit">100</span><span class="pun">;</span><span class="pln">
+
+            </span><span class="typ">Place</span><span class="pln"> place </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Place</span><span class="pun">();</span><span class="pln">
+            </span><span class="typ">Pagination</span><span class="pln"> pagination </span><span class="pun">=</span><span class="pln"> place</span><span class="pun">.</span><span class="typ">GetCategoryPaging</span><span class="pun">(</span><span class="pln">currentPage</span><span class="pun">,</span><span class="pln"> recordCount</span><span class="pun">,</span><span class="pln"> search</span><span class="pun">);</span><span class="pln">
+
+            </span><span class="kwd">return</span><span class="pln"> </span><span class="typ">PartialView</span><span class="pun">(</span><span class="str">"Controls/_Pagination"</span><span class="pun">,</span><span class="pln"> pagination</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/35390942" title="short permalink to this answer" class="short-link" id="link-post-35390942">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/35390942/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2016-02-14 10:57:05Z" class="relativetime">Feb 14 at 10:57</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/5924663/kishu"><div class="gravatar-wrapper-32"><img src="c%23%20-%20How%20do%20I%20do%20pagination%20in%20ASP.NET%20MVC%20%20-%20Stack%20Overflow_files/photo.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/5924663/kishu">Kishu</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1</span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-35390942" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-35390942" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="/questions/446196/answer/submit" method="post" class="post-form">
+						    <input id="post-id" value="446196" type="hidden">
+                            <input id="qualityBanWarningShown" name="qualityBanWarningShown" value="false" type="hidden">
+                            <input name="referrer" value="https://www.google.com.bd/" type="hidden">
+							<h2 class="space">Your Answer</h2>
+
+
+            <script>
+            StackExchange.ifUsing("editor", function () {
+                StackExchange.using("externalEditor", function () {
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.init();
+                    });
+                });
+            }, "code-snippets");
+        </script>
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+                // Have to fire editor after snippets, if snippets enabled
+                if (StackExchange.settings.snippets.snippetsEnabled) {
+                    StackExchange.using("snippets", function() {
+                        createEditor();
+                    });
+                }
+                else {
+                    createEditor();
+                }
+            });
+
+            function createEditor() {
+                prepareEditor({
+                    heartbeatType: 'answer',
+                convertImagesToLinks: true,
+                reputationToPostImages: 10,
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                    ,immediatelyShowMarkdownHelp:true
+                    });
+                
+
+        }
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor js-post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li style="left: 0px;" class="wmd-button" id="wmd-bold-button"><span style="background-position: 0px -20px;"></span></li><li style="left: 25px;" class="wmd-button" id="wmd-italic-button"><span style="background-position: -20px -20px;"></span></li><li style="left: 50px;" class="wmd-spacer" id="wmd-spacer1"><span style="background-position: -40px -20px;"></span></li><li style="left: 75px;" class="wmd-button" id="wmd-link-button"><span style="background-position: -40px -20px;"></span></li><li style="left: 100px;" class="wmd-button" id="wmd-quote-button"><span style="background-position: -60px -20px;"></span></li><li style="left: 125px;" class="wmd-button" id="wmd-code-button"><span style="background-position: -80px -20px;"></span></li><li style="left: 150px;" class="wmd-button" id="wmd-image-button"><span style="background-position: -100px -20px;"></span></li><li style="left: 175px;" class="wmd-spacer" id="wmd-spacer2"><span style="background-position: -120px -20px;"></span></li><li style="left: 200px;" class="wmd-button" id="wmd-olist-button"><span style="background-position: -120px -20px;"></span></li><li style="left: 225px;" class="wmd-button" id="wmd-ulist-button"><span style="background-position: -140px -20px;"></span></li><li style="left: 250px;" class="wmd-button" id="wmd-heading-button"><span style="background-position: -160px -20px;"></span></li><li style="left: 275px;" class="wmd-button" id="wmd-hr-button"><span style="background-position: -180px -20px;"></span></li><li style="left: 300px;" class="wmd-spacer" id="wmd-spacer3"><span style="background-position: -200px -20px;"></span></li><li style="left: 325px;" class="wmd-button" id="wmd-undo-button"><span style="background-position: -200px -20px;"></span></li><li style="left: 350px;" class="wmd-button" id="wmd-redo-button"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" value="41569c366e39934c15c7afd05b59f5b2" type="hidden">
+        <input id="author" name="author" type="text">
+    </div>
+
+
+
+</div>
+							<div style="position: relative;">
+								
+								            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://stackoverflow.com/users/login?ssrc=question_page&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f446196%2fhow-do-i-do-pagination-in-asp-net-mvc%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Email and Password</span></p>
+                        </div>
+                    </div>
+                    <input name="manual-openid" class="manual-openid" type="hidden">
+                    <input name="use-facebook" class="use-facebook" value="false" type="hidden">
+                    <input name="use-google" class="use-google" value="false" type="hidden">
+                    <input class="submit-openid" value="Submit" style="display:none" type="button">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" size="30" maxlength="30" tabindex="105" type="text">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" size="30" maxlength="100" tabindex="106" placeholder="required, but never shown" type="email">
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', 'http%3a%2f%2fstackoverflow.com%2fquestions%2f446196%2fhow-do-i-do-pagination-in-asp-net-mvc%23new-answer', 'question_page');
+                    }
+                );
+            </script>
+            <noscript>
+                        <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown" />
+                </div>
+            </td>
+        </tr>
+        </table>
+    </div>
+
+            </noscript>
+
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" value="Post Your Answer" tabindex="110" type="submit">
+									<a href="#" class="btn-clear discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input name="legalLinksShown" value="1" type="hidden">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/c%23" class="post-tag" title="show questions tagged 'c#'" rel="tag">c#</a> <a href="http://stackoverflow.com/questions/tagged/asp.net" class="post-tag" title="show questions tagged 'asp.net'" rel="tag">asp.net</a> <a href="http://stackoverflow.com/questions/tagged/asp.net-mvc" class="post-tag" title="show questions tagged 'asp.net-mvc'" rel="tag">asp.net-mvc</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2009-01-15 09:50:20Z"><b>7 years ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>60693 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/446196/how-do-i-do-pagination-in-asp-net-mvc?lastactivity" class="lastactivity-link" title="2016-02-14 10:57:05Z">6 months ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+			<div class="module community-bulletin" data-tracker="cb=1">
+    <div class="related">
+                <div class="bulletin-title">
+                    Blog
+                </div>
+                <hr>
+    <div class="spacer">
+        <div class="bulletin-item-type">
+                <a href="http://blog.stackoverflow.com/2016/08/podcast-72-jay-doesnt-get-a-raise-in-this-podcast/?cb=1" class="question-hyperlink">
+<div class="favicon favicon-stackexchangemeta" title="Meta Stack Exchange"></div>                </a>
+            </div>
+                <div class="bulletin-item-content">
+                    <a href="http://blog.stackoverflow.com/2016/08/podcast-72-jay-doesnt-get-a-raise-in-this-podcast/?cb=1" class="question-hyperlink">Podcast #72 — Jay Doesn’t Get a Raise in This Podcast</a>
+                </div>
+                <br class="cbt">
+            </div>
+    </div>
+</div>			
+			<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk1576296036",[5,17,2221]).setZone(45); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk1576296036"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NSwiYnQiOjAsImNtIjo0NzE0OTMsImNoIjoxMTc4LCJjayI6e30sImNyIjoxNjI3Nzc3LCJkaSI6ImUxNjY5MTJjNzJjMDQwM2FiYjM0ZDJhNTVlNjZkZTQ2IiwiZG0iOjEsImZjIjoxOTI0NDU2LCJmbCI6MjE0MjMxMiwiaXAiOiI0My4yNDUuMjM1LjQ2Iiwia3ciOiJjIyxhc3AubmV0LGFzcC5uZXQtbXZjIiwibnciOjIyLCJwYyI6MCwiZWMiOjAsInByIjoxNjA0LCJydCI6MSwicmYiOiJodHRwczovL3d3dy5nb29nbGUuY29tLmJkLyIsInN0Ijo4Mjc3LCJ1ayI6InVlMS00YWRmNmI0NDJiNjY0NzUwOGNlNGE5MDM4ZDMxMjYwMyIsInpuIjo0NSwidHMiOjE0NzIxMTEyNzQ0NDgsImJmIjp0cnVlLCJwbiI6ImFkemVyazE1NzYyOTYwMzYiLCJ1ciI6Imh0dHA6Ly9zdGFja292ZXJmbG93LmNvbS9qb2JzL3JlbW90ZT91dG1fc291cmNlPXdlYnNpdGUmdXRtX21lZGl1bT1iYW5uZXImdXRtX2NvbnRlbnQ9bXB1XzUmdXRtX2NhbXBhaWduPWhvdXNlX2Fkc19ST1NfU08ifQ&amp;s=AFJgBTwRUKB0cs6kdF6Co8DRJvY" rel="nofollow" target="_blank" title=""><img src="c%23%20-%20How%20do%20I%20do%20pagination%20in%20ASP.NET%20MVC%20%20-%20Stack%20Overflow_files/9ac90f1573054823a45bfca9f5aa5738.png" title="" alt="" height="250" border="0" width="300"></a><img src="c%23%20-%20How%20do%20I%20do%20pagination%20in%20ASP.NET%20MVC%20%20-%20Stack%20Overflow_files/i_002.gif" style="position:absolute;" height="0px" border="0" width="0px"><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input value="12" name="downvoteReason" type="radio">Uninteresting</label></li><li><label><input value="13" name="downvoteReason" type="radio">Misleading</label></li><li><label><input value="14" name="downvoteReason" type="radio">Offensive</label></li><li><label><input value="15" name="downvoteReason" type="radio">Repetitive</label></li><li><label><input value="16" name="downvoteReason" type="radio">Other</label></li></ul><a href="#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div></div>
+            <div id="hireme"></div>
+        <script>
+;"use strict";var _typeof=typeof Symbol=="function"&&typeof Symbol.iterator=="symbol"?function(n){return typeof n}:function(n){return n&&typeof Symbol=="function"&&n.constructor===Symbol?"symbol":typeof n};(function(n){try{var t=function(){var r,t,i;if(typeof[].indexOf!="function")return{v:void 0};if(r=["stackoverflow.com","serverfault.com","careers.stackoverflow.com","blog.codinghorror.com","joelonsoftware.com","www.joelonsoftware.com"],r[0]!=="*"&&r.indexOf(location.hostname)===-1)return{v:void 0};t=window;t.clc_opts=n;n.autoload&&(t.clc_init=t.clc_init||[],t.clc_init.push(function(){return t.clc.load()}));i=document.createElement("script");i.async=!0;i.src=n.lib;document.body.appendChild(i)}();if((typeof t=="undefined"?"undefined":_typeof(t))==="object")return t.v}catch(i){}}).call(null, {"az":true,"kt":2000,"tto":true,"autoload":true,"d":{"sb":["hireme","clc-sb"],"tlb":["careers1","clc-tlb"],"mlb":["careers3","clc-mlb"]},"allowed":["stackoverflow.com","serverfault.com","careers.stackoverflow.com","blog.codinghorror.com","joelonsoftware.com","www.joelonsoftware.com"],"h":"clc.stackoverflow.com","u":"//clc.stackoverflow.com/p.js","lib":"//cdn.sstatic.net/clc/clc.min.js?v=84432a71b7a2"});        </script>
+			
+
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/2093890?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">5</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/2093890/asp-net-mvc-paginated-list-example?noredirect=1&amp;lq=1" class="question-hyperlink">ASP.NET MVC Paginated List Example</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/23528684?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">2</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/23528684/mvc-how-to-add-pagination-for-large-result-sets?noredirect=1&amp;lq=1" class="question-hyperlink">MVC how to add pagination for large result sets</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/3466463?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">2</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/3466463/pagination-in-mvc?noredirect=1&amp;lq=1" class="question-hyperlink">Pagination In MVC</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/15744826?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">10</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/15744826/open-source-alternatives-to-telerik-grid-for-asp-net-mvc?noredirect=1&amp;lq=1" class="question-hyperlink">Open source alternatives to telerik grid for asp.net mvc?</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/1875298?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">1</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/1875298/asp-net-mvc-paging-setting-prev-next-page-values-in-actionlinks?noredirect=1&amp;lq=1" class="question-hyperlink">asp.net mvc: Paging - Setting Prev/Next page values in ActionLinks?</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/17184018?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">1</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/17184018/how-to-load-millions-of-records-in-asp-net-mvc-3-or-4-to-client-side-slow-issu?noredirect=1&amp;lq=1" class="question-hyperlink">How to load millions of records in asp.net mvc 3 or 4 to client side. (slow issue)</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/3709438?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/3709438/ajax-issue-delay-in-getting-data-from-web-service-using-innerhtml-please-guide?noredirect=1&amp;lq=1" class="question-hyperlink">Ajax issue: delay in getting data from web service using innerHTML, please guide</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/24265158?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">2</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/24265158/how-to-avoid-db-call-during-pagination?noredirect=1&amp;lq=1" class="question-hyperlink">How to avoid DB call during pagination</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/4342759?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/4342759/how-to-avoid-losing-the-state-of-controls-in-asp-net-mvc?noredirect=1&amp;lq=1" class="question-hyperlink">How to Avoid Losing the State of Controls in ASP.NET MVC</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/15097981?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/15097981/dynamically-load-bunches-of-data-from-sql-database-using-mvc-4-and-c-sharp?noredirect=1&amp;lq=1" class="question-hyperlink">Dynamically load bunches of data from sql database using MVC 4 and C#</a>
+</div>					<div class="spacer more">
+				<a href="http://stackoverflow.com/questions/linked/446196?lq=1">see more linked questions…</a>
+			</div>
+	</div>
+</div>
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/78548?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">93</div></a><a href="http://stackoverflow.com/questions/78548/passing-data-to-master-page-in-asp-net-mvc?rq=1" class="question-hyperlink">Passing data to Master Page in ASP.NET MVC</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/383192?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted large">419</div></a><a href="http://stackoverflow.com/questions/383192/compile-views-in-asp-net-mvc?rq=1" class="question-hyperlink">Compile Views in ASP.NET MVC</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/388483?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted large">447</div></a><a href="http://stackoverflow.com/questions/388483/how-do-you-create-a-dropdownlist-from-an-enum-in-asp-net-mvc?rq=1" class="question-hyperlink">How do you create a dropdownlist from an enum in ASP.NET MVC?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/442704?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted large">501</div></a><a href="http://stackoverflow.com/questions/442704/how-do-you-handle-multiple-submit-buttons-in-asp-net-mvc-framework?rq=1" class="question-hyperlink">How do you handle multiple submit buttons in ASP.NET MVC Framework?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/799511?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted large">104</div></a><a href="http://stackoverflow.com/questions/799511/how-to-simulate-server-transfer-in-asp-net-mvc?rq=1" class="question-hyperlink">How to simulate Server.Transfer in ASP.NET MVC?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/1064271?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted large">477</div></a><a href="http://stackoverflow.com/questions/1064271/asp-net-mvc-set-custom-iidentity-or-iprincipal?rq=1" class="question-hyperlink">ASP.NET MVC - Set custom IIdentity or IPrincipal</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/1288046?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted large">170</div></a><a href="http://stackoverflow.com/questions/1288046/how-can-i-get-my-webapps-base-url-in-asp-net-mvc?rq=1" class="question-hyperlink">How can I get my webapp's base URL in ASP.NET MVC?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/1677905?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">1</div></a><a href="http://stackoverflow.com/questions/1677905/asp-net-mvc-search-form-with-pagination?rq=1" class="question-hyperlink">ASP.NET MVC Search Form with Pagination</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/5193842?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted large">621</div></a><a href="http://stackoverflow.com/questions/5193842/file-upload-asp-net-mvc-3-0?rq=1" class="question-hyperlink">File Upload ASP.NET MVC 3.0</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/32909645?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="http://stackoverflow.com/questions/32909645/asp-net-mvc-pagination-based-on-query?rq=1" class="question-hyperlink">asp.net MVC pagination based on query</a></div>
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="http://worldbuilding.stackexchange.com/questions/52573/economic-reasons-to-put-people-on-mars" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Economic reasons to put people on Mars?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-gamedev" title="Game Development Stack Exchange"></div><a href="http://gamedev.stackexchange.com/questions/128775/how-to-avoid-players-getting-lost-in-and-or-bored-by-the-meta-game" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:53 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to avoid players getting lost in and/or bored by the meta game?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="http://worldbuilding.stackexchange.com/questions/52720/what-recreational-drugs-can-be-produced-with-limited-resources-and-technology" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What recreational drugs can be produced with limited resources and technology?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="http://unix.stackexchange.com/questions/305563/cat-special-characters-meaning" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    cat special characters meaning
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="http://travel.stackexchange.com/questions/77329/do-airlines-have-spare-backup-planes-just-in-case-of-an-emergency" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Do airlines have spare/backup planes just in case of an emergency?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/91023/smallest-palindrome-divisible-by-the-input" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Smallest palindrome divisible by the input
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/90916/how-does-math-work-in-anastasiyas-world" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How does math work in Anastasiya's world?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-superuser" title="Super User"></div><a href="http://superuser.com/questions/1117101/is-permitrootlogin-based-on-uid-or-user-name" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:3 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is PermitRootLogin based on UID or user name?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/134767/how-can-isps-handle-ddos-attacks" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can ISPs handle DDoS attacks?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/344529/keep-the-bed-from-running-away-equivalent-idiom-in-english" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    "Keep the bed from running away"; equivalent idiom in English?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/75595/should-i-warn-colleagues-of-another-colleagues-sexism" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Should I warn colleagues of another colleague's sexism?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/138723/why-are-there-so-few-volunteers-in-the-hunger-games" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why are there so few volunteers in the Hunger Games?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-puzzling" title="Puzzling Stack Exchange"></div><a href="http://puzzling.stackexchange.com/questions/41381/what-is-an-introspective-word" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is an Introspective Word™?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-ell" title="English Language Learners Stack Exchange"></div><a href="http://ell.stackexchange.com/questions/101577/do-some-people-call-all-horses-pony-and-if-so-why" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:481 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Do some people call all horses “Pony” and if so, why?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-money" title="Personal Finance &amp; Money Stack Exchange"></div><a href="http://money.stackexchange.com/questions/69927/if-bernie-madoff-had-invested-in-berkshire-hathaway-would-the-ponzi-actually-ha" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:93 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    If Bernie Madoff had invested in Berkshire Hathaway, would the ponzi actually have succeeded?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-gaming" title="Arqade"></div><a href="http://gaming.stackexchange.com/questions/283152/why-would-a-gym-ever-be-left-undefended" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:41 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why would a gym ever be left undefended?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-astronomy" title="Astronomy Stack Exchange"></div><a href="http://astronomy.stackexchange.com/questions/18039/is-the-sun-visible-from-proxima-centauri-for-human-eyes" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:514 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is the Sun visible from Proxima Centauri for human eyes?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="http://unix.stackexchange.com/questions/305549/processes-in-background-without" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Processes in background without “&amp;”
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-electronics" title="Electrical Engineering Stack Exchange"></div><a href="http://electronics.stackexchange.com/questions/253607/why-weights-on-cables-between-utility-poles" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:135 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why weights on cables between utility poles?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-superuser" title="Super User"></div><a href="http://superuser.com/questions/1117320/save-the-output-of-command-in-file-ms-dos-1-x" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:3 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Save the output of command in file MS-DOS 1.x
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-music" title="Music: Practice &amp; Theory Stack Exchange"></div><a href="http://music.stackexchange.com/questions/48270/why-call-a-major-second-a-diminished-third" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:240 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why call a major second a diminished third?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="http://worldbuilding.stackexchange.com/questions/52780/in-a-world-without-corpses-why-build-burial-halls" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    In a world without corpses, why build "burial halls"?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="http://tex.stackexchange.com/questions/326237/how-to-properly-typeset-math-intervals" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to properly typeset math intervals
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/343917/what-do-you-call-a-person-who-uses-vulgar-words-too-often" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What do you call a person who uses vulgar words too often?
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/446196" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/446196/ivc/ce26');});
+</script>
+<noscript>
+    <div><img src="/posts/446196/ivc/ce26" class="dno" alt="" width="0" height="0"></div>
+</noscript><div style="display:none" id="prettify-lang">lang-cs</div></div>
+
+
+        </div>
+    </div><script src="c%23%20-%20How%20do%20I%20do%20pagination%20in%20ASP.NET%20MVC%20%20-%20Stack%20Overflow_files/clc.js" async=""></script>
+    <div id="footer" class="categories">
+        <div class="footerwrap">            
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                    <a href="http://stackoverflow.com/company/about">about us</a>
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                    <a href="http://blog.stackoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackoverflow.com/company/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick='StackExchange.switchMobile("on")'>mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                        <li><a href="http://salesforce.stackexchange.com/" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                        <li><a href="http://expressionengine.stackexchange.com/" title="administrators, end users, developers and designers for ExpressionEngine® CMS">ExpressionEngine® Answers</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (13)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://movies.stackexchange.com/" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (9)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                        <li><a href="http://chemistry.stackexchange.com/" title="scientists, academics, teachers and students">Chemistry</a></li>
+                        <li><a href="http://biology.stackexchange.com/" title="biology researchers, academics, and students">Biology</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (5)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+            <div id="copyright">
+                site design / logo © 2016 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2016.8.24.3921
+            </div>
+                </div>
+    </div>
+    <noscript>
+        <div id="noscript-warning">Stack Overflow works best with JavaScript enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"></div>
+    </noscript>
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    
+    
+        
+        ados.run.push(function () {
+                setTimeout(function () { $("#adzerk-user-match").remove(); }, window.AUMIframeDone ? 0 : 2000);
+                ados_setKeywords('c%23,asp.net,asp.net-mvc');; ados_load();
+        });   
+        
+</script>
+
+    <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+            
+            ga('create', 'UA-5620270-1');
+            ga('set', 'dimension2', '|c#|asp.net|asp.net-mvc|');             ga('send', 'pageview');
+        
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+                qc.async = true;
+                qc.src = (ssl ? 'https://secure' : 'http://edge') + '.quantserve.com/quant.js';
+                s.parentNode.insertBefore(qc, s);
+                _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+                            var sc=document.createElement('script');
+                sc.async=true;
+                sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+                s.parentNode.insertBefore(sc, s);
+                _comscore.push({ c1: "2", c2: "17440561" });
+        })();
+
+    </script>
+        
+    
+            <script type="text/javascript">
+                
+                (function(appendChild) {
+                    Node.prototype.appendChild = function() {
+                        var parent = this;
+                        var newNode = arguments[0];
+                        if (parent.nodeName === 'HEAD'
+                            && newNode
+                            && newNode.nodeName === 'SCRIPT'
+                            && newNode.src) {
+                            
+                            window.setTimeout(function() {
+                                var result = newNode.src.match(/^https:\/\/maps\.googleapis\.com\/maps\/api\/place\/js\/(\w+)Service\./i) || [];
+                                var service = result[1];
+                                if (service) {
+                                    if (service === 'Autocompletion') service =  2;
+                                    else if (service === 'Place') service = 1;
+                                    else service = 0;
+                                    StackExchange.using('gps', function() {
+                                        StackExchange.gps.track('google_maps_places_api.call', { service: service });
+                                    });
+                                }
+                            }, 0);
+                        }
+                        return appendChild.apply(this, arguments);
+                    };
+                })(Node.prototype.appendChild);
+            </script>
+    
+<img style="display: none;" src="c%23%20-%20How%20do%20I%20do%20pagination%20in%20ASP.NET%20MVC%20%20-%20Stack%20Overflow_files/to.gif"></body></html>

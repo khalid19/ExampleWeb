@@ -1,0 +1,61 @@
+.str{color:#a31515;}.kwd{color:#00f;}.com{color:green;}.typ{color:#2b91af;}.lit{color:red;}.pun,.opn,.clo{color:#000;}.tag{color:#a31515;}.atn{color:red;}.atv{color:#00f;}.dec{color:purple;}.var{color:#000;}.fun{color:#000;}
+}
+
+@media print,projection {
+    .str {
+    }
+
+    .kwd {
+        font-weight: bold;
+    }
+
+    .com {
+        font-style: italic;
+    }
+
+    .typ {
+        font-weight: bold;
+    }
+
+    .lit {
+    }
+
+    .pun, .opn, .clo {
+    }
+
+    .tag {
+        font-weight: bold;
+    }
+
+    .atn {
+    }
+
+    .atv {
+    }
+}
+
+ol.linenums {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+li.L0, li.L1, li.L2, li.L3, li.L5, li.L6, li.L7, li.L8 {
+    list-style-type: none;
+}
+
+li.L1, li.L3, li.L5, li.L7, li.L9 {
+    background: #eee;
+}
+
+pre.prettyprint {
+    padding: 10px 10px 10px 20px;
+    background-color:white;
+    border-width:10px;
+    border:5px solid #f1f1f1;
+    border-radius:5px;
+    border-left:5px solid #28c10a;
+}
+code {
+    font-family: "Consolas",monospace;
+    color: #800039;
+}

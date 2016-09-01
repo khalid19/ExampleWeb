@@ -1,0 +1,1810 @@
+<!DOCTYPE html>
+<html class=" js no-flexbox flexbox-legacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en"><head><style type="text/css">.gm-style .gm-style-mtc label,.gm-style .gm-style-mtc div{font-weight:400}</style><style type="text/css">.gm-style-pbc{transition:opacity ease-in-out;background-color:black;text-align:center}.gm-style-pbt{font-size:22px;color:white;font-family:Roboto,Arial,sans-serif;position:relative;margin:0;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}</style><link href="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/css_003.css" rel="stylesheet" type="text/css"><style type="text/css">.gm-style .gm-style-cc span,.gm-style .gm-style-cc a,.gm-style .gm-style-mtc div{font-size:10px}</style><style type="text/css">@media print {  .gm-style .gmnoprint, .gmnoprint {    display:none  }}@media screen {  .gm-style .gmnoscreen, .gmnoscreen {    display:none  }}</style><style type="text/css">.gm-style{font-family:Roboto,Arial,sans-serif;font-size:11px;font-weight:400;text-decoration:none}.gm-style img{max-width:none}</style><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+    <link rel="author" href="https://plus.google.com/u/0/+souravmondal45">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="content-language" content="en_us"> 
+    <meta name="language" content="english">
+    <meta name="Classification" content="ASP.Net tutorial, WEB API, AngularJS ">
+    <meta name="subject" content="ASP.Net tutorial, WEB API, AngularJS ">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Dotnet Awesome"> 
+    <meta name="revisit-after" content="7 days"> 
+    <meta name="googlebot" content="noodp">
+    <meta name="slurp" content="noodp">
+    <meta name="bingbot" content="noodp">   
+    <meta name="google-site-verification" content="TKP8ZTlh6o9af6Fj5bezrRj3ZGiCN_TQkdmWq0GiE04">
+<link href="https://plus.google.com/+souravmondal45" rel="publisher">
+    <meta http-equiv="Cache-control" content="private">
+<script style="" src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/analytics.js" async=""></script><script src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/sdk.js" id="facebook-jssdk"></script><script src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/ca-pub-4305827917653072.js"></script><script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Person",
+  "name" : "Sourav Mondal",
+  "url" : "http://dotnetawesome.com",
+  "sameAs" : [
+    "https://www.facebook.com/dotnetawesome",
+    "https://in.linkedin.com/pub/sourav-mondal/36/895/a22",
+    "https://plus.google.com/u/0/+souravmondal45"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "WebSite",
+  "url": "http://dotnetawesome.com",
+  "name":"Dotnet Awesome",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "http://dotnetawesome.com/SearchResult?q={q}",
+    "query-input": "required name=q"
+  }
+}
+</script>
+
+
+    <meta name="keywords" content="Google map, gmap, angularJS, angular google map,">
+    <meta name="description" content="In one of the previous article, we have seen How to display google map in asp.net application. Today I am going to explain how to create Google Maps Sample App with AngularJS and asp.net MVC.">
+    <title>Creating Google Maps Sample App with AngularJS and asp.net MVC</title>
+    <link href="http://demo.dotnetawesome.com/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    
+
+    
+   <link href="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/css_002.css" rel="stylesheet">
+   
+
+<script type="text/javascript" src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/modernizr"></script>
+<script type="text/javascript" src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/jquery"></script>
+
+    <link href="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/bootstrap.css" rel="stylesheet">
+    <script src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/bootstrap.js"></script>
+    
+    <script src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/jquery.js"></script>
+    <script type="text/javascript">
+        //stLight.options({ publisher: "cf296731-9fa8-4b49-b94f-fb801b0728d5", shorten: false });
+    </script>
+
+<link href="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/prettify.css" type="text/css" rel="stylesheet"><script data-timestamp="1472092188719" src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/embed.js"></script><script src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/count.js" type="text/javascript" async=""></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f9;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29487d;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f9;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v2/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style><script charset="UTF-8" async="" src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/alfie.js"></script><script src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/common.js" charset="UTF-8" type="text/javascript"></script><script src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/map.js" charset="UTF-8" type="text/javascript"></script><script src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/util.js" charset="UTF-8" type="text/javascript"></script><script src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/onion.js" charset="UTF-8" type="text/javascript"></script><script src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/stats.js" charset="UTF-8" type="text/javascript"></script><script src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/controls.js" charset="UTF-8" type="text/javascript"></script><script src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/marker.js" charset="UTF-8" type="text/javascript"></script></head>
+<body>
+
+
+
+    <div>
+        
+        <!--Donut#62F22743F7303C6FB6F6F0DFC0FB2C7B719D36674D185CA26E83A3D535D699960071681B0EFB3E4BCDF61E54BB1837F340505627D59BA4FAE0E1F58AC33DD4C26A07630F66805BE862C46DD17716B113FFF3BC1AC7283DD12A0ADF6718A37A18E259020FE0CF78748FE920C283E0CEE59C00EC58480CEF2E7F4039340F391F2E7F7D2D5F51534C5F2B368DB0B5DE0EBD30249EF942C16C059B7B6276782AB77E7605AA462B27B2AC5B6933D237115E0D65292FCEF965585EEAEB636FC88229189F9CCDEFA95E865169EB5058C2C9E11D73D6A12DB6293D2D1DE237FF0A6B04A759AD7F62674303072942FBD1278E17A0DFADC1379789846784467C0169CEB5DB282FFC2237D1E9BC77F03C88C1201C1F7009575CF542DDFA220ECF446DB21DB1B34A159D07A7C529F0BC5CA32540587933EB3029408653AEF7EE98B8E79EE05599323FDE412F707270D3F12975DA3A78CCA6C40EC0122AB2BFB68F7A4826187FD4B327CB3A4C2C4343455665E11FF39EE4D17F9F017D45789ED4852F56976CECFC2E257C#-->
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="http://demo.dotnetawesome.com/" class="navbar-brand"> Dotnet Awesome</a>
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-main">
+                <ul class="nav navbar-nav">
+                        <li><a href="http://demo.dotnetawesome.com/" title="Home">Home</a></li>
+                        <li><a href="http://demo.dotnetawesome.com/About" title="About">About</a></li>
+                        <li><a href="http://demo.dotnetawesome.com/Question" title="Question And Answare">Q&amp;A</a></li>
+                        <li><a href="http://demo.dotnetawesome.com/Sitemap" title="Sitemap">Sitemap</a></li>
+                        <li><a href="http://demo.dotnetawesome.com/Contact" title="Contact">Contact</a></li>
+                        <li><a href="http://demo.dotnetawesome.com/mvc/mycontactbook" title="Project">Project</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                   
+                        
+                            <li><a href="http://demo.dotnetawesome.com/login?retUrl=/angularjs/creating-google-map-app-with-angularjs-mvc">Log in</a></li>
+                            <li> <a href="http://demo.dotnetawesome.com/login?retUrl=/angularjs/creating-google-map-app-with-angularjs-mvc">Register</a> </li>        
+                        
+                </ul>
+            </div>
+        </div>
+    </div>
+
+<!--EndDonut-->
+        <div class="container">
+            <div class="page-header" id="banner">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h1></h1>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    
+                    <div style="margin-top: 20px; padding-left: 15px;">
+<!--Donut#25694E0BFFEE39CDC57F6C4D33E29937661A71B65B2099313624C9F4B26C1857C9C60F1A6EFEC392A8AC1DEEFCB3420DAFF4D3C006733C8A2134328E9BA03087FF355F053DB662C33F2EE6E0DDF080A2FE584C4840FF759A478E3740E7C62ED56BA6DB59FA320228C573BE401CE1A434CE52D3371B9A50BAF74504D9D2C5D565C85B26EC431FE03F9E7666E20B662532A58C45A2C13514229D82E8DF4C92DEDCFF6FF330F4663447EA87A367BE50D6DE9105A550158FA6FC74A41B33D736C1C537F99CADEBC44DEDF97A7F15608BCF0C65D53FEB083D8A96910193364CEFF914D1758CA9F430F41D004FFA02A2125AA346C22AABF65A9BB8C229A2466C32C794ACB38EB0E52E9E59148CD238BADA7A1802364357A3893EC066BB88CC97B6B43693691A3E62759F0BBD1EAE82C8B73A07DB50709E2015A6C4C04F795A021D0FCD1C77C96C0B77BC48394FBACE8CD67F026AD4C06F8CC9E4BD44DDCF7E2E8AB9EDC86FBFF79C7EFB4878EF505F3AD6B2EF0CBF8446D2A42DAB824F0028A97592737659ACCE#-->
+<!--EndDonut-->
+                    </div>
+                </div>
+            </div>
+            <div class="page-body">
+                <div class="row">
+                    <div class="col-md-8 col-sm-7">
+                        
+
+<div class="titleArea">
+    <h1>Creating Google Maps Sample App with AngularJS and asp.net MVC</h1>    
+</div>
+<div class="description">
+    <span id="description">
+        This is 10th part of this series about AngularJS.&nbsp;<a data-blogger-escaped-target="_blank" href="http://demo.dotnetawesome.com/angularjs">Here</a>&nbsp;I have explained a little about AngularJS and What we will learn in this&nbsp;series&nbsp;&nbsp;part by part.&nbsp;<div>In one of the previous article, we have seen&nbsp;<a href="http://demo.dotnetawesome.com/asp/how-to-show-markers-location-in-google-map-from-database">How to display google map in asp.net application</a>. Today I am going to explain how to create Google Maps Sample App with AngularJS and asp.net MVC.</div>
+<link rel="canonical" href="http://dotnetawesome.com/angularjs/creating-google-map-app-with-angularjs-mvc">
+
+    </span> 
+</div>
+<div class="col-md-12" style="margin-bottom: 10px;padding:0px">
+    <script async="" src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/adsbygoogle.js"></script>
+    <!-- Site_Res_TitleDescription -->
+    <ins data-adsbygoogle-status="done" class="adsbygoogle" style="display: block; height: 90px;" data-ad-client="ca-pub-4305827917653072" data-ad-slot="1014953345" data-ad-format="auto"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:750px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:750px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" frameborder="0" height="90" width="750"></iframe></ins></ins></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+<div class="demoArea ng-scope" ng-app="myApp">
+   <div class="ng-scope" ng-controller="mapController">
+       
+    <div class="locations">
+        <ul>
+            <!-- ngRepeat: l in locations --><li class="ng-binding ng-scope" ng-repeat="l in locations" ng-click="ShowLocation(l.LocationID)">Howrah Bridge</li><!-- end ngRepeat: l in locations --><li class="ng-binding ng-scope" ng-repeat="l in locations" ng-click="ShowLocation(l.LocationID)">Indian Museum</li><!-- end ngRepeat: l in locations --><li class="ng-binding ng-scope" ng-repeat="l in locations" ng-click="ShowLocation(l.LocationID)">Victoria Memorial</li><!-- end ngRepeat: l in locations -->
+        </ul>
+    </div>
+    <div class="maps">
+        <!-- Add directive code (gmap directive) for show map and markers-->
+        <ui-gmap-google-map class="ng-isolate-scope angular-google-map" center="map.center" zoom="map.zoom"><div class="angular-google-map"><div style="position: relative; background-color: rgb(229, 227, 223); overflow: hidden;" class="angular-google-map-container"><div class="gm-style" style="position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; z-index: 0;"><div style="position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; z-index: 0; cursor: url(&quot;https://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default;"><div style="position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%; will-change: transform;"><div style="position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div aria-hidden="true" style="position: absolute; left: 0px; top: 0px; z-index: 1; visibility: inherit;"><div style="width: 256px; height: 256px; position: absolute; left: 119px; top: -18px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 119px; top: 238px;"></div><div style="width: 256px; height: 256px; position: absolute; left: -137px; top: -18px;"></div><div style="width: 256px; height: 256px; position: absolute; left: -137px; top: 238px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 375px; top: -18px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 375px; top: 238px;"></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: -1;"><div aria-hidden="true" style="position: absolute; left: 0px; top: 0px; z-index: 1; visibility: inherit;"><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 119px; top: -18px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 119px; top: 238px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -137px; top: -18px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -137px; top: 238px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 375px; top: -18px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 375px; top: 238px;"></div></div></div></div><div style="position: absolute; z-index: 0; left: 0px; top: 0px;"><div style="overflow: hidden; width: 517px; height: 300px;"><img src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/StaticMapService.png" style="width: 517px; height: 300px;"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div aria-hidden="true" style="position: absolute; left: 0px; top: 0px; z-index: 1; visibility: inherit;"><div style="position: absolute; left: 119px; top: 238px; transition: opacity 200ms ease-out 0s;"><img alt="" draggable="false" src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/vt_002.png" style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -137px; top: -18px; transition: opacity 200ms ease-out 0s;"><img alt="" draggable="false" src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/vt_005.png" style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 375px; top: -18px; transition: opacity 200ms ease-out 0s;"><img alt="" draggable="false" src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/vt_004.png" style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 375px; top: 238px; transition: opacity 200ms ease-out 0s;"><img alt="" draggable="false" src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/vt_003.png" style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 119px; top: -18px; transition: opacity 200ms ease-out 0s;"><img alt="" draggable="false" src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/vt.png" style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -137px; top: 238px; transition: opacity 200ms ease-out 0s;"><img alt="" draggable="false" src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/vt_006.png" style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;"></div></div></div></div><div class="gm-style-pbc" style="position: absolute; left: 0px; top: 0px; z-index: 2; width: 100%; height: 100%; transition-duration: 0.3s; opacity: 0; display: none;"><p class="gm-style-pbt">Use two fingers to move the map</p></div><div style="position: absolute; left: 0px; top: 0px; z-index: 3; width: 100%; height: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 4; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;"></div></div></div><div style="margin-left: 5px; margin-right: 5px; z-index: 1000000; position: absolute; left: 0px; bottom: 0px;"><a title="Click to see this area on Google Maps" href="https://maps.google.com/maps?ll=22.590406,88.366034&amp;z=16&amp;t=m&amp;hl=en&amp;gl=US&amp;mapclient=apiv3" target="_blank" style="position: static; overflow: visible; float: none; display: inline;"><div style="width: 66px; height: 26px; cursor: pointer;"><img draggable="false" src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/google4.png" style="position: absolute; left: 0px; top: 0px; width: 66px; height: 26px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;"></div></a></div><div style="background-color: white; padding: 15px 21px; border: 1px solid rgb(171, 171, 171); font-family: Roboto,Arial,sans-serif; color: rgb(34, 34, 34); box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2); z-index: 10000002; display: none; width: 256px; height: 148px; position: absolute; left: 109px; top: 60px;"><div style="padding: 0px 0px 10px; font-size: 16px;">Map Data</div><div style="font-size: 13px;">Map data ©2016 Google</div><div style="width: 13px; height: 13px; overflow: hidden; position: absolute; opacity: 0.7; right: 12px; top: 12px; z-index: 10000; cursor: pointer;"><img draggable="false" src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/mapcnt6.png" style="position: absolute; left: -2px; top: -336px; width: 59px; height: 492px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;"></div></div><div style="z-index: 1000001; position: absolute; right: 169px; bottom: 0px; width: 123px;" class="gmnoprint"><div class="gm-style-cc" style="-moz-user-select: none; height: 14px; line-height: 14px;" draggable="false"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto,Arial,sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a style="color: rgb(68, 68, 68); text-decoration: none; cursor: pointer; display: none;">Map Data</a><span>Map data ©2016 Google</span></div></div></div><div style="position: absolute; right: 0px; bottom: 0px;" class="gmnoscreen"><div style="font-family: Roboto,Arial,sans-serif; font-size: 11px; color: rgb(68, 68, 68); direction: ltr; text-align: right; background-color: rgb(245, 245, 245);">Map data ©2016 Google</div></div><div draggable="false" style="z-index: 1000001; -moz-user-select: none; height: 14px; line-height: 14px; position: absolute; right: 97px; bottom: 0px;" class="gmnoprint gm-style-cc"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto,Arial,sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a target="_blank" href="https://www.google.com/intl/en_US/help/terms_maps.html" style="text-decoration: none; cursor: pointer; color: rgb(68, 68, 68);">Terms of Use</a></div></div><div style="width: 25px; height: 25px; overflow: hidden; display: none; margin: 10px 14px; position: absolute; top: 0px; right: 0px;"><img class="gm-fullscreen-control" draggable="false" src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/sv5.png" style="position: absolute; left: -52px; top: -86px; width: 164px; height: 112px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;"></div><div class="gm-style-cc" style="-moz-user-select: none; height: 14px; line-height: 14px; position: absolute; right: 0px; bottom: 0px;" draggable="false"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto,Arial,sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a href="https://www.google.com/maps/@22.590406,88.366034,16z/data=%2110m1%211e1%2112b1?source=apiv3&amp;rapsrc=apiv3" style="font-family: Roboto,Arial,sans-serif; font-size: 10px; color: rgb(68, 68, 68); text-decoration: none; position: relative;" title="Report errors in the road map or imagery to Google" target="_new">Report a map error</a></div></div><div controlheight="93" controlwidth="28" draggable="false" style="margin: 10px; -moz-user-select: none; position: absolute; bottom: 107px; right: 28px;" class="gmnoprint gm-bundled-control gm-bundled-control-on-bottom"><div controlheight="55" controlwidth="28" style="position: absolute; left: 0px; top: 38px;" class="gmnoprint"><div style="-moz-user-select: none; box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3); border-radius: 2px; cursor: pointer; background-color: rgb(255, 255, 255); width: 28px; height: 55px;" draggable="false"><div style="position: relative; width: 28px; height: 27px; left: 0px; top: 0px;" title="Zoom in"><div style="overflow: hidden; position: absolute; width: 15px; height: 15px; left: 7px; top: 6px;"><img draggable="false" src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/tmapctrl.png" style="position: absolute; left: 0px; top: 0px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none; width: 120px; height: 54px;"></div></div><div style="position: relative; overflow: hidden; width: 67%; height: 1px; left: 16%; background-color: rgb(230, 230, 230); top: 0px;"></div><div style="position: relative; width: 28px; height: 27px; left: 0px; top: 0px;" title="Zoom out"><div style="overflow: hidden; position: absolute; width: 15px; height: 15px; left: 7px; top: 6px;"><img draggable="false" src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/tmapctrl.png" style="position: absolute; left: 0px; top: -15px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none; width: 120px; height: 54px;"></div></div></div></div><div controlheight="28" controlwidth="28" style="background-color: rgb(255, 255, 255); box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3); border-radius: 2px; width: 28px; height: 28px; cursor: url(&quot;https://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default; position: absolute; left: 0px; top: 0px;" class="gm-svpc"><div style="position: absolute; left: 1px; top: 1px;"></div><div style="position: absolute; left: 1px; top: 1px;"><div aria-label="Street View Pegman Control" style="width: 26px; height: 26px; overflow: hidden; position: absolute; left: 0px; top: 0px;"><img draggable="false" src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/cb_scout5.png" style="position: absolute; left: -147px; top: -26px; width: 215px; height: 835px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;"></div><div aria-label="Pegman is on top of the Map" style="width: 26px; height: 26px; overflow: hidden; position: absolute; left: 0px; top: 0px; visibility: hidden;"><img draggable="false" src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/cb_scout5.png" style="position: absolute; left: -147px; top: -52px; width: 215px; height: 835px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;"></div><div aria-label="Street View Pegman Control" style="width: 26px; height: 26px; overflow: hidden; position: absolute; left: 0px; top: 0px; visibility: hidden;"><img draggable="false" src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/cb_scout5.png" style="position: absolute; left: -147px; top: -78px; width: 215px; height: 835px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;"></div></div></div><div style="display: none; position: absolute;" controlheight="0" controlwidth="28" class="gmnoprint"><div title="Rotate map 90 degrees" style="width: 28px; height: 28px; overflow: hidden; position: absolute; border-radius: 2px; box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3); cursor: pointer; background-color: rgb(255, 255, 255); display: none;"><img draggable="false" src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/tmapctrl4.png" style="position: absolute; left: -141px; top: 6px; width: 170px; height: 54px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;"></div><div class="gm-tilt" style="width: 28px; height: 28px; overflow: hidden; position: absolute; border-radius: 2px; box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3); top: 0px; cursor: pointer; background-color: rgb(255, 255, 255);"><img draggable="false" src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/tmapctrl4.png" style="position: absolute; left: -141px; top: -13px; width: 170px; height: 54px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;"></div></div></div><div style="margin: 10px; z-index: 0; position: absolute; cursor: pointer; left: 0px; top: 0px;" class="gmnoprint"><div class="gm-style-mtc" style="float: left;"><div title="Show street map" draggable="false" style="direction: ltr; overflow: hidden; text-align: center; position: relative; color: rgb(0, 0, 0); font-family: Roboto,Arial,sans-serif; -moz-user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 8px; border-bottom-left-radius: 2px; border-top-left-radius: 2px; background-clip: padding-box; box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3); min-width: 22px; font-weight: 500;">Map</div><div style="background-color: white; z-index: -1; padding: 2px; border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3); position: absolute; left: 0px; top: 36px; text-align: left; display: none;"><div title="Show street map with terrain" draggable="false" style="color: rgb(0, 0, 0); font-family: Roboto,Arial,sans-serif; -moz-user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 6px 8px 6px 6px; direction: ltr; text-align: left; white-space: nowrap;"><span style="box-sizing: border-box; position: relative; line-height: 0; font-size: 0px; margin: 0px 5px 0px 0px; display: inline-block; background-color: rgb(255, 255, 255); border: 1px solid rgb(198, 198, 198); border-radius: 1px; width: 13px; height: 13px; vertical-align: middle;" role="checkbox"><div style="position: absolute; left: 1px; top: -2px; width: 13px; height: 11px; overflow: hidden; display: none;"><img draggable="false" src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/imgs8.png" style="position: absolute; left: -52px; top: -44px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none; width: 68px; height: 67px;"></div></span><label style="vertical-align: middle; cursor: pointer;">Terrain</label></div></div></div><div class="gm-style-mtc" style="float: left;"><div title="Show satellite imagery" draggable="false" style="direction: ltr; overflow: hidden; text-align: center; position: relative; color: rgb(86, 86, 86); font-family: Roboto,Arial,sans-serif; -moz-user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 8px; border-bottom-right-radius: 2px; border-top-right-radius: 2px; background-clip: padding-box; box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3); border-left: 0px none; min-width: 41px;">Satellite</div><div style="background-color: white; z-index: -1; padding: 2px; border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3); position: absolute; right: 0px; top: 36px; text-align: left; display: none;"><div title="Show imagery with street names" draggable="false" style="color: rgb(0, 0, 0); font-family: Roboto,Arial,sans-serif; -moz-user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 6px 8px 6px 6px; direction: ltr; text-align: left; white-space: nowrap;"><span style="box-sizing: border-box; position: relative; line-height: 0; font-size: 0px; margin: 0px 5px 0px 0px; display: inline-block; background-color: rgb(255, 255, 255); border: 1px solid rgb(198, 198, 198); border-radius: 1px; width: 13px; height: 13px; vertical-align: middle;" role="checkbox"><div style="position: absolute; left: 1px; top: -2px; width: 13px; height: 11px; overflow: hidden;"><img draggable="false" src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/imgs8.png" style="position: absolute; left: -52px; top: -44px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none; width: 68px; height: 67px;"></div></span><label style="vertical-align: middle; cursor: pointer;">Labels</label></div></div></div></div></div></div><div ng-transclude="" style="display: none">
+            <!-- ngRepeat: marker in markers -->
+        </div></div></ui-gmap-google-map>
+    </div>
+</div>
+</div>
+<div style="display:none">
+<img src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/DemoImageHandler.png" alt="Creating Google Maps Sample App with AngularJS and asp.net MVC">
+</div>
+<div> 
+    <div class="row" style="margin-top:10px;">
+    <div class="col-xs-12 col-sm-6"> <a href="https://www.youtube.com/watch?v=gYvCm4ve64k" class="btn btn-primary btn-block" id="VT" target="_blank" style="margin-bottom:6px;"><span class="glyphicon glyphicon-play"></span>Video Tutorial</a></div>
+    <div class="col-xs-12 col-sm-6"> <a href="http://dotnetawesome.blogspot.com/2015/10/creating-google-map-app-with-angularjs-mvc.html" class="btn btn-warning btn-block" id="SBS" target="_blank" style="margin-bottom:6px;"><span class="glyphicon glyphicon-book"></span>Step Wise Guidlines</a> </div>    
+</div>
+
+
+
+
+
+
+<form action="/CodeViwer/CodeViwer" method="post" name="codeviwer">        <div class="row">
+            
+            <div class="col-xs-12">
+                
+                <a class="btn btn-success btn-block" href="https://drive.google.com/file/d/0B6gb11RP24ngbllKZU1XNC05UDA/view?usp=sharing"><span class="glyphicon glyphicon-download-alt"></span>Download</a> 
+            </div>
+            <div style="padding-right:3px" class="col-xs-12">
+                        <div style="padding:7px 0px">
+                        <div style="padding:7px 0px">
+    <style>
+        .res-ads3-sitebelow-responsive { width: 320px; height: 250px; }
+        @media (min-width: 320px) { .res-ads3-sitebelow-responsive { width: 300px; height: 250px; } }
+        @media (min-width: 370px) { .res-ads3-sitebelow-responsive { width: 336px; height: 280px; } }
+        @media (min-width: 510px) { .res-ads3-sitebelow-responsive { width: 468px; height: 60px; } }
+        @media (min-width: 760px) { .res-ads3-sitebelow-responsive { width: 728px; height: 90px; } }
+        </style>
+        <script async="" src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/adsbygoogle.js"></script>
+        <!-- Res_Ads3_SiteBelow_responsive -->
+        <ins data-adsbygoogle-status="done" class="adsbygoogle res-ads3-sitebelow-responsive" style="display: inline-block; width: 728px; height: 90px;" data-ad-client="ca-pub-4305827917653072" data-ad-slot="9476095744"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;" frameborder="0" height="90" width="728"></iframe></ins></ins></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+</div>
+                        </div>
+ 
+            </div>
+            <div class="col-xs-12">
+                    <link href="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/css.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+.mbt-pager { border-top: 2px dashed #ddd; border-bottom: 2px dashed #ddd;  margin-bottom: 10px !important;   overflow:hidden; padding:0px;} 
+.mbt-pager li.next { float: right; padding:0px; background:none; margin:0px;} 
+.mbt-pager li.next a { padding-left: 24px; }
+.mbt-pager li.previous { margin:0px -2px 0px 0px; float: left;  border-right:1px solid #ddd; padding:0px; background:none; 
+} 
+.mbt-pager li.previous a { padding-right: 24px;  }
+.mbt-pager li.next:hover, .mbt-pager li.previous:hover  {background:#333333; }
+.mbt-pager li { width: 50%; display: inline; float: left; text-align: center; } 
+.mbt-pager li a { position: relative; min-height: 77px; display: block; padding: 15px 46px 15px; outline:none; text-decoration:none;}
+.mbt-pager li i { color: #ccc; font-size: 18px; }
+.mbt-pager li a strong { display: block; font-size: 20px; color: #92BF0C; letter-spacing: 0.5px; font-weight: bold; text-transform: uppercase; font-family:oswald, sans-serif, arial; margin-bottom:10px;}
+.mbt-pager li a span { font-size: 17px; color: #666;  font-family:oswald,Helvetica, arial; margin:0px;} 
+.mbt-pager li a:hover span, 
+.mbt-pager li a:hover i { color: #ffffff; } 
+.mbt-pager li.previous i { float:left; margin-top:15%; margin-left:5%; } 
+.mbt-pager li.next i { float: right; 
+margin-top: 15%; 
+margin-right: 5%; }
+.mbt-pager li.next i, .mbt-pager li.previous i , 
+.mbt-pager li.next,  .mbt-pager li.previous{ 
+-webkit-transition-property: background color; -webkit-transition-duration: 0.4s; -webkit-transition-timing-function: ease-out; 
+-moz-transition-property: background color; -moz-transition-duration: 0.4s; -moz-transition-timing-function: ease-out; 
+-o-transition-property: background color; -o-transition-duration: 0.4s; -o-transition-timing-function: ease-out; 
+transition-property: background color; transition-duration: 0.4s; transition-timing-function: ease-out; }
+.fa-chevron-right {padding-right:0px;}
+</style>
+
+<ul class="mbt-pager">
+<li class="next" style="display:block">
+<i class="fa fa-chevron-right"></i><a class="newer-link" href="http://demo.dotnetawesome.com/implement-jquery-datatable-in-aspnet-mvc" id="Blog1_blog-pager-newer-link" rel="next"><strong>Next</strong> <span>
+Implement jQuery Datatable in ASP.NET MVC application
+</span></a>
+</li>
+<li class="previous" style="display:block">
+<i class="fa fa-chevron-left"></i><a class="older-link" href="http://demo.dotnetawesome.com/angularjs//how-to-implement-angularjs-routing-in-aspnet-mvc4" id="Blog1_blog-pager-older-link" rel="previous"><strong>Previous</strong> <span>
+Part 9 - How to implement AngularJS Routing in ASP.NET MVC application
+</span></a>
+</li>
+</ul>
+
+            </div>
+           
+                        
+        </div>
+        <div class="codeviwer">
+            <input id="ControllerName" name="ControllerName" value="Angular" type="hidden">
+            <input id="ActionName" name="ActionName" value="ngmap" type="hidden">
+            <input id="retUrl" name="retUrl" value="/angularjs/creating-google-map-app-with-angularjs-mvc" type="hidden">
+            <input id="DemoID" name="DemoID" value="2099" type="hidden">
+            <input id="PageID" name="PageID" value="2428" type="hidden">
+
+            
+
+<style>
+    .nav.nav-tabs input{
+        color: #555;
+        cursor: pointer;
+        background-color: #fff;       
+        border: medium none;        
+        margin-right: 2px;
+        line-height: 1.42857143;       
+        border-radius: 4px 4px 0 0;
+        position: relative;
+        display: block;
+        padding: 10px 15px;
+        color: #428bca;
+        text-decoration: none;
+        background: 0 0;
+
+    }
+    .nav.nav-tabs input:hover, .nav.nav-tabs input.active
+    {
+        border: medium none;
+        -webkit-box-shadow: inset 0 -2px 0 #2196f3;
+        box-shadow: inset 0 -2px 0 #2196f3;     
+        color: #2196f3;
+    }
+</style>
+<script>
+    $(document).ready(function () {       
+        $("#VT").attr('href', 'https://www.youtube.com/watch?v=gYvCm4ve64k');
+        $("#SBS").attr('href', 'http://dotnetawesome.blogspot.com/2015/10/creating-google-map-app-with-angularjs-mvc.html');       
+    });
+</script>
+
+<div class="bs-component">
+    <ul class="nav nav-tabs">        
+                        <li class="active">                         
+                            <input class="active" value="_Layout.cshtml" name="PageName" type="submit">
+                        </li>
+                        <li class="">                            
+                            <input value="HomeController.cs" name="PageName" type="submit">
+                        </li>
+                        <li class="">                            
+                            <input value="ngMap.js" name="PageName" type="submit">
+                        </li>
+                        <li class="">                            
+                            <input value="Index.cshtml" name="PageName" type="submit">
+                        </li>
+                        <li class="">                            
+                            <input value="Database" name="PageName" type="submit">
+                        </li>
+
+            
+    </ul>
+   
+</div>
+
+            <div class="codes">
+<pre style="" class="prettyprint linenums prettyprinted"><ol class="linenums"><li class="L0"><span class="dec">&lt;!DOCTYPE html&gt;</span></li><li class="L1"><span class="tag">&lt;html&gt;</span></li><li class="L2"><span class="tag">&lt;head&gt;</span></li><li class="L3"><span class="pln">    </span><span class="tag">&lt;meta</span><span class="pln"> </span><span class="atn">charset</span><span class="pun">=</span><span class="atv">"utf-8"</span><span class="pln"> </span><span class="tag">/&gt;</span></li><li class="L4"><span class="pln">    </span><span class="tag">&lt;meta</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"viewport"</span><span class="pln"> </span><span class="atn">content</span><span class="pun">=</span><span class="atv">"width=device-width"</span><span class="pln"> </span><span class="tag">/&gt;</span></li><li class="L5"><span class="pln">    </span><span class="tag">&lt;title&gt;</span><span class="pln">@ViewBag.Title</span><span class="tag">&lt;/title&gt;</span></li><li class="L6"><span class="pln">    @Styles.Render("~/Content/css")</span></li><li class="L7"><span class="pln">    @Scripts.Render("~/bundles/modernizr")</span></li><li class="L8"><span class="tag">&lt;/head&gt;</span></li><li class="L9"><span class="tag">&lt;body&gt;</span></li><li class="L0"><span class="pln">    @RenderBody()</span></li><li class="L1"><span class="pln">&nbsp;</span></li><li class="L2"><span class="pln">    @Scripts.Render("~/bundles/jquery")</span></li><li class="L3"><span class="pln">    @RenderSection("scripts", required: false)</span></li><li class="L4"><span class="tag">&lt;/body&gt;</span></li><li class="L5"><span class="tag">&lt;/html&gt;</span></li><li class="L6"><span class="pln">&nbsp;</span></li></ol></pre>
+</div>
+
+        </div>
+</form><style>
+    pre { padding: 0 3px 2px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; color: #333; display: block; padding: 9.5px; margin: 0 0 30px 0 !important; font-size: 13px; line-height: 20px; word-break: break-all; word-wrap: break-word; white-space: pre; white-space: pre-wrap; border: 1px solid #ccc; border: 1px solid rgba(0, 0, 0, 0.15); -webkit-border-radius: 4px; border-radius: 4px; }
+    pre.prettyprint { margin-bottom: 20px; }
+    .pre-scrollable{max-height:340px;overflow-y:scroll}        
+    .prettyprint{padding:10px 15px;background-color:#FFF;border:1px solid #e1e1e8}
+    .prettyprint.linenums{-webkit-box-shadow:inset 40px 0 0 #fbfbfc,inset 41px 0 0 #ececf0;box-shadow:inset 40px 0 0 #fbfbfc,inset 41px 0 0 #ececf0}
+    ol.linenums{margin:0 0 0 -12px}
+    ol.linenums li{padding-left:12px;color:#bebec5;line-height:20px;list-style:decimal}
+    ol.linenums{margin:0!important}
+    pre.prettyprint li{background:none!important}
+    pre.prettyprint{padding:2px;border:1px solid #EDE7E7}    
+</style>
+
+</div>
+
+<div>   
+    
+
+<div id="disqus_thread"><iframe verticalscrolling="no" horizontalscrolling="no" src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/a.htm" style="width: 1px ! important; min-width: 100% ! important; border: medium none ! important; overflow: hidden ! important; height: 648px ! important;" title="Disqus" tabindex="0" scrolling="no" allowtransparency="true" name="dsq-app2" id="dsq-app2" frameborder="0" width="100%"></iframe></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//dotnetawesomedemo.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+
+    
+</div>
+<div>
+    <div style="font-size: 12px;margin-bottom:5px;">
+  Posted By : <a href="https://plus.google.com/+souravmondal45?rel=author" style="color:#005E8A;font-size:12px;" rel="author">Sourav Mondal</a>
+</div>
+</div>
+
+<style>
+    .angular-google-map-container {
+        height:300px;     
+        width:70%;
+    }
+    .angular-google-map {  
+        width:100%;
+        height:100%;
+        margin:auto 0px; 
+    }
+    .locations {
+        width: 200px;
+        float: left;
+    }
+    .locations ul {
+        padding: 0px;
+        margin: 0px;
+        margin-right: 20px;
+    }
+    .locations ul li {
+        list-style-type: none;
+        padding: 5px;
+        border-bottom: 1px solid #f3f3f3;
+        cursor: pointer;
+    }
+</style>
+
+
+
+                    </div>
+                    <div class="col-md-4 col-sm-5">
+                        <div class="sponsor">
+                            
+                            
+<!--Donut#16549481ECCD78CF6FC688DE1745A14EB48EB0F29DC7E73E54C0DFFC6418C21922021EE92702D467C9F504DD1BF8A90DC5C2BC324B2B8046F39B7EBC207BA1169EEAB160F916155130CC5B8B606DEA43E57A4EAF4F94B716D2D0B5E48CA44864EEF1652132EE861D97CC5C12B3BC791239481F86C4F20B99F4C051C8DCEF5E1B1A39F81979CB27F644F2A985A875BE8A00BE9C6820EEFD89E1C26F3891CBB379D9A4E2A483603829B6AD30193F01F95C11B2AE4C35A36BB5C5BECA6F0A61EDB790FC71D8DADAC303C71706E38B8A2CE98FB9AE88F027D49AA74EDCBA13CB5B15E06E2C46DCB41A0AC327E6E775BA52B0E113477B427F3223F04DC56107F36B1B5AE19CB234F5E985E2230614908756B8107DA8D811EE94DCF51BF5BA7507E09997D58BC2F1B00622212F4E5A7E7CB36FBC0E7482853BBC04A8D42B28A5AD792C831E1803EA0AAADE497F92255BE72E3D8EF88F464CCE57267BCC228B2B4593B04B9BA9186370E975F74E6D6715373589B6D71FDC673BC2AC8330FDDC6332CF4995405038#--><div class="panel panel-default">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-xs-12" style="text-align:center">
+<script async="" src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/adsbygoogle.js"></script>
+<!-- Site_Top_Right_300_250 -->
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display: inline-block; width: 300px; height: 250px;" data-ad-client="ca-pub-4305827917653072" data-ad-slot="8874041343"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;" frameborder="0" height="250" width="300"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    <br>
+            </div>
+        </div>
+    </div>        
+</div><!--EndDonut-->
+
+                            <div>
+
+<div class="panel panel-default">
+    <div class="panel-heading"><span class="glyphicon glyphicon-list-alt"></span><b>Search</b></div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="input-group" style="text-align:right; margin-bottom:10px;">
+                    <input value="Search" class="form-control" id="q" name="q" onblur="if(this.value == '') this.value=this.defaultValue;" onfocus="if(this.value == this.defaultValue) this.value = '';" onkeypress="return SubmitOnEnter(this, event);" type="text">                     
+                    <span class="input-group-addon">   <input class="btn btn-default btn-sm" value="Search" onclick="SiteSearch();" type="button"></span>
+                </div>
+            </div>
+        </div>
+    </div>        
+</div>
+
+    
+<script>
+        function SubmitOnEnter(searchBox, event) {
+            var keyCode;
+            if (window.event) {
+                keyCode = window.event.keyCode;
+            }
+            else if (event) {
+                keyCode = event.which;
+            }
+            else {
+                return true;
+            }
+            if (keyCode == 13) {
+                // This is for Enter Key
+                SiteSearch();
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+
+        function SiteSearch() {
+            document.location.href = "/SearchResult?q=" +
+                EncodeText(document.getElementById('q').value); // Here we should use url encode for the user input
+        }
+
+        function EncodeText(value) {
+            var returnValue = "";
+            var x = 0;
+            var regex = /(^[a-zA-Z0-9_.]*)/
+            while (x < value.toString().length) {
+                var match = regex.exec(value.substr(x));
+                if (match != null && match.length > 1 && match[1] != '') {
+                    returnValue += match[1];
+                    x += match[1].length;
+                }
+                else {
+                    if (value[x] == ' ') {
+                        returnValue += '+';
+
+                    }
+                    else {
+                        var charCode = value.charCodeAt(x);
+                        var haxValue = charCode.toString(16);
+                        returnValue += "%" + (haxValue.length < 2 ? '0' : '') + haxValue.toUpperCase();
+                    }
+                    x++;
+                }
+            }
+            return returnValue;
+        }
+
+    </script>
+                            </div>
+                           <div>
+                                <div class="panel panel-default">
+    <div class="panel-heading"><span class="glyphicon glyphicon-list-alt"></span><b>Email Subscribe</b></div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-xs-12">
+                <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=DotNetawesome', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+                <div class="input-group" style="text-align: right; margin-bottom: 10px;">
+                <p><input class="form-control" name="email" value="Enter your email address" onblur="if(this.value == '') this.value=this.defaultValue;" onfocus="if(this.value == this.defaultValue) this.value = '';" type="text"></p>
+                <span class="input-group-addon"><input value="DotNetawesome" name="uri" type="hidden">
+                    <input name="loc" value="en_US" type="hidden"><input value="Subscribe" class="btn btn-success btn-sm" type="submit"></span>
+                    </div>
+            </form>    
+            </div>
+        </div>
+    </div>        
+</div>
+                            </div>
+                            
+                            
+                            <style type="text/css">
+    .tagContainer
+    {
+        /*max-width:280px;
+        border:1px solid #f3f3f3;
+        width:300px;*/
+    }
+    .tagContainer ul 
+    {   
+        padding:0px;
+        margin:0px;
+        list-style:none;
+    }
+    .tagContainer li 
+    {
+        float: left;
+        margin: 5px 2px 2px 4px;
+        background-color: #3b8dbd;
+        padding: 0px;
+          -webkit-border-radius: 4px; 
+       -moz-border-radius: 4px; 
+        border-radius: 4px; 
+         -moz-user-select: none;
+        background-image: none;
+        border: 1px solid transparent;
+        white-space: nowrap;
+    }
+
+    
+
+    .tagContainer a 
+    {
+        display: block;
+        line-height: 25px;
+        padding: 2px 10px;
+        color: #FFFFFF;
+        text-decoration: none;
+        text-transform:uppercase;
+        font-size: 13px;
+     
+
+    }
+    .tagContainer a:hover 
+    {
+        background-color:#BDBD3B;
+        color:#000;
+    }
+  
+</style>
+
+ <div class="panel panel-default">
+    <div class="panel-heading"><span class="glyphicon glyphicon-list-alt"></span><b>Search By Tags</b></div>
+    <div class="panel-body">
+        <div class="tagContainer">
+            <ul class="tagContainer">
+                <li><a href="http://demo.dotnetawesome.com/">All</a></li>
+                <li>
+                    <a href="http://demo.dotnetawesome.com/?tag=MVC">MVC (73)</a>
+                </li>
+                <li>
+                    <a href="http://demo.dotnetawesome.com/?tag=Webgrid">Webgrid (11)</a>
+                </li>
+                <li>
+                    <a href="http://demo.dotnetawesome.com/?tag=ASP.NET">ASP.NET (25)</a>
+                </li>
+                <li>
+                    <a href="http://demo.dotnetawesome.com/?tag=Jquery">Jquery (29)</a>
+                </li>
+                <li>
+                    <a href="http://demo.dotnetawesome.com/?tag=AngularJS">AngularJS (21)</a>
+                </li>
+                <li>
+                    <a href="http://demo.dotnetawesome.com/?tag=Chart">Chart (9)</a>
+                </li>
+                <li>
+                    <a href="http://demo.dotnetawesome.com/?tag=Treeview">Treeview (2)</a>
+                </li>
+                <li>
+                    <a href="http://demo.dotnetawesome.com/?tag=Gridview">Gridview (10)</a>
+                </li>
+                <li>
+                    <a href="http://demo.dotnetawesome.com/?tag=Captcha">Captcha (4)</a>
+                </li>
+                <li>
+                    <a href="http://demo.dotnetawesome.com/?tag=Multilingual">Multilingual (2)</a>
+                </li>
+                <li>
+                    <a href="http://demo.dotnetawesome.com/?tag=File%20Upload">File Upload (6)</a>
+                </li>
+                <li>
+                    <a href="http://demo.dotnetawesome.com/?tag=Export">Export (7)</a>
+                </li>
+                <li>
+                    <a href="http://demo.dotnetawesome.com/?tag=Report">Report (4)</a>
+                </li>
+                <li>
+                    <a href="http://demo.dotnetawesome.com/?tag=CRUD%20Operations">CRUD Operations (8)</a>
+                </li>
+                <li>
+                    <a href="http://demo.dotnetawesome.com/?tag=GMap">GMap (2)</a>
+                </li>
+                <li>
+                    <a href="http://demo.dotnetawesome.com/?tag=RSS%20Feed">RSS Feed (2)</a>
+                </li>
+                <li>
+                    <a href="http://demo.dotnetawesome.com/?tag=Authentication">Authentication (3)</a>
+                </li>
+                <li>
+                    <a href="http://demo.dotnetawesome.com/?tag=Web%20API">Web API (7)</a>
+                </li>
+                <li>
+                    <a href="http://demo.dotnetawesome.com/?tag=jQuery%20DataTables">jQuery DataTables (3)</a>
+                </li>
+                <li>
+                    <a href="http://demo.dotnetawesome.com/?tag=Google%20reCaptcha">Google reCaptcha (1)</a>
+                </li>
+                <li>
+                    <a href="http://demo.dotnetawesome.com/?tag=ReactJS">ReactJS (3)</a>
+                </li>
+                <li>
+                    <a href="http://demo.dotnetawesome.com/?tag=C#">C# (1)</a>
+                </li>
+            </ul>
+        </div>   
+        <div style="height:1px;clear:both;"></div>
+    </div>
+</div>
+
+
+                            
+                            <div>
+
+<style>
+    .glyphicon {
+        margin-right: 4px !important; /*override*/
+    }
+
+    .pagination .glyphicon {
+        margin-right: 0px !important; /*override*/
+    }
+
+    .pagination a {
+        color: #555;
+    }
+
+    .panel ul {
+        padding: 0px;
+        margin: 0px;
+        list-style: none;
+    }
+
+    .news-item {
+        padding: 4px 4px;
+        margin: 0px;
+        border-bottom: 1px dotted #555;
+    }
+</style>
+<div>    
+    <div class="panel panel-default">
+        <div class="panel-heading"><span class="glyphicon glyphicon-list-alt"></span><b>Posts</b></div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul class="demo1" style="overflow-y: hidden; height: 150px;">
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            <li style="display: list-item;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Multiselect dropdown with checkbox in angularjs <a href="http://demo.dotnetawesome.com/multiselect-dropdown-with-checkbox-in-angularjs">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: list-item;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Creating dynamic menu from database data using AngularJS <a href="http://demo.dotnetawesome.com/creating-dynamic-menu-from-database-using-angularjs">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: list-item;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Google new reCAPTCHA using asp.net mvc <a href="http://demo.dotnetawesome.com/angularjs/google-new-recaptcha-using-aspnet-mvc">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Implement custom multicolumn server-side filtering in jQuery dataTables <a href="http://demo.dotnetawesome.com/implement-custom-server-side-filtering-jquery-datatables">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Part 2 : jQuery Datatable server side pagination and sorting in ASP.NET MVC <a href="http://demo.dotnetawesome.com/angularjs/jquery-datatable-server-side-pagination-sorting">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Implement jQuery Datatable in ASP.NET MVC application <a href="http://demo.dotnetawesome.com/implement-jquery-datatable-in-aspnet-mvc">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Creating Google Maps Sample App with AngularJS and asp.net MVC <a href="http://demo.dotnetawesome.com/angularjs/creating-google-map-app-with-angularjs-mvc">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to create Master Detail entry form in asp.net MVC4 <a href="http://demo.dotnetawesome.com/mvc/how-to-create-master-detail-entry-form-in-aspnet-mvc4">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Part 7 - How to retrieve and display data With Paging in the ASP.NET Web API using Jquery <a href="http://demo.dotnetawesome.com/webapi/part-7-how-to-retrieve-and-display-data-with-paging-from-webapi-using-jquery">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Part 6 - How to upload files in the ASP.NET Web API using Http Client <a href="http://demo.dotnetawesome.com/Webapi/how-to-upload-files-in-aspnet-webapi-using-httpclient">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Part 5 - How to upload files in the ASP.NET Web API using Jquery <a href="http://demo.dotnetawesome.com/webapi/part-5-how-to-upload-files-in-aspnet-webapi-using-jquery">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Part 4 - How to post data with validation in the ASP.NET Web API using Http Client <a href="http://demo.dotnetawesome.com/webapi/part-4-how-to-post-data-with-validation-to-webapi-using-httpclient">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Part 3 - How to post data with validation in the ASP.NET Web API using Jquery <a href="http://demo.dotnetawesome.com/webapi/part-3-how-to-post-data-with-validation-in-aspnet-webapi-jquery">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Part 2 - How to retrieve data from the database in the ASP.NET Web API using Http Client <a href="http://demo.dotnetawesome.com/webapi/Part2-How-to-retrieve-data-from-the-database-in-the-aspnet-web-API-using-HttpClient">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Part1 - How to retrieve data from the database in the ASP.NET Web API using Jquery <a href="http://demo.dotnetawesome.com/webapi/Part1-How-to-retrieve-data-from-the-database-in-the-aspnet-web-API-using-Jquery">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Part 4 - How to implement custom Forms Authentication in ASP.NET MVC4 application <a href="http://demo.dotnetawesome.com/mvc/how-to-implement-custom-principal-and-identity-in-aspnet-mvc">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Part 3 - How to implement custom Forms Authentication in ASP.NET MVC4 application <a href="http://demo.dotnetawesome.com/mvc/how-to-implement-custom-role-provider-in-aspnet-mvc">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Part 1- How to implement custom Forms Authentication in ASP.NET MVC4 application <a href="http://demo.dotnetawesome.com/mvc/how-to-implement-custom-forms-authentication-in-aspnet-mvc">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Part 2- How to implement custom Forms Authentication in ASP.NET MVC4 application <a href="http://demo.dotnetawesome.com/mvc/how-to-implement-custom-membership-provider-in-aspnet-mvc">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Part 3 - Basic CRUD operations using Jquery ajax and modal popup in ASP.NET MVC <a href="http://demo.dotnetawesome.com/mvc/part-3-how-to-basic-crud-operations-using-jquery-ajax-model-popup-mvc4">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Part 2 - How to Basic CRUD operations using Jquery ajax and modal popup in ASP.NET MVC4 <a href="http://demo.dotnetawesome.com/mvc/part-2-how-to-basic-crud-operations-using-jquery-ajax-model-popup-mvc4">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Part 1 - How to Basic CRUD operations using Jquery ajax and modal popup in ASP.NET MVC4. <a href="http://demo.dotnetawesome.com/mvc/part-1-how-to-basic-crud-operations-using-jquery-ajax-model-popup-mvc4">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Part 3 - How to implement Basic CRUD Functionality with the Entity Framework and ASP.NET MVC4 application <a href="http://demo.dotnetawesome.com/mvc/part-3-how-to-implement-basic-crud-functionality-with-EF-and-MVC4-application">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Part 2 - How to implement Basic CRUD Functionality with the Entity Framework and ASP.NET MVC4 application <a href="http://demo.dotnetawesome.com/mvc/part-2-how-to-implement-basic-crud-functionality-with-EF-and-MVC4-application">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Part 1 - How to implement Basic CRUD Functionality with the Entity Framework and ASP.NET MVC4 application <a href="http://demo.dotnetawesome.com/mvc/part-1-how-to-implement-basic-crud-functionality-with-EF-and-MVC4-application">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Part 2 - How to implement Basic CRUD Functionality with the Entity Framework and ASP.NET Webforms application <a href="http://demo.dotnetawesome.com/asp/part-2-how-to-implement-basic-crud-functionality-entity-framework-aspnet-webforms">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Part1 - How to implement Basic CRUD Functionality with the Entity Framework and ASP.NET Webforms application <a href="http://demo.dotnetawesome.com/asp/how-to-implement-basic-crud-functionality-entity-framework-aspnet-webforms">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to crop image and save the cropped image using asp.net &amp; jquery <a href="http://demo.dotnetawesome.com/asp/how-to-crop-image-and-save-cropped-image-using-aspnet-jquery">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to export google charts as image to server disk file in asp.net. <a href="http://demo.dotnetawesome.com/mvc/how-to-export-google-charts-as-image-to-server-disk-aspnet">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to  Implement 5 star rating system in ASP.NET inside Gridview. <a href="http://demo.dotnetawesome.com/asp/how-to-implement-5-star-rating-system-inside-gridview">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to export google charts as image file in asp.net using jquery. <a href="http://demo.dotnetawesome.com/mvc/how-to-export-google-charts-as-image-aspnet-mvc-using-jquery">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to export selected rows from gridview to excel in asp.net <a href="http://demo.dotnetawesome.com/asp/how-to-export-selected-rows-from-gridview-to-excel-file">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to implement Drill down functionality in Google Chart in mvc application <a href="http://demo.dotnetawesome.com/mvc/how-to-implement-drill-down-google-chart-in-mvc4">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to create a syndication (Rss) feed in asp.net MVC4 application <a href="http://demo.dotnetawesome.com/mvc/how-to-create-syndication-rss-feed-in-aspnet-mvc">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to export database data to PDF file in ASP.NET. <a href="http://demo.dotnetawesome.com/asp/how-to-export-database-data-to-pdf-file-using-aspnet">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to export gridview to excel &amp; Word file with formatting in asp.net <a href="http://demo.dotnetawesome.com/asp/how-to-export-gridview-to-excel-word-with-formatting">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to use Telerik Grid in MVC4 application <a href="http://demo.dotnetawesome.com/mvc/how-to-use-telerik-grid-in-mvc4-application">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to export gridview to excel &amp; Word  file in asp.net <a href="http://demo.dotnetawesome.com/asp/how-to-export-gridview-to-excel-word-in-aspnet">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to implement Custom Paging and Sorting in ASP.Net Gridview <a href="http://demo.dotnetawesome.com/asp/how-to-implement-custom-paging-and-sorting-in-aspnet-gridview">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Part 9 - How to implement AngularJS Routing in ASP.NET MVC application <a href="http://demo.dotnetawesome.com/angularjs//how-to-implement-angularjs-routing-in-aspnet-mvc4">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to Implement Autocomplete textbox in ASP.NET WITHOUT using Webservice &amp; AJAX autocomplete extender <a href="http://demo.dotnetawesome.com/asp/autocomplete-textbox-without-webservice">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Part 8 - How to upload files with AngularJS and ASP.NET MVC application. <a href="http://demo.dotnetawesome.com/angularjs/how-to-upload-files-with-angularjs-and-mvc4">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to display rdlc report in ReportViewer control into an MVC web application. <a href="http://demo.dotnetawesome.com/mvc/how-to-display-rdlc-report-in-report-viewer-control-into-mvc4">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to Show Markers(Location) in Google Map dynamically form database in ASP.NET. <a href="http://demo.dotnetawesome.com/asp/how-to-show-markers-location-in-google-map-from-database">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Part 7 - How to retrieve and display master details tabular data with AngularJS and ASP.NET MVC application. <a href="http://demo.dotnetawesome.com/angularjs/how-to-retrieve-and-display-master-details-tabular-data-using-angularjs-mvc4">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to create career page with Upload file (CV) in MVC4. <a href="http://demo.dotnetawesome.com/mvc/how-to-create-career-page-with-upload-file-aspnet-mvc4">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Part 6 - How to create simple registration form with validation using angularjs and asp.net mvc4 <a href="http://demo.dotnetawesome.com/angularjs/how-to-create-simple-registration-form-with-validation-using-angularjs-and-aspnet-mvc4">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Part 5 - How to implement Cascading DropDownList with AngularJS and ASP.NET MVC <a href="http://demo.dotnetawesome.com/angularjs/how-to-implement-cascading-dropdownlist-with-angularjs-and-mvc">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to implement Custom Paging in ASP.Net GridView using SQL Server Stored Procedure <a href="http://demo.dotnetawesome.com/asp/how-to-implement-custom-paging-in-gridview-using-stored-procedure">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Part 4 - How to Retrieve and Display tabular data with AngularJS and ASP.NET MVC application <a href="http://demo.dotnetawesome.com/angularjs/how-to-retrieve-and-display-tabular-data-with-AngularJS-and-mvc">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to create Feedback page with  cascade dropdownlist in MVC4. <a href="http://demo.dotnetawesome.com/mvc/how-to-create-feedback-page-with-cascade-dropdown-list-mvc4">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Part 3 - How to create a login page using AngularJS in MVC4 application <a href="http://demo.dotnetawesome.com/angularjs/how-to-create-login-page-using-angularjs-in-mvc4">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Microsoft Report in MVC 4 <a href="http://demo.dotnetawesome.com/mvc/microsoft-report-in-mvc-4">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Part 2 - How to fetch data from the database using angularjs in MVC4 application. <a href="http://demo.dotnetawesome.com/angularjs/how-to-fetch-data-from-database-using-angularjs">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Part 1 - How to setup AngularJS in MVC4 application <a href="http://demo.dotnetawesome.com/mvc/how-to-setup-angularjs-in-mvc4">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to implement Custom Paging and sorting in webgrid using jquery <a href="http://demo.dotnetawesome.com/mvc/how-to-implement-custom-paging-and-sorting-in-webgrid-using-jquery">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to use google recaptcha in asp.net <a href="http://demo.dotnetawesome.com/asp/how-to-use-google-recaptcha-in-aspnet">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to read and display RSS FEED  in asp.net <a href="http://demo.dotnetawesome.com/asp/how-to-read-and-display-rss-feed-in-asp-net">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to retrieve database data &amp; show  in a view using jquery in an ASP.Net MVC. <a href="http://demo.dotnetawesome.com/mvc/how-to-retrieve-database-data-show-using-jquery-mvc4">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to implement Custom Paging in webgrid in MVC4 application <a href="http://demo.dotnetawesome.com/mvc/how-to-implement-custom-paging-in-webgrid-mvc4">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to freeze gridview column in asp.net using jquery. <a href="http://demo.dotnetawesome.com/asp/how-to-freeze-gridview-column-in-aspnet-using-jquery">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to implement Google reCaptcha in asp.net MVC application without API <a href="http://demo.dotnetawesome.com/mvc/how-to-implement-google-recaptcha-in-aspnet-mvc-without-api">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to upload image to database and show in a Page without image handler in MVC4. <a href="http://demo.dotnetawesome.com/mvc/how-to-upload-image-to-database-and-show-in-view-without-image-handler">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to create Google column chart with animation on load using ASP.NET MVC4 &amp; Jquery <a href="http://demo.dotnetawesome.com/mvc/how-to-create-google-column-chart-with-animation-using-mvc4">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to create Intensity Chart using MVC4 &amp; Jquery. <a href="http://demo.dotnetawesome.com/mvc/how-to-create-intensity-chart-using-mvc4-jquery">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to Upload Files Asynchronously using ASP.NET MVC4 application. <a href="http://demo.dotnetawesome.com/mvc/how-to-upload-files-asynchronously-using-aspnet-mvc4-application">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to Export Webgrid to PDF  in MVC4 Application <a href="http://demo.dotnetawesome.com/mvc/how-to-export-webgrid-to-pdf-in-mvc4">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to implement google search box in asp.net <a href="http://demo.dotnetawesome.com/asp/how-to-implement-google-search-box-in-aspnet">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to create multilingual website in asp.net mvc4 <a href="http://demo.dotnetawesome.com/mvc/how-to-create-multilingual-website-in-aspnet-mvc4">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to implement simple Captcha in MVC4 application <a href="http://demo.dotnetawesome.com/mvc/how-to-implement-simple-captcha-in-mvc4-allpication">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to implement Custom user defined At Least One required Validation rules in MVC 4 application. <a href="http://demo.dotnetawesome.com/mvc/custom-user-defined-validation-at-least-one-required-mvc4">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to insert multiple row to database using asp.net MVC4. <a href="http://demo.dotnetawesome.com/mvc/insert-multiple-record-to-database-at-a-time-aspnet-mvc4">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to create a login page using asp.net mvc 4. <a href="http://demo.dotnetawesome.com/mvc/how-to-create-login-page-using-aspnet-mvc4">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to insert data into sql server databse using jquery with Preventing CSRF Attacks in asp.net MVC 4 Application <a href="http://demo.dotnetawesome.com/mvc/how-to-insert-data-into-database-with-preventing-csrf-using-ajax-mvc4">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Selecting / Deselecting all  CheckBoxes inside a Webgrid in asp.net MVC4 Application. <a href="http://demo.dotnetawesome.com/webgrid/selecting-deselecting-all-checkboxes-inside-webgrid-mvc4">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to Create Nested WebGrid with Expand/Collapse in ASP.NET MVC4 <a href="http://demo.dotnetawesome.com/mvc/Nested-WebGrid-With-Expand-Collapse-in-MVC4">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Implement Custom user defined Age Range Validation / Data Annotations rules in MVC 4 application. <a href="http://demo.dotnetawesome.com/mvc/how-to-implement-custom-user-defined-age-range-validation-mvc4">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to create a User Registration page using asp.net mvc 4. <a href="http://demo.dotnetawesome.com/mvc/create-user-registration-form-in-mvc4">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to implement simple Captcha in ASP.Net. <a href="http://demo.dotnetawesome.com/asp/how-to-implement-simple-captcha-in-aspnet">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Part 2: How to Dynamically set row background color in a webgrid depending on the content in MVC4. <a href="http://demo.dotnetawesome.com/Webgrid/dynamic_background_color">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Part 1: How to display database data in webgrid in mvc 4. <a href="http://demo.dotnetawesome.com/Webgrid/List">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to insert data into sql server databse using jquery (post method) in asp.net MVC 4 Application. <a href="http://demo.dotnetawesome.com/ajax/save">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to insert data into sql server databse using jquery (post method) in asp.net <a href="http://demo.dotnetawesome.com/Demo/Asp/Ajax/Save">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to implement Custom user defined Validation / Data Annotations rules in MVC 4 application. <a href="http://demo.dotnetawesome.com/customvalidation/age">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to create google pie chart with database data in ASP.NET <a href="http://demo.dotnetawesome.com/demo/google/chart/pie">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to delete multiple webgrid rows by using Checkboxes in asp.net MVC 4 Application. <a href="http://demo.dotnetawesome.com/webgrid/MultipleDelete">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to Export Webgrid to Excel in MVC4 Application <a href="http://demo.dotnetawesome.com/Webgrid/ExportToExcel">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to create google Bar chart with  database data in ASP.NET <a href="http://demo.dotnetawesome.com/demo/google/chart/bar">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to create Google Column chart with database data in ASP.NET <a href="http://demo.dotnetawesome.com/demo/google/chart/column">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to Populate Treeview Nodes  Dynamically (On Demand)  using in MVC 4 application. <a href="http://demo.dotnetawesome.com/Treeview/OnDemand">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to create google line chart with  database data in ASP.NET <a href="http://demo.dotnetawesome.com/Demo/Google/Chart/line">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to create Google Combo chart with database data in ASP.NET <a href="http://demo.dotnetawesome.com/Demo/Google/Chart/combo">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to create treeview with database data in MVC 4 application. <a href="http://demo.dotnetawesome.com/Treeview/Simple">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li style="display: none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to Create Multilingual Application in ASP.NET <a href="http://demo.dotnetawesome.com/Demo/Asp/multilingual">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+
+
+                    <li style="display:none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Treeview in AngularJS application <a href="http://demo.dotnetawesome.com/treeview-in-angularjs-application">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li><li style="display:none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Google organization (org) chart using AngularJS <a href="http://demo.dotnetawesome.com/google-organization-chart-using-angularjs">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li><li style="display:none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Advance master details entry form in asp.net MVC <a href="http://demo.dotnetawesome.com/mvc/advance-master-details-entry-form-in-mvc">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li><li style="display:none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Part 1 - Simple Contact Book application in angularjs <a href="http://demo.dotnetawesome.com/simple-contact-book-application-using-angularjs">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li><li style="display:none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Create a push notification system with SignalR <a href="http://demo.dotnetawesome.com/push-notification-system-with-signalr">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li><li style="display:none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Part 2 - CRUD operation on fullcalender with angularJS <a href="http://demo.dotnetawesome.com/part-2-crud-operation-on-fullcalender-with-angularjs">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li><li style="display:none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>How to Create Simple Image Gallery using repeater control &amp; Jquery in ASP.NET <a href="http://demo.dotnetawesome.com/how-to-create-simple-image-gallery-using-repeater-control-jquery">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li><li style="display:none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Two-Factor Authentication using Google Authenticator in asp.net mvc <a href="http://demo.dotnetawesome.com/two-factor-authentication-in-aspnet-mvc">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li><li style="display:none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Implement Event/Scheduler calendar using ui-calendar in angularJS <a href="http://demo.dotnetawesome.com/implement-event-scheduler-calendar-angularjs">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li><li style="display:none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Infinite-scroll for facebook like pagination in AngularJS <a href="http://demo.dotnetawesome.com/infinite-scroll-for-facebook-like-pagination-angularjs">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li><li style="display:none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Implement autocomplete textbox in AngularJS <a href="http://demo.dotnetawesome.com/implement-autocomplete-textbox-in-angularjs">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li><li style="display:none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Display multilevel nested grid data in asp.net mvc <a href="http://demo.dotnetawesome.com/multilevel-nested-grid-data-mvc">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li><li style="display:none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Server-side paging and sorting in React JS <a href="http://demo.dotnetawesome.com/server-side-paging-and-sorting-in-react-js">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li><li style="display:none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Displaying tabular data from database using React.js <a href="http://demo.dotnetawesome.com/displaying-tabular-data-from-database-reactjs">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li><li style="display:none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>"Hello World" example using ReactJS in asp.net mvc <a href="http://demo.dotnetawesome.com/hello-world-in-reactjs">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li><li style="display:none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Datatables server-side paging, sorting and filtering in angularjs <a href="http://demo.dotnetawesome.com/datatables-server-side-paging-sorting-filtering-angularjs">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li><li style="display:none;" class="news-item">
+                                <table cellpadding="4">
+                                    <tbody>
+                                        <tr>
+                                            <td>Datatables in AngularJS and asp.net mvc <a href="http://demo.dotnetawesome.com/datatables-in-angularjs-and-aspnet-mvc">Read more...</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li></ul>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer"><ul class="pagination pull-right" style="margin: 0px;"><li><a href="#" class="prev"><span class="glyphicon glyphicon-chevron-down"></span></a></li><li><a href="#" class="next"><span class="glyphicon glyphicon-chevron-up"></span></a></li></ul><div class="clearfix"></div></div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $(".demo1").bootstrapNews({
+            newsPerPage: 3,
+            autoplay: true,
+            pauseOnHover: true,
+            direction: 'up',
+            newsTickerInterval: 4000,
+            onToDo: function () {
+                //console.log(this);
+            }
+        });
+    });
+</script>
+</div>
+                            
+                            
+
+
+                            <div><!--<div id='fanback'>
+    <div id='fan-exit'></div>
+    <div id='fanbox'>
+        <div id='fanclose'></div>
+        <div class='remove-borda'></div>
+        <iframe allowtransparency='true' frameborder='0' scrolling='no' src='//www.facebook.com/plugins/likebox.php? 
+href=http://www.facebook.com/dotnetawesome&width
+=402&height=255&colorscheme=light&show_faces
+=true&border_color=%23E2E2E2&stream=false&header=false'
+            style='border: none; overflow: hidden; margin-top: -19px; width: 402px; height: 230px;'></iframe>
+    </div>
+</div>-->
+
+<div class=" fb_reset" id="fb-root"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe src="http://staticxx.facebook.com/connect/xd_arbiter/r/uN4_cXtJDGb.js?version=42#channel=f21cbc5dcc4d4fa&amp;origin=http%3A%2F%2Fdemo.dotnetawesome.com" style="border: medium none;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_http" scrolling="no" allowfullscreen="true" allowtransparency="true" name="fb_xdm_frame_http" frameborder="0"></iframe><iframe src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/uN4_cXtJDGb_002.htm" style="border: medium none;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_https" scrolling="no" allowfullscreen="true" allowtransparency="true" name="fb_xdm_frame_https" frameborder="0"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+    <script>(function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=519467904746484";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    
+<div fb-iframe-plugin-query="adapt_container_width=true&amp;app_id=519467904746484&amp;container_width=360&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fdotnetawesome&amp;locale=en_US&amp;sdk=joey&amp;show_facepile=true&amp;show_posts=false&amp;small_header=false" fb-xfbml-state="rendered" class="fb-page fb_iframe_widget" data-href="https://www.facebook.com/dotnetawesome" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><span style="vertical-align: bottom; width: 340px; height: 214px;"><iframe class="" src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/page.htm" style="border: medium none; visibility: visible; width: 340px; height: 214px;" title="fb:page Facebook Social Plugin" scrolling="no" allowfullscreen="true" allowtransparency="true" name="f2530ad97489648" frameborder="0" height="1000px" width="1000px"></iframe></span></div>
+
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <div class="row">
+                    <div class="col-lg-12">
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    
+    
+    <script src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/angular.js"></script>
+
+    
+    <script src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/lodash.js"></script> 
+    <script src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/angular-google-maps.js"></script>
+
+    
+    <script src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/ngMap.js"></script>
+
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-52097401-1', 'dotnetawesome.com');
+            ga('send', 'pageview');
+        </script>
+
+    <script>
+        $(document).ready(function () {
+            $('input[type="submit"][value="_Layout.cshtml"]').addClass("active");
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            var $window = $(window);
+            function checkWidth() {
+                if ($window.width() >= 768) {
+                    $('.navbar-collapse').removeClass('in').addClass('collapse');
+                }
+            }
+
+            checkWidth();
+            $(window).resize(checkWidth);
+
+            $('.navbar-nav a').on('click', function () {
+
+                if ($(window).width() < 768) {
+                    $(".btn-navbar").click(); //bootstrap 2.x
+                    $(".navbar-toggle").click() //bootstrap 3.x by Richard
+                }
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+           // var $new = '<span style="display: inline-block; position: relative; top: -7px; left: 0px; font-size: 10px; color: red; font-weight: bold;">New!</span>';
+           // $('.navbar-nav a[title="Project"]').append($new);
+        });
+    </script>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'dotnetawesome'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+
+
+<script src="Creating%20Google%20Maps%20Sample%20App%20with%20AngularJS%20and%20asp.net%20MVC_files/js" type="text/javascript" id="ui_gmap_map_load_5d0bb853-777b-4ac3-8abe-213d9cd5863a"></script></body></html>

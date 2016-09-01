@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html lang="en" dir="ltr" class="ie8"><![endif]-->
+<!--[if IE 9]><html lang="en" dir="ltr" class="ie9"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="js no-touch localstorage sessionstorage contenteditable use-opacity-transitions" dir="ltr" lang="en"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Disqus Comments</title>
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <style>
+        .alert--warning {
+            border-radius: 3px;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            background-color: #FFE070;
+            color: #A47703;
+        }
+
+        .alert--warning a,
+        .alert--warning a:hover,
+        .alert--warning strong {
+            color: #A47703;
+            font-weight: bold;
+        }
+
+        .alert--error p,
+        .alert--warning p {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        
+        </style>
+    
+    <style>
+        html {
+            overflow: hidden;
+        }
+
+        #error {
+            display: none;
+        }
+
+        .clearfix:after {
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+        
+    </style>
+
+<link href="a_data_002/lounge.css" rel="stylesheet"><script src="a_data_002/config.js" data-requiremodule="remote/config" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="a_data_002/common.js" data-requiremodule="common.bundle" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="a_data_002/lounge_002.js" data-requiremodule="lounge.bundle" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><style id="css_1471866120149"></style><!-- base href="https://disqus.com/embed/comments/?base=default&version=fd54b092b3ca9bec443457175741c419&f=sitepointproduction&t_i=124103%20http%3A%2F%2Fwww.sitepoint.com%2F%3Fp%3D124103&t_u=https%3A%2F%2Fwww.sitepoint.com%2Fajaxjquery-getjson-simple-example%2F&t_e=Ajax%2FjQuery.getJSON%20Simple%20Example&t_d=%0A%20%20%20%20%20%20%20%20Ajax%2FjQuery.getJSON%20Simple%20Example%0A%20%20%20%20%20%20&t_t=Ajax%2FjQuery.getJSON%20Simple%20Example&s_o=default&l=" --><link href="a_data_002/discovery.css" rel="stylesheet"><script src="a_data_002/ga.js" data-requiremodule="ga" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="a_data_002/discovery.js" data-requiremodule="discovery/main" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script></head>
+<body>
+    
+
+    
+    <div id="error" class="alert--error">
+        <p>We were unable to load Disqus. If you are a moderator please see our <a href="https://docs.disqus.com/help/83/"> troubleshooting guide</a>. </p>
+    </div>
+
+    
+    <script type="text/json" id="disqus-forumData">{"session":{"canModerate":false,"audienceSyncVerified":false,"mustVerify":false,"canReply":true,"mustVerifyEmail":false},"features":{},"forum":{"category":"Culture","description":"\u003cp>Learn to be a better web developer on SitePoint. \u003c/p>","founder":"5935034","twitterName":"","url":"http://www.sitepoint.com","raw_description":"Learn to be a better web developer on SitePoint. ","guidelines":null,"favicon":{"permalink":"https://disqus.com/api/forums/favicons/sitepointproduction.jpg","cache":"//a.disquscdn.com/uploads/forums/269/7744/favicon.png"},"raw_guidelines":null,"language":"en","daysThreadAlive":0,"installCompleted":true,"avatar":{"small":{"permalink":"https://disqus.com/api/forums/avatars/sitepointproduction.jpg?size=32","cache":"//a.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450"},"large":{"permalink":"https://disqus.com/api/forums/avatars/sitepointproduction.jpg?size=92","cache":"//a.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"}},"channel":null,"daysAlive":0,"pk":"2697744","signedUrl":"http://disq.us/?url=http%3A%2F%2Fwww.sitepoint.com&key=MTQiGi0vYGABlO97EaYfxg","settings":{"supportLevel":3,"adsDRNativeEnabled":false,"disable3rdPartyTrackers":false,"adsVideoEnabled":false,"adsProductVideoEnabled":false,"adsPositionTopEnabled":false,"ssoRequired":false,"linkAffiliationEnabled":false,"adsProductLinksThumbnailsEnabled":false,"adsProductStoriesEnabled":false,"organicDiscoveryEnabled":false,"allowMedia":false,"discoveryMax":false,"discoveryLocked":false,"moderatorText":"SitePoint Staff","adsEnabled":false,"allowAnonPost":true,"hasCustomAvatar":true,"adultContent":false,"promotedDiscoveryEnabled":false,"allowAnonVotes":false,"mustVerify":true,"colorScheme":"auto","adsSettingsLocked":false,"mustVerifyEmail":true,"audienceSyncEnabled":false,"typeface":"auto","adsPositionBottomEnabled":false,"mediaembedEnabled":false,"adsProductLinksEnabled":false,"discoveryThumbnailsEnabled":false,"isVIP":false,"adsPositionInthreadEnabled":false},"id":"sitepointproduction","createdAt":"2013-12-01T18:16:08.677391","name":"SitePoint"}}</script>
+
+    
+    <script type="text/json" id="disqus-threadData">{"cursor":{"hasPrev":false,"prev":null,"total":6,"hasNext":false,"next":"1:0:0"},"code":0,"response":{"lastModified":1467764338,"posts":[{"dislikes":0,"numReports":0,"likes":0,"message":"\u003cp>Hey Florian,\u003cbr>If i wanted to print the value for \u003cbr>\"obj\": {\u003c/p>\u003cp>    \"number\": 1.2345e-6,\u003c/p>\u003cp>    \"enabled\": true\u003c/p>\u003cp>  },\u003c/p>\u003cp>  \"message\": \"Strings have to be in double-quotes.\"\u003c/p>\u003cp>Then how may i print the value for \"obj\" and \"message\".\u003c/p>","id":"2712945074","isDeleted":false,"author":{"name":"Pankaj vajpayee","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450","cache":"//a.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450"},"large":{"permalink":"//a.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"//a.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"permalink":"//a.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"//a.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"signedUrl":"","isAnonymous":true},"media":[],"isSpam":false,"isDeletedByAuthor":false,"createdAt":"2016-06-05T09:40:17","parent":null,"isApproved":true,"isFlagged":false,"raw_message":"Hey Florian,\nIf i wanted to print the value for \n\"obj\": {\n\n    \"number\": 1.2345e-6,\n\n    \"enabled\": true\n\n  },\n\n  \"message\": \"Strings have to be in double-quotes.\"\n\nThen how may i print the value for \"obj\" and \"message\".","isHighlighted":false,"canVote":false,"thread":"4550770392","forum":"sitepointproduction","depth":0,"points":0,"isEdited":false},{"dislikes":0,"numReports":0,"likes":0,"message":"\u003cp>I'm starting with javascript so you helped me a lot!. I had some problems checking the status equal to 200 so I checked the documentation at w3school and to make it works the correct line would be\u003c/p>\u003cp>$.getJSON(url, function (data, status) {\u003cbr>      if (status == \"success\") {\u003c/p>\u003cp>       }\u003cbr>}\u003c/p>\u003cp>instead of (status === 200)\u003c/p>\u003cp>I hope it helps, thanks again!!\u003c/p>","id":"2645077137","isDeleted":false,"author":{"username":"disqus_PREJ8WaI3h","about":"","name":"Jorge de Castro","disable3rdPartyTrackers":false,"isPowerContributor":false,"isAnonymous":false,"rep":1.232124,"profileUrl":"https://disqus.com/by/disqus_PREJ8WaI3h/","url":"","reputation":1.232124,"location":"","isPrivate":false,"signedUrl":"","isPrimary":true,"joinedAt":"2016-04-27T08:48:49","id":"205981960","avatar":{"small":{"permalink":"//a.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450","cache":"//a.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450"},"large":{"permalink":"//a.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"//a.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"permalink":"//a.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"//a.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"}},"media":[],"isSpam":false,"isDeletedByAuthor":false,"createdAt":"2016-04-27T08:49:22","parent":null,"isApproved":true,"isFlagged":false,"raw_message":"I'm starting with javascript so you helped me a lot!. I had some problems checking the status equal to 200 so I checked the documentation at w3school and to make it works the correct line would be \n\n$.getJSON(url, function (data, status) {\n      if (status == \"success\") {\n\n       }\n}\n\ninstead of (status === 200)\n\nI hope it helps, thanks again!!","isHighlighted":false,"canVote":false,"thread":"4550770392","forum":"sitepointproduction","depth":0,"points":0,"isEdited":false},{"dislikes":0,"numReports":0,"likes":0,"message":"\u003cp>Thanks for the article Florian. I've been keep wondering about why should we use Json. Infact, before I read this article, I didn't know the diffrence between Json's type 'post' and 'get'. I highly recommend this article to people who recently started programming just like me. Once again, Thank you for this wonderful article.\u003c/p>","id":"2636723071","isDeleted":false,"author":{"username":"disqus_cjcdJbhmMd","about":"","name":"Erik","disable3rdPartyTrackers":false,"isPowerContributor":false,"isAnonymous":false,"rep":1.2324929999999998,"profileUrl":"https://disqus.com/by/disqus_cjcdJbhmMd/","url":"","reputation":1.2324929999999998,"location":"","isPrivate":false,"signedUrl":"","isPrimary":true,"joinedAt":"2016-04-22T06:14:00","id":"205372651","avatar":{"small":{"permalink":"//a.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450","cache":"//a.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450"},"large":{"permalink":"//a.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"//a.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"permalink":"//a.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"//a.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"}},"media":[],"isSpam":false,"isDeletedByAuthor":false,"createdAt":"2016-04-22T06:15:00","parent":null,"isApproved":true,"isFlagged":false,"raw_message":"Thanks for the article Florian. I've been keep wondering about why should we use Json. Infact, before I read this article, I didn't know the diffrence between Json's type 'post' and 'get'. I highly recommend this article to people who recently started programming just like me. Once again, Thank you for this wonderful article.","isHighlighted":false,"canVote":false,"thread":"4550770392","forum":"sitepointproduction","depth":0,"points":0,"isEdited":true},{"dislikes":0,"numReports":0,"likes":0,"message":"\u003cp>Hi Florian, thanks for the article. I've been refreshing my memory with ajax and json lately. In one such instance, I have a json file being read and specifics pieces of data are being returned on screen. However, I keep seeing [HTMLDivElement] preceding the data on the page. Where does this come from and how can I keep it from appearing? Thanks much\u003c/p>","id":"2529580690","isDeleted":false,"author":{"username":"chrishpz","about":"My interests and education involve web design, motion graphics, animation, photography, astronomy, aliens, the paranormal, and history","name":"Chris","disable3rdPartyTrackers":false,"isPowerContributor":false,"isAnonymous":false,"rep":1.237009,"profileUrl":"https://disqus.com/by/chrishpz/","url":"http://www.cdemarco.net/","reputation":1.237009,"location":"Ohio","isPrivate":false,"signedUrl":"http://disq.us/?url=http%3A%2F%2Fwww.cdemarco.net%2F&key=uV7zwQCYqLvZSGTc7r7HRQ","isPrimary":true,"joinedAt":"2012-04-12T10:02:07","id":"24741085","avatar":{"small":{"permalink":"https://disqus.com/api/users/avatars/chrishpz.jpg","cache":"//a.disquscdn.com/uploads/users/2474/1085/avatar32.jpg?1402767484"},"isCustom":true,"permalink":"https://disqus.com/api/users/avatars/chrishpz.jpg","cache":"//a.disquscdn.com/uploads/users/2474/1085/avatar92.jpg?1402767484","large":{"permalink":"https://disqus.com/api/users/avatars/chrishpz.jpg","cache":"//a.disquscdn.com/uploads/users/2474/1085/avatar92.jpg?1402767484"}}},"media":[],"isSpam":false,"isDeletedByAuthor":false,"createdAt":"2016-02-22T22:24:20","parent":null,"isApproved":true,"isFlagged":false,"raw_message":"Hi Florian, thanks for the article. I've been refreshing my memory with ajax and json lately. In one such instance, I have a json file being read and specifics pieces of data are being returned on screen. However, I keep seeing [HTMLDivElement] preceding the data on the page. Where does this come from and how can I keep it from appearing? Thanks much","isHighlighted":false,"canVote":false,"thread":"4550770392","forum":"sitepointproduction","depth":0,"points":0,"isEdited":false},{"dislikes":0,"numReports":0,"likes":0,"message":"\u003cp>If your data/text is inserted at the wrong spot, in the selected element, you probably use the wrong method. See: \u003ca href=\"https://learn.jquery.com/using-jquery-core/manipulating-elements/#moving-copying-and-removing-elements\" rel=\"nofollow\">https://learn.jquery.com/using...\u003c/a>\u003c/p>","id":"2530637652","isDeleted":false,"author":{"name":"Ton Lankveld","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450","cache":"//a.disquscdn.com/uploads/forums/269/7744/avatar32.jpg?1397612450"},"large":{"permalink":"//a.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"//a.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"permalink":"//a.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450","cache":"//a.disquscdn.com/uploads/forums/269/7744/avatar92.jpg?1397612450"},"signedUrl":"","isAnonymous":true},"media":[],"isSpam":false,"isDeletedByAuthor":false,"createdAt":"2016-02-23T14:04:29","parent":2529580690,"isApproved":true,"isFlagged":false,"raw_message":"If your data/text is inserted at the wrong spot, in the selected element, you probably use the wrong method. See: https://learn.jquery.com/using-jquery-core/manipulating-elements/#moving-copying-and-removing-elements","isHighlighted":false,"canVote":false,"thread":"4550770392","forum":"sitepointproduction","depth":1,"points":0,"isEdited":false},{"dislikes":0,"numReports":0,"likes":0,"message":"\u003cp>Got it worked out actually. A variable had the $ operator in front of it which made jQuery think it was a jQuery object. That's what I get for staring at code for a few hours.\u003c/p>","id":"2533235752","isDeleted":false,"author":{"username":"chrishpz","about":"My interests and education involve web design, motion graphics, animation, photography, astronomy, aliens, the paranormal, and history","name":"Chris","disable3rdPartyTrackers":false,"isPowerContributor":false,"isAnonymous":false,"rep":1.237009,"profileUrl":"https://disqus.com/by/chrishpz/","url":"http://www.cdemarco.net/","reputation":1.237009,"location":"Ohio","isPrivate":false,"signedUrl":"http://disq.us/?url=http%3A%2F%2Fwww.cdemarco.net%2F&key=uV7zwQCYqLvZSGTc7r7HRQ","isPrimary":true,"joinedAt":"2012-04-12T10:02:07","id":"24741085","avatar":{"small":{"permalink":"https://disqus.com/api/users/avatars/chrishpz.jpg","cache":"//a.disquscdn.com/uploads/users/2474/1085/avatar32.jpg?1402767484"},"isCustom":true,"permalink":"https://disqus.com/api/users/avatars/chrishpz.jpg","cache":"//a.disquscdn.com/uploads/users/2474/1085/avatar92.jpg?1402767484","large":{"permalink":"https://disqus.com/api/users/avatars/chrishpz.jpg","cache":"//a.disquscdn.com/uploads/users/2474/1085/avatar92.jpg?1402767484"}}},"media":[],"isSpam":false,"isDeletedByAuthor":false,"createdAt":"2016-02-24T19:49:45","parent":2530637652,"isApproved":true,"isFlagged":false,"raw_message":"Got it worked out actually. A variable had the $ operator in front of it which made jQuery think it was a jQuery object. That's what I get for staring at code for a few hours.","isHighlighted":false,"canVote":false,"thread":"4550770392","forum":"sitepointproduction","depth":2,"points":0,"isEdited":false}],"thread":{"feed":"https://sitepointproduction.disqus.com/ajaxjquerygetjson_simple_example_06/latest.rss","identifiers":["124103 http://www.sitepoint.com/?p=124103"],"dislikes":0,"likes":32,"message":"","id":"4550770392","isDeleted":false,"category":"2738944","author":"5935034","userScore":0,"userSubscription":false,"isSpam":false,"signedLink":"http://disq.us/?url=http%3A%2F%2Fwww.sitepoint.com%2F%3Fp%3D124103&key=8Fg4lxX6omiAbPWSp9-H8Q","createdAt":"2016-02-04T11:52:45","hasStreaming":false,"raw_message":"","isClosed":false,"link":"http://www.sitepoint.com/?p=124103","slug":"ajaxjquerygetjson_simple_example_06","forum":"sitepointproduction","clean_title":"Ajax/jQuery.getJSON Simple Example","posts":6,"moderators":[193006337,90121019,95438885,117740678,217512201,86275434,51960759,84203213,93974345,110681391,84194772,103336375,84400312,5935034,157513807,22737277],"title":"Ajax/jQuery.getJSON Simple Example","highlightedPost":null}},"order":"popular"}</script>
+
+    
+
+    <div id="fixed-content"></div>
+
+
+    
+        
+<script type="text/json" id="disqus-urls">{
+    "root":"//disqus.com",
+    "next":"//a.disquscdn.com/next/current/embed"
+}</script>
+
+        <script src="a_data_002/lounge.js" id="bootstrap-script" data-app="lounge" async=""></script>
+    
+
+
+<div id="layout" data-tracking-area="layout">
+
+<div id="onboard" data-tracking-area="onboard"></div>
+
+<div style="display: none;" id="highlighted-post" data-tracking-area="highlighted" class="highlighted-post"></div>
+
+<div id="global-alert"></div>
+
+<header id="main-nav" data-tracking-area="main-nav">
+<nav class="nav nav-primary">
+<ul>
+<li class="nav-tab nav-tab--primary tab-conversation active" data-role="post-count"><a class="publisher-nav-color">
+<span class="comment-count">
+6 comments
+</span>
+
+<span class="comment-count-placeholder">
+Comments
+</span>
+</a>
+</li>
+<li class="nav-tab nav-tab--primary tab-community">
+<a href="https://disqus.com/home/forums/sitepointproduction/" class="publisher-nav-color" data-action="community-sidebar" data-forum="sitepointproduction" id="community-tab">
+<span class="community-name">
+<strong>SitePoint</strong>
+
+</span>
+
+<strong class="community-name-placeholder">Community</strong>
+</a>
+</li>
+<li class="nav-tab nav-tab--primary dropdown user-menu" data-role="logout"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
+<span class="dropdown-toggle-wrapper">
+
+<span>
+Login
+</span>
+
+</span> <span class="caret"></span>
+</a>
+<ul class="dropdown-menu">
+
+
+<li>
+<a href="#" data-action="auth:disqus">Disqus</a>
+</li>
+<li>
+<a href="#" data-action="auth:facebook">Facebook</a>
+</li>
+<li>
+<a href="#" data-action="auth:twitter">Twitter</a>
+</li>
+<li>
+<a href="#" data-action="auth:google">Google</a>
+</li>
+
+
+
+</ul>
+</li>
+<li class="nav-tab nav-tab--primary notification-menu unread" data-role="notification-menu"><a href="https://disqus.com/home/inbox/" class="notification-container" data-action="home" data-home-path="home/inbox/">
+<span class="notification-icon icon-comment" aria-hidden=""></span>
+<span class="notification-count" data-role="notification-count">1</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+
+<section id="conversation" data-role="main" data-tracking-area="main">
+<div class="nav nav-secondary" data-tracking-area="secondary-nav">
+<ul>
+<li id="recommend-button" class="nav-tab nav-tab--secondary recommend dropdown">
+<div class="thread-likes"><a href="#" data-action="recommend" title="Recommend this discussion" class="dropdown-toggle ">
+<span class="icon-heart"></span>
+<span class="label label-default">Recommend</span>
+<span class="label label-recommended">Recommended</span>
+<span class="label label-count">32</span>
+</a>
+<ul class="dropdown-menu dropdown-menu--coachmark">
+<li>
+<h2 class="coachmark__heading">Discussion Recommended!</h2>
+<p class="coachmark__description">Recommending means this is a 
+discussion worth sharing. It gets shared to your followers' Disqus 
+feeds, and gives the creator kudos!</p>
+<a href="https://disqus.com/home/?utm_source=disqus_embed&amp;utm_content=recommend_btn" class="btn btn-primary coachmark__button" target="_blank">
+ Find More Discussions 
+</a>
+</li>
+</ul>
+</div></li>
+<li id="thread-share-menu" class="nav-tab nav-tab--secondary dropdown share-menu hidden-sm"><a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Share">
+<span class="icon-export"></span>
+<span class="label">Share</span>
+</a>
+<ul class="share-menu dropdown-menu">
+<li>
+<div class="share-menu__label">Share this discussion on</div>
+<ul>
+<li class="twitter">
+<a data-action="share:twitter" href="#">Twitter</a>
+</li>
+<li class="facebook">
+<a data-action="share:facebook" href="#">Facebook</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-role="post-sort" class="nav-tab nav-tab--secondary dropdown sorting pull-right">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+Sort by Best
+
+
+<span class="caret"></span>
+</a>
+<ul class="dropdown-menu pull-right">
+<li class="selected">
+<a href="#" data-action="sort" data-sort="popular">Best<i aria-hidden="true" class="icon-checkmark"></i></a>
+</li>
+
+<li>
+<a href="#" data-action="sort" data-sort="desc">Newest<i aria-hidden="true" class="icon-checkmark"></i></a>
+</li>
+
+<li>
+<a href="#" data-action="sort" data-sort="asc">Oldest<i aria-hidden="true" class="icon-checkmark"></i></a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<div id="posts">
+<div id="form" class="textarea-wrapper--top-level"><form class="reply">
+<div class="postbox">
+<div role="alert"></div>
+<div class="avatar">
+<span class="user">
+<img data-role="user-avatar" src="a_data_002/noavatar92.png" alt="Avatar">
+</span>
+</div>
+
+<div class="textarea-wrapper" data-role="textarea" dir="auto"><div><span class="placeholder">Join the discussion…</span><div aria-label="Join the discussion…" style="overflow: auto; max-height: 350px;" data-role="editable" aria-multiline="true" role="textbox" tabindex="0" class="textarea" contenteditable="true"><p><br></p></div><div style="display: none;"><ul class="user-mention__list">
+<li class="header user-mention__header">
+<h5>in this conversation</h5>
+</li>
+</ul>
+</div></div>
+<div data-role="drag-drop-placeholder" class="media-drag-hover" style="display: none">
+<div class="drag-text">
+⬇ Drag and drop your images here to upload them.
+</div>
+</div>
+<div class="edit-alert" role="postbox-alert"></div>
+<div class="post-actions">
+<ul class="wysiwyg">
+</ul>
+</div>
+</div>
+
+<div data-role="login-form"><div><section class="auth-section logged-out">
+<div class="connect">
+<h6>Log in with</h6>
+<ul data-role="login-menu" class="services login-buttons">
+
+<li class="auth-disqus">
+<button type="button" data-action="auth:disqus" title="Disqus" class="connect__button"><i class="icon-disqus"></i></button>
+</li>
+<li class="auth-facebook">
+<button type="button" data-action="auth:facebook" title="Facebook" class="connect__button"><i class="icon-facebook-circle"></i></button>
+</li>
+<li class="auth-twitter">
+<button type="button" data-action="auth:twitter" title="Twitter" class="connect__button"><i class="icon-twitter-circle"></i></button>
+</li>
+<li class="auth-google">
+<button type="button" data-action="auth:google" title="Google" class="connect__button"><i class="icon-google-plus-circle"></i></button>
+</li>
+</ul>
+</div>
+<div class="guest">
+<h6 class="guest-form-title">
+<span class="register-text"> or sign up with Disqus </span>
+<span class="guest-text"> or pick a name </span>
+</h6>
+
+<div class="help-tooltip__wrapper help-icon">
+<div id="rules" class="tooltip show help-tooltip">
+<h3 class="help-tooltip__heading">Disqus is a discussion network</h3>
+<ul class="help-tooltip__list">
+<li><span>Disqus never moderates or censors. The rules on this community are its own.</span></li>
+<li><span>Your email is safe with us. It's only used for moderation and optional notifications.</span></li>
+<li><span>Don't be a jerk or do anything illegal. Everything is easier that way.</span></li>
+</ul>
+<p class="clearfix"><a href="https://docs.disqus.com/kb/terms-and-policies/" class="btn btn-small help-tooltip__button" target="_blank">Read full terms and conditions</a></p>
+</div>
+</div>
+
+<p class="input-wrapper">
+<input dir="auto" placeholder="Name" name="display_name" id="view42_display_name" maxlength="30" class="input--text" type="text">
+</p>
+
+<div class="guest-details " data-role="guest-details">
+<p class="input-wrapper">
+<input dir="auto" placeholder="Email" name="email" id="view42_email" class="input--text" type="email">
+</p>
+
+<p class="input-wrapper">
+<input dir="auto" class="register-text input--text" placeholder="Password" name="password" id="view42_password" type="password">
+</p>
+
+<div class="acceptance-wrapper register-text">
+By signing up, you agree to the Disqus <a target="_blank" href="https://help.disqus.com/customer/portal/articles/1753105-basic-rules-for-disqus-powered-profiles-and-discussions">Basic Rules</a>, <a target="_blank" href="https://help.disqus.com/customer/portal/articles/466260-terms-of-service">Terms of Service</a>, and <a target="_blank" href="https://help.disqus.com/customer/portal/articles/466259-privacy-policy">Privacy Policy</a>.
+</div>
+<div class="acceptance-wrapper guest-text">
+By posting, you agree to the Disqus <a target="_blank" href="https://help.disqus.com/customer/portal/articles/1753105-basic-rules-for-disqus-powered-profiles-and-discussions">Basic Rules</a>, <a target="_blank" href="https://help.disqus.com/customer/portal/articles/466260-terms-of-service">Terms of Service</a>, and <a target="_blank" href="https://help.disqus.com/customer/portal/articles/466259-privacy-policy">Privacy Policy</a>.
+</div>
+
+<div class="guest-checkbox">
+<label>
+<input name="author-guest" type="checkbox">
+I'd rather post as a guest
+</label>
+</div>
+
+<div class="proceed" data-role="submit-btn-container">
+<button type="submit" class="proceed__button btn submit" aria-label="Post"><span class="icon-proceed"></span><div class="spinner"></div></button>
+<button type="submit" class="proceed__button btn next" aria-label="Next"><span class="icon-proceed"></span><div class="spinner"></div></button>
+</div>
+</div>
+</div>
+</section>
+
+</div></div>
+</div>
+</form></div>
+
+<button class="alert alert--realtime" style="display: none" data-role="realtime-notification">
+</button>
+
+<div id="no-posts" style="display:none"></div>
+
+<ul id="post-list" class="post-list"><li id="post-2712945074" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="a_data_002/avatar92.jpg" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header class="comment__header">
+<span class="post-byline">
+<span class="author">Pankaj vajpayee</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://www.sitepoint.com/ajaxjquery-getjson-simple-example/#comment-2712945074" data-role="relative-time" class="time-ago" title="Sunday, June 5, 2016 3:40 PM">3 months ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Hey Florian,<br>If i wanted to print the value for <br>"obj": {</p><p>    "number": 1.2345e-6,</p><p>    "enabled": true</p><p>  },</p><p>  "message": "Strings have to be in double-quotes."</p><p>Then how may i print the value for "obj" and "message".</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer class="comment__footer">
+<menu class="comment-footer__menu">
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="comment__share">
+<a class="toggle"><span class="text">Share ›</span></a>
+<ul class="comment-share__buttons">
+<li class="twitter">
+<button class="share__button" data-action="share:twitter">Twitter</button>
+</li>
+<li class="facebook">
+<button class="share__button" data-action="share:facebook">Facebook</button>
+</li>
+<li class="link">
+<input class="share__button" value="http://disq.us/p/18v7tte" name="Link" title="Click to copy post link" data-action="copy-link" readonly="readonly">
+</li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:2712945074">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="realtime-button"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li id="post-2645077137" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar hovercard">
+<a href="https://disqus.com/by/disqus_PREJ8WaI3h/" class="user" data-action="profile" data-username="disqus_PREJ8WaI3h">
+<img data-role="user-avatar" data-user="205981960" src="a_data_002/avatar92.jpg" alt="Avatar">
+</a>
+</div>
+<div class="post-body">
+<header class="comment__header">
+<span class="post-byline">
+<span class="author publisher-anchor-color"><a href="https://disqus.com/by/disqus_PREJ8WaI3h/" data-action="profile" data-username="disqus_PREJ8WaI3h" data-role="username">Jorge de Castro</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://www.sitepoint.com/ajaxjquery-getjson-simple-example/#comment-2645077137" data-role="relative-time" class="time-ago" title="Wednesday, April 27, 2016 2:49 PM">4 months ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>I'm starting with javascript so you helped me a lot!. I had some 
+problems checking the status equal to 200 so I checked the documentation
+ at w3school and to make it works the correct line would be</p><p>$.getJSON(url, function (data, status) {<br>      if (status == "success") {</p><p>       }<br>}</p><p>instead of (status === 200)</p><p>I hope it helps, thanks again!!</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer class="comment__footer">
+<menu class="comment-footer__menu">
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="comment__share">
+<a class="toggle"><span class="text">Share ›</span></a>
+<ul class="comment-share__buttons">
+<li class="twitter">
+<button class="share__button" data-action="share:twitter">Twitter</button>
+</li>
+<li class="facebook">
+<button class="share__button" data-action="share:facebook">Facebook</button>
+</li>
+<li class="link">
+<input class="share__button" value="http://disq.us/p/17qt6kx" name="Link" title="Click to copy post link" data-action="copy-link" readonly="readonly">
+</li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:2645077137">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="realtime-button"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li id="post-2636723071" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar hovercard">
+<a href="https://disqus.com/by/disqus_cjcdJbhmMd/" class="user" data-action="profile" data-username="disqus_cjcdJbhmMd">
+<img data-role="user-avatar" data-user="205372651" src="a_data_002/avatar92.jpg" alt="Avatar">
+</a>
+</div>
+<div class="post-body">
+<header class="comment__header">
+<span class="post-byline">
+<span class="author publisher-anchor-color"><a href="https://disqus.com/by/disqus_cjcdJbhmMd/" data-action="profile" data-username="disqus_cjcdJbhmMd" data-role="username">Erik</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://www.sitepoint.com/ajaxjquery-getjson-simple-example/#comment-2636723071" data-role="relative-time" class="time-ago" title="Friday, April 22, 2016 12:15 PM">4 months ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Thanks for the article Florian. I've been keep wondering about why 
+should we use Json. Infact, before I read this article, I didn't know 
+the diffrence between Json's type 'post' and 'get'. I highly recommend 
+this article to people who recently started programming just like me. 
+Once again, Thank you for this wonderful article.</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer class="comment__footer">
+<menu class="comment-footer__menu">
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="comment__share">
+<a class="toggle"><span class="text">Share ›</span></a>
+<ul class="comment-share__buttons">
+<li class="twitter">
+<button class="share__button" data-action="share:twitter">Twitter</button>
+</li>
+<li class="facebook">
+<button class="share__button" data-action="share:facebook">Facebook</button>
+</li>
+<li class="link">
+<input class="share__button" value="http://disq.us/p/17lu4jj" name="Link" title="Click to copy post link" data-action="copy-link" readonly="readonly">
+</li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:2636723071">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="realtime-button"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li id="post-2529580690" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar hovercard">
+<a href="https://disqus.com/by/chrishpz/" class="user" data-action="profile" data-username="chrishpz">
+<img data-role="user-avatar" data-user="24741085" src="a_data_002/avatar92.jpg" alt="Avatar">
+</a>
+</div>
+<div class="post-body">
+<header class="comment__header">
+<span class="post-byline">
+<span class="author publisher-anchor-color"><a href="https://disqus.com/by/chrishpz/" data-action="profile" data-username="chrishpz" data-role="username">Chris</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://www.sitepoint.com/ajaxjquery-getjson-simple-example/#comment-2529580690" data-role="relative-time" class="time-ago" title="Tuesday, February 23, 2016 4:24 AM">6 months ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Hi Florian, thanks for the article. I've been refreshing my memory 
+with ajax and json lately. In one such instance, I have a json file 
+being read and specifics pieces of data are being returned on screen. 
+However, I keep seeing [HTMLDivElement] preceding the data on the page. 
+Where does this come from and how can I keep it from appearing? Thanks 
+much</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer class="comment__footer">
+<menu class="comment-footer__menu">
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="comment__share">
+<a class="toggle"><span class="text">Share ›</span></a>
+<ul class="comment-share__buttons">
+<li class="twitter">
+<button class="share__button" data-action="share:twitter">Twitter</button>
+</li>
+<li class="facebook">
+<button class="share__button" data-action="share:facebook">Facebook</button>
+</li>
+<li class="link">
+<input class="share__button" value="http://disq.us/p/15u1oya" name="Link" title="Click to copy post link" data-action="copy-link" readonly="readonly">
+</li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:2529580690">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="realtime-button"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"><li id="post-2530637652" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="a_data_002/avatar92.jpg" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header class="comment__header">
+<span class="post-byline">
+<span class="author">Ton Lankveld</span>
+
+<span><a href="https://www.sitepoint.com/ajaxjquery-getjson-simple-example/#comment-2529580690" class="parent-link" data-role="parent-link"><i aria-hidden="true" class="icon-forward" title="in reply to"></i> Chris</a></span>
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://www.sitepoint.com/ajaxjquery-getjson-simple-example/#comment-2530637652" data-role="relative-time" class="time-ago" title="Tuesday, February 23, 2016 8:04 PM">6 months ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>If your data/text is inserted at the wrong spot, in the selected element, you probably use the wrong method. See: <a href="https://learn.jquery.com/using-jquery-core/manipulating-elements/#moving-copying-and-removing-elements" rel="nofollow">https://learn.jquery.com/using...</a></p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer class="comment__footer">
+<menu class="comment-footer__menu">
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="comment__share">
+<a class="toggle"><span class="text">Share ›</span></a>
+<ul class="comment-share__buttons">
+<li class="twitter">
+<button class="share__button" data-action="share:twitter">Twitter</button>
+</li>
+<li class="facebook">
+<button class="share__button" data-action="share:facebook">Facebook</button>
+</li>
+<li class="link">
+<input class="share__button" value="http://disq.us/p/15uocic" name="Link" title="Click to copy post link" data-action="copy-link" readonly="readonly">
+</li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:2530637652">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="realtime-button"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"><li id="post-2533235752" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar hovercard">
+<a href="https://disqus.com/by/chrishpz/" class="user" data-action="profile" data-username="chrishpz">
+<img data-role="user-avatar" data-user="24741085" src="a_data_002/avatar92.jpg" alt="Avatar">
+</a>
+</div>
+<div class="post-body">
+<header class="comment__header">
+<span class="post-byline">
+<span class="author publisher-anchor-color"><a href="https://disqus.com/by/chrishpz/" data-action="profile" data-username="chrishpz" data-role="username">Chris</a></span>
+
+<span><a href="https://www.sitepoint.com/ajaxjquery-getjson-simple-example/#comment-2530637652" class="parent-link" data-role="parent-link"><i aria-hidden="true" class="icon-forward" title="in reply to"></i> Ton Lankveld</a></span>
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://www.sitepoint.com/ajaxjquery-getjson-simple-example/#comment-2533235752" data-role="relative-time" class="time-ago" title="Thursday, February 25, 2016 1:49 AM">6 months ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Got it worked out actually. A variable had the $ operator in front of
+ it which made jQuery think it was a jQuery object. That's what I get 
+for staring at code for a few hours.</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer class="comment__footer">
+<menu class="comment-footer__menu">
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="comment__share">
+<a class="toggle"><span class="text">Share ›</span></a>
+<ul class="comment-share__buttons">
+<li class="twitter">
+<button class="share__button" data-action="share:twitter">Twitter</button>
+</li>
+<li class="facebook">
+<button class="share__button" data-action="share:facebook">Facebook</button>
+</li>
+<li class="link">
+<input class="share__button" value="http://disq.us/p/15w817s" name="Link" title="Click to copy post link" data-action="copy-link" readonly="readonly">
+</li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:2533235752">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="realtime-button"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li></ul>
+
+</li></ul>
+
+</li></ul>
+
+<div class="load-more" data-role="more" style="display:none">
+<a href="#" data-action="more-posts" class="btn load-more__button">Load more comments</a>
+</div>
+</div>
+
+</section>
+
+<div id="placement-bottom" data-tracking-area="discovery-south"><div style="height: 0px; visibility: hidden;" class="post-list"></div></div>
+
+<div id="footer" data-tracking-area="footer" class="disqus-footer__wrapper">
+<ul class="disqus-footer">
+<li class="disqus-footer__logo"><a href="https://disqus.com/" rel="nofollow" title="Powered by Disqus" class="disqus-footer__link">Powered by Disqus</a></li>
+<li id="thread-subscribe-button" class="email disqus-footer__item"> 
+<div class="default">
+<a href="#" rel="nofollow" data-action="subscribe" title="Subscribe and get email updates from this discussion" class="disqus-footer__link"><i aria-hidden="true" class="icon icon-mail"></i><span class="clip">Subscribe</span> <i aria-hidden="true" class="icon icon-checkmark"></i></a>
+</div>
+<div class="form">
+<div class="input-wrapper"><input id="thread-subscribe-email" placeholder="yourname@email.com" class="disqus-footer__input input--text" type="email"></div>
+</div>
+</li>
+<li class="install disqus-footer__item">
+<a href="https://publishers.disqus.com/engage?utm_source=sitepointproduction&amp;utm_medium=Disqus-Footer" rel="nofollow" target="_blank" class="disqus-footer__link">
+<i aria-hidden="true" class="icon icon-disqus"></i>
+<span class="clip hidden-sm">Add Disqus to your site</span>
+<span class="clip visible-sm hidden-xs">Add Disqus</span>
+<span class="clip visible-xs">Add</span>
+</a>
+</li>
+<li class="privacy disqus-footer__item">
+<a href="https://help.disqus.com/customer/portal/articles/1657951?utm_source=disqus&amp;utm_medium=embed-footer&amp;utm_content=privacy-btn" rel="nofollow" target="_blank" class="disqus-footer__link">
+<i aria-hidden="true" class="icon icon-lock"></i>
+<span class="clip">Privacy</span>
+</a>
+</li>
+</ul>
+</div>
+</div><img src="a_data_002/23096.gif" style="display: none;"><img src="a_data_002/a.htm" style="display: none;"><img src="a_data_002/tpidc8qppl7p29cafol.gif" style="display: none;"><iframe src="a_data_002/sync.htm" style="display: none;"></iframe></body></html>

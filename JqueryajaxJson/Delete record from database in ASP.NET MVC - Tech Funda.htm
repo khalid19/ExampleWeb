@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" style=""><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delete record from database in ASP.NET MVC - Tech Funda</title>
+<link href="Delete%20record%20from%20database%20in%20ASP.NET%20MVC%20-%20Tech%20Funda_files/bootstrap.css" rel="stylesheet">
+<link href="Delete%20record%20from%20database%20in%20ASP.NET%20MVC%20-%20Tech%20Funda_files/Site.css" rel="stylesheet">
+<script src="Delete%20record%20from%20database%20in%20ASP.NET%20MVC%20-%20Tech%20Funda_files/gpt.js" type="text/javascript" async=""></script><script src="Delete%20record%20from%20database%20in%20ASP.NET%20MVC%20-%20Tech%20Funda_files/analytics.js" async=""></script><script src="Delete%20record%20from%20database%20in%20ASP.NET%20MVC%20-%20Tech%20Funda_files/ca-pub-3021550955035385.js"></script><script src="Delete%20record%20from%20database%20in%20ASP.NET%20MVC%20-%20Tech%20Funda_files/modernizr-2.js"></script>
+<script src="Delete%20record%20from%20database%20in%20ASP.NET%20MVC%20-%20Tech%20Funda_files/jquery.js"></script>
+<link rel="shortcut icon" href="http://techfunda.com/favicon.ico">
+<meta name="keywords" content="ASP.NET MVC, delete record from database, Database operations, ASP.NET MVC, delete using DbContext, DbContext">
+<meta name="description" content="To delete a record from database, again we will be using &lt;a href=&quot;http://techfunda.com/Howto/asp-net-mvc/109/scaffold-controller-and-view&quot; title=&quot;S">
+<script src="Delete%20record%20from%20database%20in%20ASP.NET%20MVC%20-%20Tech%20Funda_files/TechFundaScripts.js"></script>
+ 
+<script async="" src="Delete%20record%20from%20database%20in%20ASP.NET%20MVC%20-%20Tech%20Funda_files/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-3021550955035385",
+    enable_page_level_ads: true
+  });
+    </script>
+ 
+<script src="Delete%20record%20from%20database%20in%20ASP.NET%20MVC%20-%20Tech%20Funda_files/a.js" type="text/javascript"></script><script async="" src="Delete%20record%20from%20database%20in%20ASP.NET%20MVC%20-%20Tech%20Funda_files/pubads_impl_94.js"></script><link href="http://tpc.googlesyndication.com/safeframe/1-0-4/html/container.html" rel="prefetch"></head>
+<body>
+<header>
+<div class="logoBar navbar-fixed-top container-fluid">
+<div class="mainLogoPanel">
+<a href="http://techfunda.com/" class="spacer"><img src="Delete%20record%20from%20database%20in%20ASP.NET%20MVC%20-%20Tech%20Funda_files/TechFunda.gif" alt="TechFunda"></a> <span class="label label-info">Online: 9231</span>
+<div class="pull-right">
+ 
+<a href="https://plus.google.com/+TechFundaHowto/" target="_blank" title="Google"><img src="Delete%20record%20from%20database%20in%20ASP.NET%20MVC%20-%20Tech%20Funda_files/google_32.png" alt="G"></a><a href="https://twitter.com/TechFundaHowto" target="_blank" title="Twitter"><img src="Delete%20record%20from%20database%20in%20ASP.NET%20MVC%20-%20Tech%20Funda_files/twitter_32.png" alt="T"></a><a href="https://www.facebook.com/TechFundaHowto" target="_blank" title="Facebook"><img src="Delete%20record%20from%20database%20in%20ASP.NET%20MVC%20-%20Tech%20Funda_files/facebook_32.png" alt="F"></a>
+</div>
+</div>
+</div>
+<nav>
+<div class="navbar navbar-inverse navbar-fixed-top">
+<div class="container-fluid killLeftRightSpace">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle" data-toggle="collapse" style="padding:6px 12px;color:white;" onclick="ShowMenu('divSearch')">
+<span class="glyphicon glyphicon-search"></span>
+</button>
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#divMainMenu">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div>
+<div class="navbar-collapse collapse" id="divMainMenu">
+<ul class="nav navbar-nav navbar-left">
+<li class="dropdown">
+<a href="#" title="Home" id="mmhome"><span class="glyphicon glyphicon-home"></span> <span class="caret"></span></a>
+<ul class="dropdown-menu" role="menu">
+<li><a href="http://techfunda.com/Home/LatestPosts" title="Latest Posts">Latest Posts</a></li>
+<li><a href="http://techfunda.com/Home/TopPosts" title="Top Posts">Top Posts</a></li>
+</ul>
+</li>
+<li class="selectedMainMenu" id="mmasp-net-mvc"><a href="http://techfunda.com/howto/asp-net-mvc">ASP.NET MVC</a></li>
+<li id="mmangularjs"><a href="http://techfunda.com/howto/angularjs">AngularJS</a></li>
+<li id="mmsql-server"><a href="http://techfunda.com/howto/sql-server">SQL Server</a></li>
+<li id="mmjquery"><a href="http://techfunda.com/howto/jquery">jQuery</a></li>
+<li id="mmjavascript"><a href="http://techfunda.com/howto/javascript">JavaScript</a></li>
+<li id="mmhtml5"><a href="http://techfunda.com/howto/html5">HTML5</a></li>
+<li id="mmbootstrap"><a href="http://techfunda.com/howto/bootstrap">Bootstrap</a></li>
+<li><a href="javascript:void(0)" onclick="ShowMenu('divLibList')"><span class="glyphicon glyphicon-list"></span> More <span class="caret"></span></a></li>
+</ul>
+<ul class="nav navbar-nav navbar-right" style="margin-right:5px;">
+<li id="mmcode"><a href="http://techfunda.com/Examples/" title="Live Examples"><span class="glyphicon glyphicon-globe"></span> Live Examples</a></li>
+<li class="dropdown" id="mmtools">
+<a><span class="glyphicon glyphicon-star"></span> Tools <span class="caret"></span></a>
+<ul class="dropdown-menu" role="menu" id="divTools">
+<li><a href="http://techfunda.com/Tools/PasswordGenerator">Password Generator Online</a></li>
+<li><a href="http://techfunda.com/Tools/HtmlEncodeDecode">HTML Encoder and Decoder</a></li>
+<li><a href="http://techfunda.com/Tools/UrlEncodeDecode">URL Encoder and Decoder</a></li>
+<li><a href="http://techfunda.com/Tools/XmlToJson">Xml to Json</a></li>
+<li><a href="http://techfunda.com/Code/Demo">Code Editor</a></li>
+<li><a href="http://techfunda.com/Tools/ColorPicker">Color Picker and Preview</a></li>
+</ul>
+</li>
+<li class="smallHide"><a href="javascript:void(0)" onclick="ShowMenu('divSearch')"><span class="glyphicon glyphicon-search"></span></a></li>
+</ul>
+</div>
+</div>
+</div>
+</nav>
+<div id="divLibList">
+<div class="container-fluid killLeftRightSpace">
+<div class="row">
+<div class="col-md-12">
+<div class="pull-right" style="padding:0px 20px;"><a href="javascript:void(0)" onclick="ShowMenu('divLibList')" style="color: white;"><span class="glyphicon glyphicon-remove"></span></a></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-2 divLibMenu" id="mmandroid-os"><a href="http://techfunda.com/howto/android-os">Android OS</a></div>
+<div class="col-md-2 divLibMenu" id="mmc"><a href="http://techfunda.com/howto/c">C#</a></div>
+<div class="col-md-2 divLibMenu" id="mmmisc"><a href="http://techfunda.com/howto/misc">Misc.</a></div>
+<div class="col-md-2 divLibMenu" id="mmtypescript"><a href="http://techfunda.com/howto/typescript">Typescript</a></div>
+<div class="col-md-2 divLibMenu" id="mmcss3"><a href="http://techfunda.com/howto/css3">CSS3</a></div>
+<div class="col-md-2 divLibMenu" id="mmexcel"><a href="http://techfunda.com/howto/excel">Excel</a></div>
+</div>
+</div>
+</div>
+<div id="divSearch">
+<div class="container-fluid killLeftRightSpace">
+<div class="pull-right" style="padding:0px 20px;"><a href="javascript:void(0)" onclick="ShowMenu('divSearch')" style="color: white;"><span class="glyphicon glyphicon-remove"></span></a></div>
+<div style="max-width:350px;margin:auto;">
+<form action="/Search" method="get">
+<div class="input-group">
+<input id="q" placeholder="Search" required="" name="q" class="form-control" style="max-width:320px;" type="text">
+<span class="input-group-btn">
+<button class="btn btn-success" type="submit" title="Search">
+<span class="glyphicon glyphicon-search"></span>
+</button>
+</span>
+</div>
+</form>
+</div>
+</div>
+</div>
+</header>
+<div class="container-fluid body-content">
+<div class="smallHide" style="padding-left:10px;">
+<h4>ASP.NET MVC &gt; Entity Framework</h4>
+</div>
+<div class="row">
+<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 killLeftRightSpace" id="divLeft">
+<div class="tocPlaceholder">
+<aside>
+<span class="smallShow bigHide">ASP.NET MVC "How to" list</span>
+<button type="button" class="navbar-toggle" id="btnTOC" data-toggle="collapse" data-target="#divTOC">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<div class="navbar-collapse collapse tocMenu" id="divTOC">
+<div class="smallHide">
+</div>
+<div class="tocExpColpse">&nbsp;136 "How to" posts &nbsp;<a href="javascript:ShowSearchCatPosts()" title="Search posts"><span class="glyphicon glyphicon-search"></span></a></div>
+<div class="spacer">
+<a href="javascript:void(0)" title="Expand sub categories" onclick="ToggleSubCats()" style="white-space:nowrap;"><span class="glyphicon glyphicon-minus tocExpanderS"></span> Toggle Sub Categories <span class="glyphicon glyphicon-plus tocExpanderS"></span></a>
+</div>
+<div class="clearfix"></div>
+<h5 id="h51" data-rendersubcat="true" data-reorder="False">
+<a id="tsc1" data-subcatid="2" class="tocExpander" href="javascript:void(0)" title="Toggle posts" onclick="GetSubCatPosts(2, 2, 'ASP.NET MVC', 1)">
+<span class="glyphicon glyphicon-plus tocExpanderS"></span>
+</a> <a href="http://techfunda.com/howto/asp-net-mvc/basics" title="Basics">ASP.NET MVC Basics</a>
+</h5>
+<h5 id="h52" data-rendersubcat="true" data-reorder="False">
+<a id="tsc2" data-subcatid="3" class="tocExpander" href="javascript:void(0)" title="Toggle posts" onclick="GetSubCatPosts(2, 3, 'ASP.NET MVC', 2)">
+<span class="glyphicon glyphicon-plus tocExpanderS"></span>
+</a> <a href="http://techfunda.com/howto/asp-net-mvc/views-razor-engine" title="Views - Razor Engine">ASP.NET MVC Views - Razor Engine</a>
+</h5>
+<h5 id="h53" data-rendersubcat="true" data-reorder="False">
+<a id="tsc3" data-subcatid="29" class="tocExpander" href="javascript:void(0)" title="Toggle posts" onclick="GetSubCatPosts(2, 29, 'ASP.NET MVC', 3)">
+<span class="glyphicon glyphicon-plus tocExpanderS"></span>
+</a> <a href="http://techfunda.com/howto/asp-net-mvc/view-form-specific" title="View - Form specific">ASP.NET MVC View - Form specific</a>
+</h5>
+<h5 id="h54" data-rendersubcat="true" data-reorder="False">
+<a id="tsc4" data-subcatid="31" class="tocExpander" href="javascript:void(0)" title="Toggle posts" onclick="GetSubCatPosts(2, 31, 'ASP.NET MVC', 4)">
+<span class="glyphicon glyphicon-plus tocExpanderS"></span>
+</a> <a href="http://techfunda.com/howto/asp-net-mvc/models" title="Models">ASP.NET MVC Models</a>
+</h5>
+<h5 id="h55" data-rendersubcat="true" data-reorder="False">
+<a id="tsc5" data-subcatid="36" class="tocExpander" href="javascript:void(0)" title="Toggle posts" onclick="GetSubCatPosts(2, 36, 'ASP.NET MVC', 5)">
+<span class="glyphicon glyphicon-plus tocExpanderS"></span>
+</a> <a href="http://techfunda.com/howto/asp-net-mvc/viewmodel" title="ViewModel">ASP.NET MVC ViewModel</a>
+</h5>
+<h5 id="h56" data-rendersubcat="true" data-reorder="False">
+<a id="tsc6" data-subcatid="52" class="tocExpander" href="javascript:void(0)" title="Toggle posts" onclick="GetSubCatPosts(2, 52, 'ASP.NET MVC', 6)">
+<span class="glyphicon glyphicon-plus tocExpanderS"></span>
+</a> <a href="http://techfunda.com/howto/asp-net-mvc/controller" title="Controller">ASP.NET MVC Controller</a>
+</h5>
+<h5 id="h57" data-rendersubcat="true" data-reorder="False">
+<a id="tsc7" data-subcatid="53" class="tocExpander" href="javascript:void(0)" title="Toggle posts" onclick="GetSubCatPosts(2, 53, 'ASP.NET MVC', 7)">
+<span class="glyphicon glyphicon-plus tocExpanderS"></span>
+</a> <a href="http://techfunda.com/howto/asp-net-mvc/partial-view" title="Partial view">ASP.NET MVC Partial view</a>
+</h5>
+<h5 id="h58" data-rendersubcat="true" data-reorder="False">
+<a id="tsc8" data-subcatid="54" class="tocExpander" href="javascript:void(0)" title="Toggle posts" onclick="GetSubCatPosts(2, 54, 'ASP.NET MVC', 8)">
+<span class="glyphicon glyphicon-plus tocExpanderS"></span>
+</a> <a href="http://techfunda.com/howto/asp-net-mvc/redirect" title="Redirect">ASP.NET MVC Redirect</a>
+</h5>
+<h5 id="h59" data-rendersubcat="true" data-reorder="False">
+<a id="tsc9" data-subcatid="55" class="tocExpander" href="javascript:void(0)" title="Toggle posts" onclick="GetSubCatPosts(2, 55, 'ASP.NET MVC', 9)">
+<span class="glyphicon glyphicon-plus tocExpanderS"></span>
+</a> <a href="http://techfunda.com/howto/asp-net-mvc/passing-data" title="Passing data">ASP.NET MVC Passing data</a>
+</h5>
+<h5 id="h510" data-rendersubcat="true" data-reorder="False">
+<a id="tsc10" data-subcatid="56" class="tocExpander" href="javascript:void(0)" title="Toggle posts" onclick="GetSubCatPosts(2, 56, 'ASP.NET MVC', 10)">
+<span class="glyphicon glyphicon-plus tocExpanderS"></span>
+</a> <a href="http://techfunda.com/howto/asp-net-mvc/output" title="Output">ASP.NET MVC Output</a>
+</h5>
+<h5 id="h511" data-rendersubcat="true" data-reorder="False">
+<a id="tsc11" data-subcatid="57" class="tocExpander" href="javascript:void(0)" title="Toggle posts" onclick="GetSubCatPosts(2, 57, 'ASP.NET MVC', 11)">
+<span class="glyphicon glyphicon-plus tocExpanderS"></span>
+</a> <a href="http://techfunda.com/howto/asp-net-mvc/route" title="Route">ASP.NET MVC Route</a>
+</h5>
+<h5 id="h512" data-rendersubcat="true" data-reorder="False">
+<a id="tsc12" data-subcatid="58" class="tocExpander" href="javascript:void(0)" title="Toggle posts" onclick="GetSubCatPosts(2, 58, 'ASP.NET MVC', 12)">
+<span class="glyphicon glyphicon-plus tocExpanderS"></span>
+</a> <a href="http://techfunda.com/howto/asp-net-mvc/urls" title="URLs">ASP.NET MVC URLs</a>
+</h5>
+<h5 id="h513" data-rendersubcat="true" data-reorder="False">
+<a id="tsc13" data-subcatid="59" class="tocExpander" href="javascript:void(0)" title="Toggle posts" onclick="GetSubCatPosts(2, 59, 'ASP.NET MVC', 13)">
+<span class="glyphicon glyphicon-plus tocExpanderS"></span>
+</a> <a href="http://techfunda.com/howto/asp-net-mvc/authentication-and-authorization" title="Authentication and Authorization">ASP.NET MVC Authentication and Authorization</a>
+</h5>
+<h5 id="h514" data-rendersubcat="true" data-reorder="False">
+<a id="tsc14" data-subcatid="60" class="tocExpander" href="javascript:void(0)" title="Toggle posts" onclick="GetSubCatPosts(2, 60, 'ASP.NET MVC', 14)">
+<span class="glyphicon glyphicon-plus tocExpanderS"></span>
+</a> <a href="http://techfunda.com/howto/asp-net-mvc/error-handling" title="Error handling">ASP.NET MVC Error handling</a>
+</h5>
+<h5 id="h515" data-rendersubcat="true" data-reorder="False">
+<a id="tsc15" data-subcatid="61" class="tocExpander" href="javascript:void(0)" title="Toggle posts" onclick="GetSubCatPosts(2, 61, 'ASP.NET MVC', 15)">
+<span class="glyphicon glyphicon-plus tocExpanderS"></span>
+</a> <a href="http://techfunda.com/howto/asp-net-mvc/validation" title="Validation">ASP.NET MVC Validation</a>
+</h5>
+<h5 id="h516" data-rendersubcat="true" data-reorder="False">
+<a id="tsc16" data-subcatid="62" class="tocExpander" href="javascript:void(0)" title="Toggle posts" onclick="GetSubCatPosts(2, 62, 'ASP.NET MVC', 16)">
+<span class="glyphicon glyphicon-plus tocExpanderS"></span>
+</a> <a href="http://techfunda.com/howto/asp-net-mvc/session-management" title="Session management">ASP.NET MVC Session management</a>
+</h5>
+<h5 id="h517" data-rendersubcat="true" data-reorder="False">
+<a id="tsc17" data-subcatid="63" class="tocExpander" href="javascript:void(0)" title="Toggle posts" onclick="GetSubCatPosts(2, 63, 'ASP.NET MVC', 17)">
+<span class="glyphicon glyphicon-plus tocExpanderS"></span>
+</a> <a href="http://techfunda.com/howto/asp-net-mvc/caching" title="Caching">ASP.NET MVC Caching</a>
+</h5>
+<h5 id="h518" data-rendersubcat="false" data-reorder="False">
+<a id="tsc18" data-subcatid="64" class="tocExpander" href="javascript:void(0)" title="Toggle posts" onclick="GetSubCatPosts(2, 64, 'ASP.NET MVC', 18)"><span class="glyphicon glyphicon-minus tocExpanderS"></span></a> <a href="http://techfunda.com/howto/asp-net-mvc/entity-framework" title="Entity Framework">ASP.NET MVC Entity Framework</a>
+</h5> <ul class="list-group" id="scatP18"> <li class="list-group-item" id="tcp277"><a href="http://techfunda.com/howto/277/list-the-data-from-database" title="How to list the data from database in ASP.NET MVC?">List the data from database</a>
+</li> <li class="list-group-item" id="tcp278"><a href="http://techfunda.com/howto/278/insert-record-into-database" title="How to insert a record into database in ASP.NET MVC?">Insert record into database</a>
+</li> <li class="list-group-item" id="tcp279"><a href="http://techfunda.com/howto/279/update-record-into-database" title="How to update a record into the database in ASP.NET MVC?">Update record into database</a>
+</li> <li class="list-group-item selectedTocPost" id="tcp280"><a href="http://techfunda.com/howto/280/delete-record-from-database" title="How to delete a record from the database?">Delete record from database</a>
+</li> <li class="list-group-item" id="tcp281"><a href="http://techfunda.com/howto/281/file-upload" title="How to upload a file on the server in ASP.NET MVC?">File upload</a>
+</li> <li class="list-group-item" id="tcp282"><a href="http://techfunda.com/howto/282/upload-multiple-files-on-server" title="How to upload multiple files on server in ASP.NET MVC?">Upload multiple files on server</a>
+</li> <li class="list-group-item" id="tcp283"><a href="http://techfunda.com/howto/283/pagination-of-records" title="How to paginate records in the ASP.NET MVC view?">Pagination of records</a>
+</li> <li class="list-group-item" id="tcp284"><a href="http://techfunda.com/howto/284/sort-paginate-records" title="How to sort and paginate records in ASP.NET MVC?">Sort &amp; paginate records</a>
+</li> <li class="list-group-item" id="tcp285"><a href="http://techfunda.com/howto/285/search-based-on-keyword" title="How to perform a search based on a keyword from the database table in ASP.NET MVC?">Search based on keyword</a>
+</li> <li class="list-group-item" id="tcp286"><a href="http://techfunda.com/howto/286/listing-records-in-grid" title="How to quickly list records in Grid in ASP.NET MVC?">Listing records in Grid</a>
+</li> <li class="list-group-item" id="tcp288"><a href="http://techfunda.com/howto/288/insert-record-using-transactions" title="How to work with Transactions in ASP.NET MVC?">Insert record using transactions</a>
+</li> </ul>
+
+<h5 id="h519" data-rendersubcat="true" data-reorder="False">
+<a id="tsc19" data-subcatid="65" class="tocExpander" href="javascript:void(0)" title="Toggle posts" onclick="GetSubCatPosts(2, 65, 'ASP.NET MVC', 19)">
+<span class="glyphicon glyphicon-plus tocExpanderS"></span>
+</a> <a href="http://techfunda.com/howto/asp-net-mvc/ajax" title="Ajax">ASP.NET MVC Ajax</a>
+</h5>
+<h5 id="h520" data-rendersubcat="true" data-reorder="False">
+<a id="tsc20" data-subcatid="67" class="tocExpander" href="javascript:void(0)" title="Toggle posts" onclick="GetSubCatPosts(2, 67, 'ASP.NET MVC', 20)">
+<span class="glyphicon glyphicon-plus tocExpanderS"></span>
+</a> <a href="http://techfunda.com/howto/asp-net-mvc/asynchronous" title="Asynchronous">ASP.NET MVC Asynchronous</a>
+</h5>
+<h5 id="h521" data-rendersubcat="true" data-reorder="False">
+<a id="tsc21" data-subcatid="68" class="tocExpander" href="javascript:void(0)" title="Toggle posts" onclick="GetSubCatPosts(2, 68, 'ASP.NET MVC', 21)">
+<span class="glyphicon glyphicon-plus tocExpanderS"></span>
+</a> <a href="http://techfunda.com/howto/asp-net-mvc/bundles" title="Bundles">ASP.NET MVC Bundles</a>
+</h5>
+<h5 id="h522" data-rendersubcat="true" data-reorder="False">
+<a id="tsc22" data-subcatid="69" class="tocExpander" href="javascript:void(0)" title="Toggle posts" onclick="GetSubCatPosts(2, 69, 'ASP.NET MVC', 22)">
+<span class="glyphicon glyphicon-plus tocExpanderS"></span>
+</a> <a href="http://techfunda.com/howto/asp-net-mvc/web-api" title="Web API">ASP.NET MVC Web API</a>
+</h5>
+<h5 id="h523" data-rendersubcat="true" data-reorder="False">
+<a id="tsc23" data-subcatid="70" class="tocExpander" href="javascript:void(0)" title="Toggle posts" onclick="GetSubCatPosts(2, 70, 'ASP.NET MVC', 23)">
+<span class="glyphicon glyphicon-plus tocExpanderS"></span>
+</a> <a href="http://techfunda.com/howto/asp-net-mvc/exporting-data" title="Exporting Data">ASP.NET MVC Exporting Data</a>
+</h5>
+<h5 id="h524" data-rendersubcat="true" data-reorder="False">
+<a id="tsc24" data-subcatid="71" class="tocExpander" href="javascript:void(0)" title="Toggle posts" onclick="GetSubCatPosts(2, 71, 'ASP.NET MVC', 24)">
+<span class="glyphicon glyphicon-plus tocExpanderS"></span>
+</a> <a href="http://techfunda.com/howto/asp-net-mvc/unit-testing" title="Unit testing">ASP.NET MVC Unit testing</a>
+</h5>
+<h5 id="h525" data-rendersubcat="true" data-reorder="False">
+<a id="tsc25" data-subcatid="182" class="tocExpander" href="javascript:void(0)" title="Toggle posts" onclick="GetSubCatPosts(2, 182, 'ASP.NET MVC', 25)">
+<span class="glyphicon glyphicon-plus tocExpanderS"></span>
+</a> <a href="http://techfunda.com/howto/asp-net-mvc/action-invoker" title="Action Invoker">ASP.NET MVC Action Invoker</a>
+</h5>
+<script>
+    var subCatCount = 25;
+    function ToggleSubCats()
+    {
+        for (var i = 1; i <= subCatCount; i++){
+            $("#tsc" + i).trigger("click");
+        }
+    }
+
+</script>
+<script>
+                        $(function(){
+                            // collapse TOC and expand related sub category
+                            var thisPostSubCatId = '64';
+                            if (thisPostSubCatId.length > 0)
+                            {
+                                // filter out this post subcatid and show
+                                $("a").filter("[data-subcatid='" + thisPostSubCatId + "']").trigger("click");
+                            }
+                        });
+                    </script>
+<div class="clearfix"></div>
+<div>
+</div>
+</div>
+</aside>
+</div>
+</div>
+<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12" style="padding-right:0px;" id="divCenter">
+<div class="TFContent">
+<main>
+<div id="divCatSearchP" style="display:none;">
+<hr>
+<form class="form-inline" method="post" onsubmit="return SearchCatPosts('2')">
+Search posts under ASP.NET MVC: <input name="qp" id="qp" class="form-control" required="" type="text">
+<input value="Search" class="btn btn-success" type="submit"> <img id="imgWaitCS" style="display:none;" src="Delete%20record%20from%20database%20in%20ASP.NET%20MVC%20-%20Tech%20Funda_files/wait.gif" alt="Please wait ...">
+</form>
+<hr>
+<h4 id="h4TList"></h4><span id="lblCnt" class="text-danger"></span>
+<ol id="divTOCForCat" class="liLoose"></ol>
+</div>
+<h1 class="pageHeading">Delete record from database in ASP.NET MVC</h1>
+<h5 class="pageHeading">How to delete a record from the database?</h5><br>
+<div class="row">
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 iconSizeL killPaddingSmall">
+<a class="aNavP" href="http://techfunda.com/howto/279/update-record-into-database" title="How to update a record into the database in ASP.NET MVC?"><span class="glyphicon glyphicon-circle-arrow-left"></span> <span class="smallHide">Previous Post</span></a>
+</div>
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 iconSizeL text-right killPaddingSmall">
+<a class="aNav" href="http://techfunda.com/howto/281/file-upload" title="How to upload a file on the server in ASP.NET MVC?"><span class="smallHide">Next Post</span> <span class="glyphicon glyphicon-circle-arrow-right"></span></a>
+</div>
+</div><hr>
+<div class="ads" style="margin-bottom:15px;">
+<div data-type="ad" data-publisher="techfunda.com" data-format="728x90" data-zone="ros"></div>
+</div><p>To delete a record from database, again we will be using <a href="http://techfunda.com/Howto/asp-net-mvc/109/scaffold-controller-and-view" title="Scaffolding controller and view" target="_blank">the same scaffolding template</a>.</p>
+<p class="codeHeading">CONTROLLER ACTION METHODS</p>
+<pre style="" class="prettyprint prettyprinted"><span class="com">// GET: PersonalDetails/Delete/5</span><span class="pln">
+</span><span class="kwd">public</span><span class="pln"> </span><span class="typ">ActionResult</span><span class="pln"> </span><span class="typ">Delete</span><span class="pun">(</span><span class="kwd">int</span><span class="pun">?</span><span class="pln"> id</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">id </span><span class="pun">==</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">HttpStatusCodeResult</span><span class="pun">(</span><span class="typ">HttpStatusCode</span><span class="pun">.</span><span class="typ">BadRequest</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="typ">PersonalDetail</span><span class="pln"> personalDetail </span><span class="pun">=</span><span class="pln"> db</span><span class="pun">.</span><span class="typ">PersonalDetails</span><span class="pun">.</span><span class="typ">Find</span><span class="pun">(</span><span class="pln">id</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">personalDetail </span><span class="pun">==</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> </span><span class="typ">HttpNotFound</span><span class="pun">();</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="typ">View</span><span class="pun">(</span><span class="pln">personalDetail</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="com">// POST: PersonalDetails/Delete/5</span><span class="pln">
+</span><span class="pun">[</span><span class="typ">HttpPost</span><span class="pun">,</span><span class="pln"> </span><span class="typ">ActionName</span><span class="pun">(</span><span class="str">"Delete"</span><span class="pun">)]</span><span class="pln">
+</span><span class="pun">[</span><span class="typ">ValidateAntiForgeryToken</span><span class="pun">]</span><span class="pln">
+</span><span class="kwd">public</span><span class="pln"> </span><span class="typ">ActionResult</span><span class="pln"> </span><span class="typ">DeleteConfirmed</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> id</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="typ">PersonalDetail</span><span class="pln"> personalDetail </span><span class="pun">=</span><span class="pln"> db</span><span class="pun">.</span><span class="typ">PersonalDetails</span><span class="pun">.</span><span class="typ">Find</span><span class="pun">(</span><span class="pln">id</span><span class="pun">);</span><span class="pln">
+    db</span><span class="pun">.</span><span class="typ">PersonalDetails</span><span class="pun">.</span><span class="typ">Remove</span><span class="pun">(</span><span class="pln">personalDetail</span><span class="pun">);</span><span class="pln">
+    db</span><span class="pun">.</span><span class="typ">SaveChanges</span><span class="pun">();</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="typ">RedirectToAction</span><span class="pun">(</span><span class="str">"Index"</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span></pre>
+<p style="text-align: justify;">In the first Delete action method, we 
+find out the value of id; if null redirects to Bad Request otherwise 
+finds the&nbsp;record and return to Delete view with PersonalDetail 
+model.</p>
+<p style="text-align: justify;"><span style="font-size: small; font-weight: bold; text-transform: uppercase; line-height: 1.42857143;">DELETE VIEW CODE</span></p>
+<pre style="" class="prettyprint prettyprinted"><span class="highlight"><span class="lit">@model</span></span><span class="pln"> </span><span class="typ">WebApplication1</span><span class="pun">.</span><span class="typ">Models</span><span class="pun">.</span><span class="typ">PersonalDetail</span><span class="pln">
+
+</span><span class="highlight"><span class="pun">@{</span></span><span class="pln">
+ </span><span class="typ">ViewBag</span><span class="pun">.</span><span class="typ">Title</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">"Delete"</span><span class="pun">;</span><span class="pln">
+</span><span class="highlight"><span class="pun">}</span></span><span class="pln">
+
+</span><span class="str">&lt;h2&gt;</span><span class="typ">Delete</span><span class="pun">&lt;/</span><span class="pln">h2</span><span class="pun">&gt;</span><span class="pln">
+
+</span><span class="str">&lt;h3&gt;</span><span class="typ">Are</span><span class="pln"> you sure you want to </span><span class="kwd">delete</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">?&lt;/</span><span class="pln">h3</span><span class="pun">&gt;</span><span class="pln">
+    </span><span class="str">&lt;div&gt;</span><span class="pln">
+        </span><span class="str">&lt;h4&gt;</span><span class="typ">PersonalDetail</span><span class="pun">&lt;/</span><span class="pln">h4</span><span class="pun">&gt;</span><span class="pln">
+        </span><span class="pun">&lt;</span><span class="pln">hr </span><span class="pun">/&gt;</span><span class="pln">
+        </span><span class="pun">&lt;</span><span class="pln">dl </span><span class="kwd">class</span><span class="pun">=</span><span class="str">"dl-horizontal"</span><span class="pun">&gt;</span><span class="pln">
+            </span><span class="str">&lt;dt&gt;</span><span class="highlight"><span class="lit">@</span></span><span class="lit">Html</span><span class="pun">.</span><span class="typ">DisplayNameFor</span><span class="pun">(</span><span class="pln">model </span><span class="pun">=&gt;</span><span class="pln"> model</span><span class="pun">.</span><span class="typ">FirstName</span><span class="pun">)</span><span class="pln">
+            </span><span class="pun">&lt;/</span><span class="pln">dt</span><span class="pun">&gt;</span><span class="pln">
+            </span><span class="str">&lt;dd&gt;</span><span class="highlight"><span class="lit">@</span></span><span class="lit">Html</span><span class="pun">.</span><span class="typ">DisplayFor</span><span class="pun">(</span><span class="pln">model </span><span class="pun">=&gt;</span><span class="pln"> model</span><span class="pun">.</span><span class="typ">FirstName</span><span class="pun">)</span><span class="pln">
+            </span><span class="pun">&lt;/</span><span class="pln">dd</span><span class="pun">&gt;</span><span class="pln">
+            </span><span class="str">&lt;dt&gt;</span><span class="highlight"><span class="lit">@</span></span><span class="lit">Html</span><span class="pun">.</span><span class="typ">DisplayNameFor</span><span class="pun">(</span><span class="pln">model </span><span class="pun">=&gt;</span><span class="pln"> model</span><span class="pun">.</span><span class="typ">LastName</span><span class="pun">)</span><span class="pln">
+            </span><span class="pun">&lt;/</span><span class="pln">dt</span><span class="pun">&gt;</span><span class="pln">
+            </span><span class="str">&lt;dd&gt;</span><span class="highlight"><span class="lit">@</span></span><span class="lit">Html</span><span class="pun">.</span><span class="typ">DisplayFor</span><span class="pun">(</span><span class="pln">model </span><span class="pun">=&gt;</span><span class="pln"> model</span><span class="pun">.</span><span class="typ">LastName</span><span class="pun">)</span><span class="pln">
+            </span><span class="pun">&lt;/</span><span class="pln">dd</span><span class="pun">&gt;</span><span class="pln">
+            </span><span class="str">&lt;dt&gt;</span><span class="highlight"><span class="lit">@</span></span><span class="lit">Html</span><span class="pun">.</span><span class="typ">DisplayNameFor</span><span class="pun">(</span><span class="pln">model </span><span class="pun">=&gt;</span><span class="pln"> model</span><span class="pun">.</span><span class="typ">Age</span><span class="pun">)</span><span class="pln">
+            </span><span class="pun">&lt;/</span><span class="pln">dt</span><span class="pun">&gt;</span><span class="pln">
+            </span><span class="str">&lt;dd&gt;</span><span class="highlight"><span class="lit">@</span></span><span class="lit">Html</span><span class="pun">.</span><span class="typ">DisplayFor</span><span class="pun">(</span><span class="pln">model </span><span class="pun">=&gt;</span><span class="pln"> model</span><span class="pun">.</span><span class="typ">Age</span><span class="pun">)</span><span class="pln">
+            </span><span class="pun">&lt;/</span><span class="pln">dd</span><span class="pun">&gt;</span><span class="pln">
+            </span><span class="str">&lt;dt&gt;</span><span class="highlight"><span class="lit">@</span></span><span class="lit">Html</span><span class="pun">.</span><span class="typ">DisplayNameFor</span><span class="pun">(</span><span class="pln">model </span><span class="pun">=&gt;</span><span class="pln"> model</span><span class="pun">.</span><span class="typ">Active</span><span class="pun">)</span><span class="pln">
+            </span><span class="pun">&lt;/</span><span class="pln">dt</span><span class="pun">&gt;</span><span class="pln">
+            </span><span class="str">&lt;dd&gt;</span><span class="highlight"><span class="lit">@</span></span><span class="lit">Html</span><span class="pun">.</span><span class="typ">DisplayFor</span><span class="pun">(</span><span class="pln">model </span><span class="pun">=&gt;</span><span class="pln"> model</span><span class="pun">.</span><span class="typ">Active</span><span class="pun">)</span><span class="pln">
+            </span><span class="pun">&lt;/</span><span class="pln">dd</span><span class="pun">&gt;</span><span class="pln">
+        </span><span class="pun">&lt;/</span><span class="pln">dl</span><span class="pun">&gt;</span><span class="pln">
+
+        </span><span class="highlight"><span class="lit">@</span></span><span class="lit">using</span><span class="pln"> </span><span class="pun">(</span><span class="typ">Html</span><span class="pun">.</span><span class="typ">BeginForm</span><span class="pun">())</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+</span><span class="highlight"><span class="lit">@</span></span><span class="lit">Html</span><span class="pun">.</span><span class="typ">AntiForgeryToken</span><span class="pun">()</span><span class="pln">
+        </span><span class="pun">&lt;</span><span class="pln">div </span><span class="kwd">class</span><span class="pun">=</span><span class="str">"form-actions no-color"</span><span class="pun">&gt;</span><span class="pln">
+            </span><span class="pun">&lt;</span><span class="pln">input type</span><span class="pun">=</span><span class="str">"submit"</span><span class="pln"> value</span><span class="pun">=</span><span class="str">"Delete"</span><span class="pln"> </span><span class="kwd">class</span><span class="pun">=</span><span class="str">"btn btn-default"</span><span class="pln"> </span><span class="pun">/&gt;</span><span class="pln">
+            </span><span class="pun">|</span><span class="pln">
+</span><span class="highlight"><span class="lit">@</span></span><span class="lit">Html</span><span class="pun">.</span><span class="typ">ActionLink</span><span class="pun">(</span><span class="str">"Back to List"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Index"</span><span class="pun">)</span><span class="pln">
+        </span><span class="pun">&lt;/</span><span class="pln">div</span><span class="pun">&gt;</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">&lt;/</span><span class="pln">div</span><span class="pun">&gt;</span></pre>
+<p style="text-align: justify;">This view retrieve the Model data and show the record selected for delete. Read the <a href="http://techfunda.com/Howto/asp-net-mvc/277/list-the-data-from-database" title="How to list records from the database in asp.net mvc" target="_blank">How to list ….</a> post in this series to understand about @Html.DisplayNameFor and @Html.DisplayFor methods.</p>
+<p style="text-align: justify;"><img src="Delete%20record%20from%20database%20in%20ASP.NET%20MVC%20-%20Tech%20Funda_files/635659550657996795.jpg" height="543" width="450"></p>
+<p style="text-align: justify;">Clicking on Delete button calls <code>DeleteConfirmed</code> action method. Notice the attribute <code>ActionName</code>
+ that instruct&nbsp;the ASP.NET MVC framework that despite the name of 
+the method is DeleteConfirmed, it’s name should be&nbsp;treated as <span class="highlight">Delete</span>.
+ This is because we can’t keep the same name of the action method with 
+same parameter in C#. This&nbsp;is a trick to fool C# compiler.</p>
+<p style="text-align: justify;">DeleteConfirmed method finds the record 
+to delete and add into Remove method and calls SaveChanges()&nbsp;method
+ to physically remove this record from the database.</p> <div id="demoLink" style="display:none;text-align:left;"><a target="_blank" href="http://techfunda.com/Examples/Show/0"><span class="glyphicon glyphicon-play"></span> Demo URL</a></div>
+<script>
+                        // write demo url
+                        var thisPostId = 0;
+                        if (thisPostId > 0)  { $("#demoLink").show(); $("pre").eq(0).after($("#demoLink"));  } else { $("#demoLink").hide(); }
+                    </script>
+<span style="color:white;"> &nbsp;Views: 10165 | Post Order: 103</span>
+</main>
+<div class="row">
+<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 iconSizeL killPaddingSmall smallHide">
+<a class="aNavP" href="http://techfunda.com/howto/279/update-record-into-database" title="How to update a record into the database in ASP.NET MVC?"><span class="glyphicon glyphicon-circle-arrow-left"></span> Previous Post</a>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 iconSizeL text-center smallHide">
+<ul class="list-inline">
+<li>
+<a href="javascript:void(0)" title="Toggle Print View" id="lnkPrint"><span class="glyphicon glyphicon-print"></span></a>
+</li>
+</ul>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 iconSizeL text-right killPaddingSmall">
+<a class="aNav smallHide" href="http://techfunda.com/howto/281/file-upload" title="How to upload a file on the server in ASP.NET MVC?"><span class="smallHide">Next Post</span> <span class="glyphicon glyphicon-circle-arrow-right"></span></a>
+</div>
+</div>
+<div class="row">
+<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 iconSizeL killPaddingSmall">
+<a href="http://techfunda.com/Home/Ask?c=2" title="Not found the solution? ask from us">Ask<span class="smallHide"> ASP.NET MVC question</span> <span class="glyphicon glyphicon-comment"></span></a>
+</div>
+<a href="http://techfunda.com/Home/ReportError?u=http://techfunda.com/howto/280/delete-record-from-database" target="_blank" class="pull-right iconSizeL" title="Report an error"><span class="glyphicon glyphicon-eye-open"></span> <span class="smallHide">Report Error</span></a>
+</div>
+<hr>
+<script>
+    var thisUrl = 'http://techfunda.com/howto/280/delete-record-from-database';
+</script>
+<div class="socialIcon">
+<a href="javascript:void(0)" onclick="var scrTop = window.screen.height / 2 - (250); var scrLeft = window.screen.width / 2 - (350); window.open('http://www.facebook.com/sharer.php?u=' + thisUrl, 'tfSharer', 'toolbar=0,status=0,width=626,height=456,top=' + scrTop + ',left=' + scrLeft); return false;"><img src="Delete%20record%20from%20database%20in%20ASP.NET%20MVC%20-%20Tech%20Funda_files/facebook.png" alt="Facebook"></a>
+<a href="javascript:void(0)" onclick="var scrTop = window.screen.height / 2 - (250); var scrLeft = window.screen.width / 2 - (350); window.open('http://twitter.com/share?original_referer=' + thisUrl + '&amp;text=' + document.title, 'tfSharer', 'toolbar=0,status=0,width=626,height=456,top=' + scrTop + ',left=' + scrLeft); return false;"><img src="Delete%20record%20from%20database%20in%20ASP.NET%20MVC%20-%20Tech%20Funda_files/twitter.png" alt="Twitter"></a>
+<a href="javascript:void(0)" onclick="var scrTop = window.screen.height/2-(250); var scrLeft = window.screen.width/2-(350);window.open('https://www.linkedin.com/cws/share?url=' + thisUrl +'&amp;title='+ document.title,'tfSharer','toolbar=0,status=0,width=626,height=456,top='+scrTop+',left='+scrLeft);return false;"><img src="Delete%20record%20from%20database%20in%20ASP.NET%20MVC%20-%20Tech%20Funda_files/linkedin.png" alt="LinkedIn"></a>
+<a href="javascript:void(0)" onclick="var scrTop = window.screen.height/2-(250); var scrLeft = window.screen.width/2-(350);window.open('https://plus.google.com/share?url='+ thisUrl,'tfSharer','toolbar=0,status=0,width=626,height=456,top='+scrTop+',left='+scrLeft);return false;"><img src="Delete%20record%20from%20database%20in%20ASP.NET%20MVC%20-%20Tech%20Funda_files/google-plus.png" alt="GooglePlus"></a>
+<a href="javascript:void(0)" onclick="var scrTop = window.screen.height/2-(250); var scrLeft = window.screen.width/2-(350);window.open('http://www.stumbleupon.com/submit?url=' + thisUrl + '&amp;title='+ document.title,'tfSharer','toolbar=0,status=0,width=626,height=456,top='+scrTop+',left='+scrLeft);return false;"><img src="Delete%20record%20from%20database%20in%20ASP.NET%20MVC%20-%20Tech%20Funda_files/stumbleupon.png" alt="StumbleUpon"></a>
+<a href="https://in.pinterest.com/pin/find/?url=http://techfunda.com/howto/280/delete-record-from-database" target="_blank"><img src="Delete%20record%20from%20database%20in%20ASP.NET%20MVC%20-%20Tech%20Funda_files/pinterest.png" alt="Pinterest"></a>
+<a href="javascript:void(0)" onclick="var scrTop = window.screen.height/2-(250); var scrLeft = window.screen.width/2-(350);window.open('https://delicious.com/save?v=5&amp;provider=&amp;noui&amp;jump=close&amp;url=' + thisUrl + '&amp;title=' + document.title, 'tfSharer','toolbar=0,status=0,width=626,height=656,top='+scrTop+',left='+scrLeft);return false;"><img src="Delete%20record%20from%20database%20in%20ASP.NET%20MVC%20-%20Tech%20Funda_files/delicious_32.png" alt="Delicious"></a>
+<a href="javascript:void(0)" onclick="var scrTop = window.screen.height/2-(250); var scrLeft = window.screen.width/2-(350);window.open('http://reddit.com/submit?url='+ thisUrl + '&amp;title='+ document.title,'tfSharer','toolbar=0,status=0,width=626,height=656,top='+scrTop+',left='+scrLeft);return false;"><img src="Delete%20record%20from%20database%20in%20ASP.NET%20MVC%20-%20Tech%20Funda_files/reddit_32.png" alt="Reddit"></a>
+<a href="mailto:sample@sample.com?subject=http://techfunda.com/howto/280/delete-record-from-database"><img src="Delete%20record%20from%20database%20in%20ASP.NET%20MVC%20-%20Tech%20Funda_files/email.png" alt="Email"></a>
+</div>
+<hr>
+<div class="row"><h4>Related Posts</h4>
+<ul id="divMorePost"><li><a href="http://techfunda.com/howto/281/file-upload" title="How to upload a file on the server in ASP.NET MVC?">File upload</a></li><li><a href="http://techfunda.com/howto/282/upload-multiple-files-on-server" title="How to upload multiple files on server in ASP.NET MVC?">Upload multiple files on server</a></li><li><a href="http://techfunda.com/howto/283/pagination-of-records" title="How to paginate records in the ASP.NET MVC view?">Pagination of records</a></li><li><a href="http://techfunda.com/howto/284/sort-paginate-records" title="How to sort and paginate records in ASP.NET MVC?">Sort &amp; paginate records</a></li><li><a href="http://techfunda.com/howto/285/search-based-on-keyword" title="How to perform a search based on a keyword from the database table in ASP.NET MVC?">Search based on keyword</a></li></ul>
+</div>
+<br>
+<div class="ads" style="margin-bottom:15px;">
+<div data-type="ad" data-publisher="techfunda.com" data-format="728x90" data-zone="ros"></div>
+</div>
+ 
+<script async="" src="Delete%20record%20from%20database%20in%20ASP.NET%20MVC%20-%20Tech%20Funda_files/adsbygoogle.js"></script>
+ 
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display: block; height: 383px;" data-ad-client="ca-pub-3021550955035385" data-ad-slot="9998300952" data-ad-format="autorelaxed"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:383px;margin:0;padding:0;position:relative;visibility:visible;width:767px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:383px;margin:0;padding:0;position:relative;visibility:visible;width:767px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;" frameborder="0" height="383" width="767"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  </div>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" style="padding-right:5px;" id="divRight">
+<p class="tocPlaceholder text-center">
+<a class="label label-warning" style="font-weight:bold;font-size:14px;color:white;background-color:red;" href="http://techfunda.com/Authors/Home/Page/12" title="Earn royalty income by writing on TechFunda.com"><span class="glyphicon glyphicon-usd"></span> Write for us</a>
+</p>
+<div class="tocPlaceholder text-center" style="position:initial;padding:15px;">
+<a href="http://feeds.feedburner.com/techfundafeed"><img src="Delete%20record%20from%20database%20in%20ASP.NET%20MVC%20-%20Tech%20Funda_files/techfundafeed.gif" style="border:0" alt="" height="26" width="88"></a>
+<form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=techfundafeed', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"><input style="width:160px" name="email" placeholder="Subscribe to latest posts" type="text"> <input value="techfundafeed" name="uri" type="hidden"><input name="loc" value="en_US" type="hidden"><input value="Subscribe" style="background-color:#e84711;color:white;" type="submit"></form>
+</div>
+<br>
+<div class="tocPlaceholder" style="position:initial;">
+<h5>Utility Tools</h5>
+<ul class="list-group">
+<li class="list-group-item"><a href="http://techfunda.com/Tools/PasswordGenerator">Password Generator</a></li>
+<li class="list-group-item"><a href="http://techfunda.com/Examples/Show">Live Code Editor</a></li>
+<li class="list-group-item"><a href="http://techfunda.com/Tools/XmlToJson">Xml to Json</a></li>
+<li class="list-group-item"><a href="http://techfunda.com/Tools/HtmlEncodeDecode">HTML Encoder Decoder</a></li>
+<li class="list-group-item"><a href="http://techfunda.com/Tools/UrlEncodeDecode">URL Encoder Decoder</a></li>
+</ul>
+</div>
+<br>
+<div class="ads">
+<script src="Delete%20record%20from%20database%20in%20ASP.NET%20MVC%20-%20Tech%20Funda_files/adsbygoogle.js"></script>
+ 
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display: block; height: 250px;" data-ad-client="ca-pub-3021550955035385" data-ad-slot="1707994157" data-ad-format="rectangle"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:317px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:317px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;" frameborder="0" height="250" width="317"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+ 
+<br>
+<div style="position: fixed; top: 200px;" id="divSocialShare">
+<script>
+function fixSocial() {
+    if ($(document).width() < 768) { return;}
+    if ($(document).height() < 1550) { return;}
+   
+    var scrollPos = $(document).scrollTop();
+    if (scrollPos > 670) {
+        $("#divSocialShare").css({'position' : 'fixed', 'top' : '200px'});
+    } else {
+        $("#divSocialShare").css({'position' : 'relative', 'top' : 'auto'});
+    }
+}
+ window.onscroll = fixSocial;
+</script>
+<br>
+<div class="ads">
+<div data-type="ad" data-publisher="techfunda.com" data-format="300x250" data-zone="ros"><div data-google-query-id="CNrdhbjq3M4CFVOJaAodPwoCew" id="div-gpt-ad-techfunda.com/ros-3" style="height: 250px; width: 300px; box-sizing: border-box; border: 0px none; font-size: 0px;"><div style="border: 0pt none;" id="google_ads_iframe_/6839/techfunda.com/ros_0__container__"><iframe src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px none; vertical-align: bottom;" marginheight="0" marginwidth="0" scrolling="no" name="google_ads_iframe_/6839/techfunda.com/ros_0" title="3rd party ad content" id="google_ads_iframe_/6839/techfunda.com/ros_0" frameborder="0" height="250" width="300"></iframe></div><iframe src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px none; vertical-align: bottom; visibility: hidden; display: none;" marginheight="0" marginwidth="0" scrolling="no" name="google_ads_iframe_/6839/techfunda.com/ros_0__hidden__" title="" id="google_ads_iframe_/6839/techfunda.com/ros_0__hidden__" frameborder="0" height="0" width="0"></iframe></div></div>
+<script type="text/javascript">
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = false;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.js'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.js'); setTimeout(_dmFollowup, 1000); })();
+</script>
+</div>
+</div>
+ 
+</div>
+</div>
+<link href="Delete%20record%20from%20database%20in%20ASP.NET%20MVC%20-%20Tech%20Funda_files/prettify.css" rel="stylesheet">
+<script src="Delete%20record%20from%20database%20in%20ASP.NET%20MVC%20-%20Tech%20Funda_files/prettify.js"></script>
+<script>
+    var parentPostId = '280';
+    var flagForHome = 'asp-net-mvc';
+    var printFlag = true;
+    
+    $("#mmasp-net-mvc").addClass("selectedMainMenu");
+    $(function(){
+        // format the code now
+        $("pre").addClass("prettyprint");
+        prettyPrint();
+
+        $(".demoURL").prepend('<span class="glyphicon glyphicon-play" style="color:#28c10a;"></span> Demo: ');
+    });
+
+    $("#lnkPrint").click(function () {
+        $("#divLeft").toggle(); $("#divRight").toggle(); $(".navbar").toggle(); $("footer").toggle();
+        if (printFlag) { $('html, body').scrollTop(0); window.print(); printFlag = false; alert("Click Print icon again to toggle print view.");  } else { printFlag = true; }
+    });
+</script>
+<div class="clearfix"></div>
+</div><ins data-adsbygoogle-status="done" style="display: none; width: auto; height: auto;" class="adsbygoogle"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" frameborder="0" height="0" width="0"></iframe></ins></ins></ins>
+<footer>
+<div class="container-fluid killPaddingSmall">
+<div class="clearfix"></div>
+<div class="col-md-9 col-sm-9 killLeftRightSpace killPaddingSmall">
+<a href="http://techfunda.com/Home/Page/3" title="Contact / Feedback">Contact / Feedback</a> &nbsp;
+<a href="http://techfunda.com/Home/Page/4" title="About Us">About Us</a> &nbsp;
+<a href="http://techfunda.com/Home/Page/2" title="Terms of use">Terms of use</a> &nbsp;
+<a href="http://techfunda.com/Home/Page/1" title="Privacy Policy">Privacy Policy</a> &nbsp;
+<a href="http://techfunda.com/Authors/Home/Page/12" title="Write for us">Write for us</a>
+<p>All rights reserved. © 2016 - TechFunda.com</p>
+</div>
+<div class="col-md-3 col-sm-3 killPaddingSmall">
+<div style="float:right;" class="iconSizeL">
+<a href="javascript:void(0)" title="Go Top" id="lnkGoTop"><span class="glyphicon glyphicon-circle-arrow-up"></span></a>
+</div>
+</div>
+<div class="clearfix"></div>
+</div>
+</footer>
+<script src="Delete%20record%20from%20database%20in%20ASP.NET%20MVC%20-%20Tech%20Funda_files/bootstrap.js"></script>
+<script src="Delete%20record%20from%20database%20in%20ASP.NET%20MVC%20-%20Tech%20Funda_files/respond.js"></script>
+<script>
+        $("#lnkGoTop").click(function () {
+            $('html, body').animate({ scrollTop: 0 }, 'medium');
+        });
+        function ShowMenu(id) {
+            $("#" + id).toggle();
+            $("#q").focus();
+        }
+    </script>
+ 
+<script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-63988911-1', 'auto');
+        ga('send', 'pageview');
+</script>
+ 
+
+
+<iframe style="display: none;" name="DMGlobalUserIdetifierIFRAME" id="DMGlobalUserIdetifierIFRAME" src="Delete%20record%20from%20database%20in%20ASP.NET%20MVC%20-%20Tech%20Funda_files/a.htm" height="1" width="1"></iframe><iframe style="display: none; width: 0px; height: 0px;" name="google_osd_static_frame" id="google_osd_static_frame_415974731712"></iframe></body></html>
